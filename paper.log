@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=latex 2023.9.21)  2 MAY 2025 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=latex 2023.9.21)  2 MAY 2025 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,15 +1549,14 @@ Chapter 4.
 
 ]
 Chapter 5.
-[56
+(./paper.bbl [56
 
-] (./paper.bbl
+]
 Overfull \hbox (32.4664pt too wide) in paragraph at lines 18--23
 [][][][][][]\T1/cmr/m/n/12 ,
  []
 
 [57
-
 
 ] [58] [59] [60] [61] [62]
 Overfull \hbox (41.097pt too wide) in paragraph at lines 284--289
@@ -1595,4 +1594,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  132i,22n,132p,511b,1049s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.dvi (74 pages, 342044 bytes).
+Output written on paper.dvi (74 pages, 344052 bytes).
