@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=latex 2023.9.21)  2 MAY 2025 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=latex 2023.9.21)  2 MAY 2025 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,7 +1278,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
 
-LaTeX Warning: Reference `fig:energies' on page 5 undefined on input line 357.
+LaTeX Warning: Reference `fig:energies' on page 5 undefined on input line 361.
 
 
 Underfull \vbox (badness 4752) has occurred while \output is active []
@@ -1291,20 +1291,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-43.
+47.
 
 (/usr/local/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-Underfull \vbox (badness 4846) has occurred while \output is active []
-
- [6]
-Overfull \hbox (4.99265pt too wide) in paragraph at lines 478--478
+) [6]
+Overfull \hbox (4.99265pt too wide) in paragraph at lines 482--482
 []|$\OML/cmm/m/it/6 ^^[[] \OMS/cmsy/m/n/6 ^^T
  []
 
 
-Overfull \hbox (3.78845pt too wide) in paragraph at lines 478--478
+Overfull \hbox (3.78845pt too wide) in paragraph at lines 482--482
 []|$\OML/cmm/m/it/6 ^^O[]$\T1/cmr/m/n/6 (kJ/mol)| 
  []
 
@@ -1366,7 +1363,7 @@ File: figures//figure_s2_ch1.eps Graphic file (type eps)
 
 <figures//figure_s2_ch1.eps>
 
-LaTeX Warning: Reference `fig:energies' on page 19 undefined on input line 870.
+LaTeX Warning: Reference `fig:energies' on page 19 undefined on input line 874.
 
 
 
@@ -1402,7 +1399,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
 
-LaTeX Warning: Reference `fig:ch1' on page 26 undefined on input line 1113.
+LaTeX Warning: Reference `fig:ch1' on page 26 undefined on input line 1117.
 
 File: figures//figure_s3_ch1.eps Graphic file (type eps)
 <figures//figure_s3_ch1.eps> [26] [27]
@@ -1419,27 +1416,27 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1270.
+(hyperref)                removing `\mathsurround' on input line 1278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1270.
+(hyperref)                removing `\z@' on input line 1278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1270.
+(hyperref)                removing `superscript' on input line 1278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1270.
+(hyperref)                removing `\mathsurround' on input line 1278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1270.
+(hyperref)                removing `\z@' on input line 1278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1270.
+(hyperref)                removing `superscript' on input line 1278.
 
 [32
 
@@ -1451,35 +1448,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
-
-LaTeX Warning: Reference `tab:ions' on page 34 undefined on input line 1430.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34]
 
 LaTeX Warning: Reference `tab:ions' on page 35 undefined on input line 1438.
 
-[35]
+
+LaTeX Warning: Reference `tab:ions' on page 35 undefined on input line 1446.
+
+[35] [36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1483.
+(hyperref)                removing `\mathsurround' on input line 1491.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1483.
+(hyperref)                removing `\z@' on input line 1491.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1483.
+(hyperref)                removing `superscript' on input line 1491.
 
 File: figures//Figure_1_ch2.eps Graphic file (type eps)
-<figures//Figure_1_ch2.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-[37]
+<figures//Figure_1_ch2.eps> [37]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38]
@@ -1534,7 +1526,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [49] [50]
 
 LaTeX Warning: Reference `fig:cationfrac' on page 51 undefined on input line 19
-05.
+13.
 
 File: figures//Figure_8_ch2.eps Graphic file (type eps)
 <figures//Figure_8_ch2.eps>
@@ -1542,7 +1534,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
 [52]
-Overfull \hbox (5.41632pt too wide) in paragraph at lines 1926--1939
+Overfull \hbox (5.41632pt too wide) in paragraph at lines 1934--1947
 []\T1/cmr/m/n/12 Ion ad-sorp-tion to porous in-ter-faces is a com-plex in-ter-p
 lay be-tween solvent--surface, solvent--
  []
@@ -1595,12 +1587,12 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: E09579CEC833C796F7F4581DA3B4765B;5489.
  ) 
 Here is how much of TeX's memory you used:
- 30427 strings out of 476026
- 617361 string characters out of 5780559
+ 30433 strings out of 476026
+ 617426 string characters out of 5780559
  1875385 words of memory out of 5000000
- 50350 multiletter control sequences out of 15000+600000
- 527551 words of font info for 73 fonts, out of 8000000 for 9000
+ 50353 multiletter control sequences out of 15000+600000
+ 529259 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  132i,22n,132p,511b,1049s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.dvi (74 pages, 340628 bytes).
+Output written on paper.dvi (74 pages, 342044 bytes).
