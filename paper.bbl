@@ -1,0 +1,472 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{berkowitz:2019}
+M.~L. Berkowitz, Biomembrane Simulations: Computational Studies of Biological
+  Membranes, CRC Press, 2019.
+
+\bibitem{pandit:2008:simulationtextbook}
+S.~A. Pandit, H.~L. Scott, Simulations and models of lipid bilayers, in: Soft
+  Matter: Lipid Bilayers and Red Blood Cells, Vol.~4, Wiley Online Library,
+  2008, Ch.~1, pp. 1--82.
+
+\bibitem{kruczek:2017}
+J.~Kruczek, S.-W. Chiu, E.~Jakobsson, S.~A. Pandit,
+  \href{http://dx.doi.org/10.1021/acs.langmuir.6b04166}{Effects of lithium and
+  other monovalent ions on palmitoyl oleoyl phosphatidylcholine bilayer},
+  Langmuir 33~(4) (2017) 1105--1115.
+\newline\urlprefix\url{http://dx.doi.org/10.1021/acs.langmuir.6b04166}
+
+\bibitem{kruczek:2019}
+J.~Kruczek, S.-W. Chiu, S.~Varma, E.~Jakobsson, S.~A. Pandit, Interactions of
+  monovalent and divalent cations at palmitoyl-oleoyl-phosphatidylcholine
+  interface, Langmuir 35~(32) (2019) 10522--10532.
+
+\bibitem{saunders:2019}
+M.~Saunders, M.~Steele, W.~Lavigne, S.~Varma, S.~A. Pandit, Interaction of salt
+  with ether-and ester-linked phospholipid bilayers, Biochimica et Biophysica
+  Acta (BBA)-Biomembranes 1861~(5) (2019) 907--915.
+
+\bibitem{Bockmann:2003}
+R.~A. B{\"o}ckmann, A.~Hac, T.~Heimburg, H.~Grubm{\"u}ller, Effect of sodium
+  chloride on a lipid bilayer, Biophysical Journal 85~(3) (2003) 1647--1655.
+
+\bibitem{cordomi:2008}
+A.~Cordomi, O.~Edholm, J.~J. Perez, Effect of ions on a dipalmitoyl
+  phosphatidylcholine bilayer. a molecular dynamics simulation study, The
+  Journal of Physical Chemistry B 112~(5) (2008) 1397--1408.
+
+\bibitem{gurtovenko:2008}
+A.~A. Gurtovenko, I.~Vattulainen, Effect of nacl and kcl on phosphatidylcholine
+  and phosphatidylethanolamine lipid membranes: insight from atomic-scale
+  simulations for understanding salt-induced effects in the plasma membrane,
+  The Journal of Physical Chemistry B 112~(7) (2008) 1953--1962.
+
+\bibitem{Cordomi:2009}
+A.~Cordomi, O.~Edholm, J.~J. Perez, Effect of force field parameters on sodium
+  and potassium ion binding to dipalmitoyl phosphatidylcholine bilayers,
+  Journal of chemical theory and computation 5~(8) (2009) 2125--2134.
+
+\bibitem{jurkiewicz:2012}
+P.~Jurkiewicz, L.~Cwiklik, A.~Vojt{\'\i}{\v{s}}kov{\'a}, P.~Jungwirth, M.~Hof,
+  Structure, dynamics, and hydration of popc/pops bilayers suspended in nacl,
+  kcl, and cscl solutions, Biochimica et Biophysica Acta (BBA)-Biomembranes
+  1818~(3) (2012) 609--616.
+
+\bibitem{pabst:2007}
+G.~Pabst, A.~Hodzic, J.~{\v{S}}trancar, S.~Danner, M.~Rappolt, P.~Laggner,
+  Rigidification of neutral lipid bilayers in the presence of salts,
+  Biophysical journal 93~(8) (2007) 2688--2696.
+
+\bibitem{petrache:2006:swelling}
+H.~I. Petrache, S.~Tristram-Nagle, D.~Harries, N.~Ku{\v{c}}erka, J.~F. Nagle,
+  V.~A. Parsegian, Swelling of phospholipids by monovalent salt, Journal of
+  lipid research 47~(2) (2006) 302--309.
+
+\bibitem{uhrikova:2008}
+D.~Uhr{\'\i}kov{\'a}, N.~Ku{\v{c}}erka, J.~Teixeira, V.~Gordeliy,
+  P.~Balgav{\`y}, Structural changes in dipalmitoylphosphatidylcholine bilayer
+  promoted by ca2+ ions: a small-angle neutron scattering study, Chemistry and
+  physics of lipids 155~(2) (2008) 80--89.
+
+\bibitem{joung:2008}
+I.~S. Joung, T.~E. Cheatham~III, Determination of alkali and halide monovalent
+  ion parameters for use in explicitly solvated biomolecular simulations, The
+  journal of physical chemistry B 112~(30) (2008) 9020--9041.
+
+\bibitem{chiu:2009}
+S.-W. Chiu, S.~A. Pandit, H.~Scott, E.~Jakobsson, An improved united atom force
+  field for simulation of mixed lipid bilayers, The Journal of Physical
+  Chemistry B 113~(9) (2009) 2748--2763.
+
+\bibitem{varma:2010}
+S.~Varma, S.~B. Rempe, Multibody effects in ion binding and selectivity,
+  Biophysical journal 99~(10) (2010) 3394--3401.
+
+\bibitem{wineman:2019}
+V.~Wineman-Fisher, Y.~Al-Hamdani, I.~Addou, A.~Tkatchenko, S.~Varma,
+  Ion-hydroxyl interactions: From high-level quantum benchmarks to transferable
+  polarizable force fields, Journal of chemical theory and computation 15~(4)
+  (2019) 2444--2453.
+
+\bibitem{vacha:2010}
+R.~V{\'a}cha, P.~Jurkiewicz, M.~Petrov, M.~L. Berkowitz, R.~A. Bockmann,
+  J.~Barucha-Kraszewska, M.~Hof, P.~Jungwirth, Mechanism of interaction of
+  monovalent ions with phosphatidylcholine lipid membranes, The Journal of
+  Physical Chemistry B 114~(29) (2010) 9504--9509.
+
+\bibitem{vorobyov:2010}
+I.~Vorobyov, T.~W. Allen, The electrostatics of solvent and membrane interfaces
+  and the role of electronic polarizability, The Journal of Chemical Physics
+  132~(18) (2010) 05B602.
+
+\bibitem{melcr:2018}
+J.~Melcr, H.~Martinez-Seara, R.~Nencini, J.~Kolafa, P.~Jungwirth, O.~S. Ollila,
+  Accurate binding of sodium and calcium to a popc bilayer by effective
+  inclusion of electronic polarization, The Journal of Physical Chemistry B
+  122~(16) (2018) 4546--4557.
+
+\bibitem{chen:2021}
+P.~Chen, I.~Vorobyov, B.~Roux, T.~W. Allen, Molecular dynamics simulations
+  based on polarizable models show that ion permeation interconverts between
+  different mechanisms as a function of membrane thickness, The Journal of
+  Physical Chemistry B 125~(4) (2021) 1020--1035.
+
+\bibitem{lee:2008:origin}
+G.~Lee~Warren, J.~E. Davis, S.~Patel, Origin and control of superlinear
+  polarizability scaling in chemical potential equalization methods, The
+  Journal of chemical physics 128~(14) (2008) 144110.
+
+\bibitem{boda:2008:effects}
+D.~Boda, D.~Henderson, The effects of deviations from lorentz--berthelot rules
+  on the properties of a simple mixture, Molecular Physics 106~(20) (2008)
+  2367--2370.
+
+\bibitem{baker:2010:accurate}
+C.~M. Baker, P.~E. Lopes, X.~Zhu, B.~Roux, A.~D. MacKerell~Jr, Accurate
+  calculation of hydration free energies using pair-specific lennard-jones
+  parameters in the charmm drude polarizable force field, Journal of chemical
+  theory and computation 6~(4) (2010) 1181--1198.
+
+\bibitem{yoo:2012:improved}
+J.~Yoo, A.~Aksimentiev, Improved parametrization of li+, na+, k+, and mg2+ ions
+  for all-atom molecular dynamics simulations of nucleic acid systems, The
+  journal of physical chemistry letters 3~(1) (2012) 45--50.
+
+\bibitem{fyta:2012:ionic}
+M.~Fyta, R.~R. Netz, Ionic force field optimization based on single-ion and
+  ion-pair solvation properties: Going beyond standard mixing rules, The
+  Journal of chemical physics 136~(12) (2012) 124103.
+
+\bibitem{mamatkulov:2013:force}
+S.~Mamatkulov, M.~Fyta, R.~R. Netz, Force fields for divalent cations based on
+  single-ion and ion-pair properties, The Journal of chemical physics 138~(2)
+  (2013) 024505.
+
+\bibitem{venable:2013}
+R.~M. Venable, Y.~Luo, K.~Gawrisch, B.~Roux, R.~W. Pastor, Simulations of
+  anionic lipid membranes: development of interaction-specific ion parameters
+  and validation using nmr data, The journal of physical chemistry B 117~(35)
+  (2013) 10183--10192.
+
+\bibitem{savelyev:2014:balancing}
+A.~Savelyev, A.~D. MacKerell~Jr, Balancing the interactions of ions, water, and
+  dna in the drude polarizable force field, The Journal of Physical Chemistry B
+  118~(24) (2014) 6742--6757.
+
+\bibitem{li:2015:representation}
+H.~Li, V.~Ngo, M.~C. Da~Silva, D.~R. Salahub, K.~Callahan, B.~Roux, S.~Y.
+  Noskov, Representation of ion--protein interactions using the drude
+  polarizable force-field, The Journal of Physical Chemistry B 119~(29) (2015)
+  9401--9416.
+
+\bibitem{savelyev:2015:competition}
+A.~Savelyev, A.~D. MacKerell~Jr, Competition among li+, na+, k+, and rb+
+  monovalent ions for dna in molecular dynamics simulations using the additive
+  charmm36 and drude polarizable force fields, The Journal of Physical
+  Chemistry B 119~(12) (2015) 4428--4440.
+
+\bibitem{jing:2017:study}
+Z.~Jing, R.~Qi, C.~Liu, P.~Ren, Study of interactions between metal ions and
+  protein model compounds by energy decomposition analyses and the amoeba force
+  field, The Journal of chemical physics 147~(16) (2017) 161733.
+
+\bibitem{reif:2017}
+M.~M. Reif, C.~Kallies, V.~Knecht, Effect of sodium and chloride binding on a
+  lecithin bilayer. a molecular dynamics study, Membranes 7~(1) (2017) 5.
+
+\bibitem{fogarty:2014:paropt}
+J.~C. Fogarty, S.-W. Chiu, P.~Kirby, E.~Jakobsson, S.~A. Pandit, Automated
+  optimization of water--water interaction parameters for a coarse-grained
+  model, The Journal of Physical Chemistry B 118~(6) (2014) 1603--1611.
+
+\bibitem{fogarty:2014:thesis}
+J.~C. Fogarty, High Dimensional Non-Linear Optimization of Molecular Models,
+  University of South Florida, 2014.
+
+\bibitem{varma:2006:coordination}
+S.~Varma, S.~B. Rempe, Coordination numbers of alkali metal ions in aqueous
+  solutions, Biophysical chemistry 124~(3) (2006) 192--199.
+
+\bibitem{mason:2006:neutron}
+P.~Mason, S.~Ansell, G.~Neilson, Neutron diffraction studies of electrolytes in
+  null water: a direct determination of the first hydration zone of ions,
+  Journal of Physics: Condensed Matter 18~(37) (2006) 8437.
+
+\bibitem{galib:2017:revisiting}
+M.~Galib, M.~Baer, L.~Skinner, C.~Mundy, T.~Huthwelker, G.~Schenter,
+  C.~Benmore, N.~Govind, J.~L. Fulton, Revisiting the hydration structure of
+  aqueous na+, The Journal of chemical physics 146~(8) (2017) 084504.
+
+\bibitem{timko:2010:dissociation}
+J.~Timko, D.~Bucher, S.~Kuyucak, Dissociation of nacl in water from ab initio
+  molecular dynamics simulations, The Journal of chemical physics 132~(11)
+  (2010) 114510.
+
+\bibitem{smirnov:2020}
+P.~Smirnov, Structure of the nearest environment of na+, k+, rb+, and cs+ ions
+  in oxygen-containing solvents, Russian Journal of General Chemistry 90~(9)
+  (2020) 1693--1702.
+
+\bibitem{fhiaims}
+V.~Blum, R.~Gehrke, F.~Hanke, P.~Havu, V.~Havu, X.~Ren, K.~Reuter,
+  M.~Scheffler, Ab initio molecular simulations with numeric atom-centered
+  orbitals, Computer Physics Communications 180~(11) (2009) 2175--2196.
+
+\bibitem{perdew:1996:generalized}
+J.~P. Perdew, K.~Burke, M.~Ernzerhof, Generalized gradient approximation made
+  simple, Physical review letters 77~(18) (1996) 3865.
+
+\bibitem{adamo:1999:toward}
+C.~Adamo, V.~Barone, Toward reliable density functional methods without
+  adjustable parameters: The pbe0 model, The Journal of chemical physics
+  110~(13) (1999) 6158--6170.
+
+\bibitem{tkatchenko:2009}
+A.~Tkatchenko, M.~Scheffler, Accurate molecular van der waals interactions from
+  ground-state electron density and free-atom reference data, Physical review
+  letters 102~(7) (2009) 073005.
+
+\bibitem{wineman:2020:transferable}
+V.~Wineman-Fisher, J.~M. Delgado, P.~R. Nagy, E.~Jakobsson, S.~A. Pandit,
+  S.~Varma, Transferable interactions of li+ and mg2+ ions in polarizable
+  models, The Journal of Chemical Physics 153~(10) (2020) 104113.
+
+\bibitem{wineman:2020:improved}
+V.~Wineman-Fisher, Y.~Al-Hamdani, P.~R. Nagy, A.~Tkatchenko, S.~Varma, Improved
+  description of ligand polarization enhances transferability of ion--ligand
+  interactions, The Journal of Chemical Physics 153~(9) (2020) 094115.
+
+\bibitem{abraham:2015}
+M.~J. Abraham, T.~Murtola, R.~Schulz, S.~P{\'a}ll, J.~C. Smith, B.~Hess,
+  E.~Lindahl, Gromacs: High performance molecular simulations through
+  multi-level parallelism from laptops to supercomputers, SoftwareX 1 (2015)
+  19--25.
+
+\bibitem{pall:2014}
+S.~Pall, M.~J. Abraham, C.~Kutzner, B.~Hess, E.~Lindahl, Tackling exascale
+  software challenges in molecular dynamics simulations with gromacs, in:
+  International Conference on Exascale Applications and Software, Springer,
+  2014, pp. 3--27.
+
+\bibitem{van:2005}
+D.~V.~D. Spoel, E.~Lindahl, B.~Hess, G.~Groenhof, A.~Mark, H.~Berendsen,
+  Gromacs: fast, flexible, free, J. Comput. Chem. 26 (2005) 1701.
+
+\bibitem{lindahl:2001}
+E.~Lindahl, B.~Hess, D.~Van Der~Spoel, Gromacs 3.0: a package for molecular
+  simulation and trajectory analysis, Molecular modeling annual 7~(8) (2001)
+  306--317.
+
+\bibitem{berendsen:1995}
+H.~J. Berendsen, D.~van~der Spoel, R.~van Drunen, Gromacs: a message-passing
+  parallel molecular dynamics implementation, Computer Physics Communications
+  91~(1-3) (1995) 43--56.
+
+\bibitem{spce}
+H.~Berendsen, J.~Grigera, T.~Straatsma, The missing term in effective pair
+  potentials, Journal of Physical Chemistry 91~(24) (1987) 6269--6271.
+
+\bibitem{nose:1983}
+S.~Nos{\'e}, M.~Klein, Constant pressure molecular dynamics for molecular
+  systems, Molecular Physics 50~(5) (1983) 1055--1076.
+
+\bibitem{parrinello:1981}
+M.~Parrinello, A.~Rahman, Polymorphic transitions in single crystals: A new
+  molecular dynamics method, Journal of Applied physics 52~(12) (1981)
+  7182--7190.
+
+\bibitem{lincs}
+B.~Hess, H.~Bekker, H.~J.~C. Berendsen, J.~G. E.~M. Fraaije,
+  \href{http://dx.doi.org/10.1002/(SICI)1096-987X(199709)18:12<1463::AID-JCC4>3.0.CO;2-H}{Lincs:
+  A linear constraint solver for molecular simulations}, Journal of
+  Computational Chemistry 18~(12) (1997) 1463--1472.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/(SICI)1096-987X(199709)18:12<1463::AID-JCC4>3.0.CO;2-H}
+
+\bibitem{essmann:1995}
+U.~Essmann, L.~Perera, M.~L. Berkowitz, T.~Darden, H.~Lee, L.~G. Pedersen, A
+  smooth particle mesh ewald method, The Journal of chemical physics 103~(19)
+  (1995) 8577--8593.
+
+\bibitem{petrache:1997}
+H.~I. Petrache, S.~E. Feller, J.~F. Nagle,
+  \href{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1184418/}{Determination of
+  component volumes of lipid bilayers from simulations.}, Biophysical Journal
+  72~(5) (1997) 2237--2242.
+\newline\urlprefix\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1184418/}
+
+\bibitem{nagle:2000}
+J.~F. Nagle, S.~Tristram-Nagle, Structure of lipid bilayers, Biochimica et
+  Biophysica Acta (BBA)-Reviews on Biomembranes 1469~(3) (2000) 159--195.
+
+\bibitem{fogarty:2015}
+J.~C. Fogarty, M.~Arjunwadkar, S.~A. Pandit, J.~Pan, Atomically detailed lipid
+  bilayer models for the interpretation of small angle neutron and x-ray
+  scattering data, Biochimica et Biophysica Acta (BBA)-Biomembranes 1848~(2)
+  (2015) 662--672.
+
+\bibitem{egberts:1988}
+E.~Egberts, H.~Berendsen, Molecular dynamics simulation of a smectic liquid
+  crystal with atomic detail, The Journal of chemical physics 89~(6) (1988)
+  3718--3732.
+
+\bibitem{Douliez:1995}
+J.-P. Douliez, A.~Leonard, E.~J. Dufourc, Restatement of order parameters in
+  biomembranes: calculation of cc bond order parameters from cd quadrupolar
+  splittings., Biophysical journal 68~(5) (1995) 1727.
+
+\bibitem{varma:2008:JACS}
+S.~Varma, S.~B. Rempe, Structural transitions in ion coordination driven by
+  changes in competition for ligand binding, Journal of the American Chemical
+  Society 130~(46) (2008) 15405--15419.
+
+\bibitem{aaman:2003}
+K.~{\AA}man, E.~Lindahl, O.~Edholm, P.~H{\aa}kansson, P.-O. Westlund, Structure
+  and dynamics of interfacial water in an l $\alpha$ phase lipid bilayer from
+  molecular dynamics simulations, Biophysical journal 84~(1) (2003) 102--115.
+
+\bibitem{israelachvili:2011:intermol}
+J.~N. Israelachvili, Intermolecular and surface forces, Academic press, 2011.
+
+\bibitem{stern:1924:theory}
+O.~Stern, The theory of the electrolytic double-layer, Z. Elektrochem 30~(508)
+  (1924) 1014--1020.
+
+\bibitem{grahame:1947:electrical}
+D.~C. Grahame, The electrical double layer and the theory of
+  electrocapillarity., Chemical reviews 41~(3) (1947) 441--501.
+
+\bibitem{smith:2017:zeta}
+M.~C. Smith, R.~M. Crist, J.~D. Clogston, S.~E. McNeil, Zeta potential: a case
+  study of cationic, anionic, and neutral liposomes, Analytical and
+  bioanalytical chemistry 409 (2017) 5779--5787.
+
+\bibitem{marra:1985:direct}
+J.~Marra, J.~Israelachvili, Direct measurements of forces between
+  phosphatidylcholine and phosphatidylethanolamine bilayers in aqueous
+  electrolyte solutions, Biochemistry 24~(17) (1985) 4608--4618.
+
+\bibitem{pan:2012}
+J.~Pan, F.~A. Heberle, S.~Tristram-Nagle, M.~Szymanski, M.~Koepfinger,
+  J.~Katsaras, N.~Kucerka, Molecular structures of fluid phase
+  phosphatidylglycerol bilayers as determined by small angle neutron and x-ray
+  scattering, Biochimica et Biophysica Acta (BBA)-Biomembranes 1818~(9) (2012)
+  2135--2148.
+
+\bibitem{panff:2012}
+J.~Pan, X.~Cheng, F.~A. Heberle, B.~Mostofian, N.~Kucerka, P.~Drazba,
+  J.~Katsaras, Interactions between ether phospholipids and cholesterol as
+  determined by scattering and molecular dynamics simulations, The Journal of
+  Physical Chemistry B 116~(51) (2012) 14829--14838.
+
+\bibitem{casal:1989}
+H.~Casal, H.~Mantsch, H.~Hauser, Infrared and 31p-nmr studies of the
+  interaction of mg2+ with phosphatidylserines: effect of hydrocarbon chain
+  unsaturation, Biochimica et Biophysica Acta (BBA)-Biomembranes 982~(2) (1989)
+  228--236.
+
+\bibitem{pandit:2003:dppc:na}
+S.~A. Pandit, D.~Bostick, M.~L. Berkowitz, Molecular dynamics simulation of a
+  dipalmitoylphosphatidylcholine bilayer with nacl, Biophysical journal 84~(6)
+  (2003) 3743--3750.
+
+\bibitem{Berkowitz:2006}
+M.~L. Berkowitz, D.~L. Bostick, S.~Pandit, Aqueous solutions next to
+  phospholipid membrane surfaces: insights from simulations, Chemical reviews
+  106~(4) (2006) 1527--1539.
+
+\bibitem{kalinin:1996:ionbinding}
+V.~Kalinin, C.~Radke, An ion-binding model for ionic surfactant adsorption at
+  aqueous-fluid interfaces, Colloids and Surfaces A: Physicochemical and
+  Engineering Aspects 114 (1996) 337--350.
+
+\bibitem{saunders:2022}
+M.~Saunders, V.~Wineman-Fisher, E.~Jakobsson, S.~Varma, S.~A. Pandit,
+  High-dimensional parameter search method to determine force field mixing
+  terms in molecular simulations, Langmuir 38~(9) (2022) 2840--2851.
+
+\bibitem{bowman:2012}
+J.~C. Bowman, T.~K. Lenz, N.~V. Hud, L.~D. Williams, et~al., Cations in charge:
+  magnesium ions in rna folding and catalysis, Current opinion in structural
+  biology 22~(3) (2012) 262.
+
+\bibitem{rulivsek:2003:outer}
+L.~Rul{\'\i}{\v{s}}ek, J.~{\v{S}}poner, Outer-shell and inner-shell
+  coordination of phosphate group to hydrated metal ions (mg2+, cu2+, zn2+,
+  cd2+) in the presence and absence of nucleobase. the role of nonelectrostatic
+  effects, The Journal of Physical Chemistry B 107~(8) (2003) 1913--1923.
+
+\bibitem{dudev:2003}
+T.~Dudev, Lin, M.~Dudev, C.~Lim, First- second shell interactions in metal
+  binding sites in proteins: A pdb survey and dft/cdm calculations, Journal of
+  the American Chemical Society 125~(10) (2003) 3168--3180.
+
+\bibitem{porschke:1979:mode}
+D.~P{\"o}rschke, The mode of mg++ binding to oligonucleotides. inner sphere
+  complexes as markers for recognition?, Nucleic Acids Research 6~(3) (1979)
+  883--898.
+
+\bibitem{petrov:2005}
+A.~S. Petrov, J.~Funseth-Smotzer, G.~R. Pack, Computational study of dimethyl
+  phosphate anion and its complexes with water, magnesium, and calcium,
+  International journal of quantum chemistry 102~(5) (2005) 645--655.
+
+\bibitem{merzparams}
+P.~Li, B.~P. Roberts, D.~K. Chakravorty, K.~M. Merz~Jr, Rational design of
+  particle mesh ewald compatible lennard-jones parameters for+ 2 metal cations
+  in explicit solvent, Journal of chemical theory and computation 9~(6) (2013)
+  2733--2748.
+
+\bibitem{microparams}
+K.~K. Grotz, N.~Schwierz, Optimized magnesium force field parameters for
+  biomolecular simulations with accurate solvation, ion-binding, and
+  water-exchange properties in spc/e, tip3p-fb, tip4p/2005, tip4p-ew, and
+  tip4p-d, Journal of Chemical Theory and Computation 18~(1) (2021) 526--537.
+
+\bibitem{grotz:2021:optimized}
+K.~K. Grotz, S.~Cruz-Le{\'o}n, N.~Schwierz, Optimized magnesium force field
+  parameters for biomolecular simulations with accurate solvation, ion-binding,
+  and water-exchange properties, Journal of Chemical Theory and Computation
+  17~(4) (2021) 2530--2540.
+
+\bibitem{gromacsmanual}
+M.~Abraham, D.~van~der Spoel, E.~Lindahl, B.~Hess, the gromacs development team
+  gromacs user manual version 5.1. 2; 2016, MJ Abraham, T. Murtola, R. Schulz,
+  S. P{\'a}ll, JC Smith, B. Hess, E. Lindahl, SoftwareX 1 (2015) 19.
+
+\bibitem{mdanalysis1}
+N.~Michaud-Agrawal, E.~J. Denning, T.~B. Woolf, O.~Beckstein, Mdanalysis: a
+  toolkit for the analysis of molecular dynamics simulations, Journal of
+  computational chemistry 32~(10) (2011) 2319--2327.
+
+\bibitem{mdanalysis2}
+R.~J. Gowers, M.~Linke, J.~Barnoud, T.~J.~E. Reddy, M.~N. Melo, S.~L. Seyler,
+  J.~Domanski, D.~L. Dotson, S.~Buchoux, I.~M. Kenney, et~al., Mdanalysis: a
+  python package for the rapid analysis of molecular dynamics simulations,
+  Tech. rep., Los Alamos National lab.(LANL), Los Alamos, NM (United States)
+  (2019).
+
+\bibitem{villaparams}
+O.~Alln{\'e}r, L.~Nilsson, A.~Villa, Magnesium ion--water coordination and
+  exchange in biomolecular simulations, Journal of chemical theory and
+  computation 8~(4) (2012) 1493--1502.
+
+\bibitem{julian:2023:mg}
+J.~M. Delgado, P.~R. Nagy, S.~Varma, Polarizable amoeba model for simulating
+  mg2+{\textperiodcentered} protein{\textperiodcentered} nucleotide complexes,
+  Journal of Chemical Information and Modeling 64~(2) (2023) 378--392.
+
+\bibitem{kruczek:2017:ether}
+J.~Kruczek, M.~Saunders, M.~Khosla, Y.~Tu, S.~A. Pandit, Molecular dynamics
+  simulations of ether-and ester-linked phospholipids, Biochimica et Biophysica
+  Acta (BBA)-Biomembranes 1859~(12) (2017) 2297--2307.
+
+\bibitem{reddy:1989:dielectric}
+M.~R. Reddy, M.~Berkowitz, The dielectric constant of spc/e water, Chemical
+  physics letters 155~(2) (1989) 173--176.
+
+\end{thebibliography}

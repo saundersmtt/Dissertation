@@ -1,0 +1,3925 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: distances_li_final.eps
+%%Creator: gnuplot 6.0 patchlevel 1
+%%CreationDate: Tue Oct 22 11:22:43 2024
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 770 410
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext false def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Level3 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -60 def
+/dl1 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 770 50 lineto 770 410 lineto 50 410 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 5.2 (Dec 2017)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Classic Line colors (version 5.0)
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
+/LTw {PL [] 1 setgray} def
+/LTb {PL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [2 dl1 3 dl2] LC1 DL} def
+/LT2 {PL [1 dl1 1.5 dl2] LC2 DL} def
+/LT3 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC3 DL} def
+/LT4 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [4 dl1 2 dl2] LC5 DL} def
+/LT6 {PL [1.5 dl1 1.5 dl2 1.5 dl1 1.5 dl2 1.5 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC8 DL} def
+/SL {[] 0 setdash} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto closepath gsave fill grestore stroke} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+dup 2 lt
+	{/InterpretLevel1 true def
+	 /InterpretLevel3 false def}
+	{/InterpretLevel1 Level1 def
+	 2 gt
+	    {/InterpretLevel3 Level3 def}
+	    {/InterpretLevel3 false def}
+	 ifelse }
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+%
+%
+% Base ISO8859-1 character encoding plus support macros for UTF-8 encoding
+% via the glyphshow operator
+%
+/reencodeISO {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+currentdict /CharStrings known {
+	CharStrings /Idieresis known {
+		/Encoding ISOLatin1Encoding def } if
+} if
+currentdict end definefont
+} def
+/ISOLatin1Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
+/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
+/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
+
+/Gshow { dup type /stringtype eq { show } { glyphshow } ifelse } def
+
+/Gsall { {Gshow} forall } def
+/Gwidth {
+	dup currentpoint pop exch
+	gsave 6 array currentmatrix nulldevice setmatrix Gsall currentpoint pop grestore sub
+	} def
+/GLshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray Gsall grestore} {Gsall} ifelse} def
+/GRshow {currentpoint stroke M dup Gwidth vshift R
+	Blacktext {gsave 0 setgray Gsall grestore} {Gsall} ifelse} def
+/GCshow {currentpoint stroke M dup Gwidth 2 div vshift R 
+	Blacktext {gsave 0 setgray Gsall grestore} {Gsall} ifelse} def
+/Metrics {ExtendTextBox Gswidth} def
+/Lwidth {currentpoint stroke M 0 vshift R Metrics} def
+/Rwidth {currentpoint stroke M dup stringwidth pop neg vshift R Metrics} def
+/Cwidth {currentpoint stroke M dup stringwidth pop -2 div vshift R Metrics} def
+/GLwidth {currentpoint stroke M 0 vshift R {ExtendTextBox} forall} def
+/GRwidth {currentpoint stroke M dup Gwidth vshift R {ExtendTextBox} forall} def
+/GCwidth {currentpoint stroke M dup Gwidth 2 div vshift R {ExtendTextBox} forall} def
+/GLwidth2 {0 Gwidth AddGlyphWidth} def
+/GRwidth2 {Gwidth -1 mul 0 AddGlyphWidth} def
+/GCwidth2 {Gwidth 2 div dup -1 mul AddGlyphWidth} def
+/AddGlyphWidth { dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+                 dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse } def
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {textshow} {Metrics pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get Gswidth pop -2 div
+     dup 0 R} {dup 6 get Gswidth pop -2 div 0 R 6 get
+     textshow 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+/Times-BoldItalic reencodeISO def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (distances_li_final.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 6.0 patchlevel 1)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Tue Oct 22 11:22:43 2024)
+  /DOCINFO pdfmark
+end
+} ifelse
+%
+% Support for boxed text - Ethan A Merritt Sep 2016
+%
+/InitTextBox { userdict /TBy2 3 -1 roll put userdict /TBx2 3 -1 roll put
+           userdict /TBy1 3 -1 roll put userdict /TBx1 3 -1 roll put
+	   /Boxing true def } def
+/ExtendTextBox { dup type /stringtype eq
+    { Boxing { gsave dup false charpath pathbbox
+      dup TBy2 gt {userdict /TBy2 3 -1 roll put} {pop} ifelse
+      dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+      dup TBy1 lt {userdict /TBy1 3 -1 roll put} {pop} ifelse
+      dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse
+      grestore } if }
+    {} ifelse} def
+/PopTextBox { newpath TBx1 TBxmargin sub TBy1 TBymargin sub M
+               TBx1 TBxmargin sub TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy1 TBymargin sub L closepath } def
+/DrawTextBox { PL PopTextBox stroke /Boxing false def} def
+/FillTextBox { gsave PopTextBox fill grestore /Boxing false def} def
+0 0 0 0 InitTextBox
+/TBxmargin 20 def
+/TBymargin 20 def
+/Boxing false def
+/textshow { ExtendTextBox Gshow } def
+%
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Times-BoldItalic) findfont 180 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 14400.00 7200.00 BoxColFill} if
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 4140 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 4140 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 4140 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+/vshift -60 def
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 4356 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 4356 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 4356 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.1)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 4572 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 4572 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 4572 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.2)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 4788 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 4788 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 4788 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.3)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 5003 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 5003 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 5003 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.4)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 5219 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 5219 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 5219 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.5)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 5435 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 5435 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 5435 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.6)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 5651 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 5651 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 5651 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.7)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+1440 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2316 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2316 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2316 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3192 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3192 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3192 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4067 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4067 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4067 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4943 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4943 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4943 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+1440 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+1615 5678 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(a\) 1 MeAc)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+LCb setrgbcolor
+12968 6749 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (QM)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+13076 6749 M
+495 0 V
+1440 5006 M
+876 -24 V
+876 -207 V
+875 -262 V
+876 454 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+LCb setrgbcolor
+12968 6569 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (LB)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+2.000 UL
+LTb
+0.00 0.64 1.00 C
+13076 6569 M
+495 0 V
+1440 5062 M
+876 -39 V
+876 -222 V
+875 -264 V
+876 469 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+LCb setrgbcolor
+12968 6389 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Optimized)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+2.000 UL
+LTb
+1.00 0.00 0.00 C
+13076 6389 M
+495 0 V
+1440 4986 M
+876 -43 V
+876 -212 V
+875 -265 V
+876 492 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+1440 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 4140 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 4140 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 4356 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 4356 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 4572 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 4572 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 4788 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 4788 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 5003 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 5003 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 5219 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 5219 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 5435 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 5435 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 5651 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 5651 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+5808 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+6197 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+6197 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+6197 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+6586 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+6586 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+6586 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+6976 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+6976 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+6976 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+7365 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+7365 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+7365 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+7754 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+7754 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+7754 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+8143 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+8143 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+8143 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+8533 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+8533 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+8533 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+8922 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+8922 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+8922 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+9311 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+9311 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+9311 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+5808 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+5983 5678 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(b\) 2 MeAc)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+5808 5012 M
+389 -19 V
+389 -210 V
+390 -261 V
+389 451 V
+389 46 V
+389 -22 V
+390 -214 V
+389 -259 V
+389 447 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+5808 5062 M
+389 -37 V
+389 -222 V
+390 -264 V
+389 464 V
+389 59 V
+389 -37 V
+390 -224 V
+389 -262 V
+389 464 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+5808 4982 M
+389 -35 V
+389 -211 V
+390 -266 V
+389 492 V
+389 20 V
+389 -37 V
+390 -211 V
+389 -266 V
+389 492 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+5808 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+LCb setrgbcolor
+5529 4949 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+LCb setrgbcolor
+7559 3641 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 4140 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 4140 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 4356 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 4356 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 4572 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 4572 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 4788 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 4788 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 5003 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 5003 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 5219 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 5219 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 5435 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 5435 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 5651 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 5651 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10176 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10426 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10426 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10426 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10676 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10676 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10676 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10927 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10927 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10927 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11177 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11177 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11177 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11427 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11427 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11427 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11677 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11677 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11677 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11928 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11928 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11928 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12178 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12178 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12178 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12428 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12428 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12428 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12678 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12678 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12678 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12928 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12928 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12928 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13179 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13179 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13179 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13429 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13429 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13429 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13679 4140 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13679 4140 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13679 4032 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+10176 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+10351 5678 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(c\) 3 MeAc)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+10176 4902 M
+250 50 V
+250 -158 V
+251 -257 V
+250 507 V
+250 46 V
+250 -74 V
+251 -246 V
+250 -231 V
+250 361 V
+250 192 V
+250 -71 V
+251 -249 V
+250 -228 V
+250 358 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+10176 5064 M
+250 -35 V
+250 -226 V
+251 -261 V
+250 459 V
+250 59 V
+250 -33 V
+251 -224 V
+250 -259 V
+250 462 V
+250 56 V
+250 -35 V
+251 -224 V
+250 -261 V
+250 459 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+10176 4984 M
+250 -34 V
+250 -201 V
+251 -266 V
+250 490 V
+250 2 V
+250 -21 V
+251 -205 V
+250 -264 V
+250 495 V
+250 4 V
+250 -26 V
+251 -211 V
+250 -266 V
+250 490 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+10176 5759 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+LCb setrgbcolor
+9897 4949 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+LCb setrgbcolor
+11927 3641 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2088 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2088 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 2088 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2304 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2304 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 2304 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.1)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2520 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2520 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 2520 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.2)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2736 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2736 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 2736 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.3)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2951 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2951 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 2951 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.4)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 3167 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 3167 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 3167 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.5)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 3383 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 3383 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 3383 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.6)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 3599 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 3599 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+1332 3599 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( 0.7)]
+] -60.0 MRshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1440 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1440 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+1440 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1624 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1624 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+1624 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1809 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1809 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+1809 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1993 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1993 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+1993 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2177 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2177 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2177 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2362 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2362 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2362 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2546 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2546 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2546 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2731 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2731 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2731 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+2915 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+2915 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+2915 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3099 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3099 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3099 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3284 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3284 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3284 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3468 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3468 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3468 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3652 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3652 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3652 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+3837 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+3837 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+3837 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4021 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4021 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4021 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4206 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4206 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4206 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4390 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4390 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4390 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4574 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4574 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4574 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4759 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4759 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4759 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (O4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+4943 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+4943 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+4943 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+1440 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+1615 3626 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(d\) 4 MeAc)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+1440 3049 M
+184 -300 V
+185 -46 V
+184 -192 V
+184 490 V
+185 242 V
+184 -276 V
+185 -238 V
+184 -227 V
+184 357 V
+185 252 V
+184 -308 V
+184 -78 V
+185 -223 V
+184 512 V
+185 233 V
+184 -274 V
+184 -242 V
+185 -224 V
+184 345 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+1440 3189 M
+184 -298 V
+185 -149 V
+184 -248 V
+184 516 V
+185 179 V
+184 -302 V
+185 -143 V
+184 -252 V
+184 526 V
+185 167 V
+184 -303 V
+184 -138 V
+185 -250 V
+184 524 V
+185 171 V
+184 -298 V
+184 -151 V
+185 -248 V
+184 509 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+1440 3191 M
+184 -291 V
+185 -188 V
+184 -264 V
+184 508 V
+185 235 V
+184 -291 V
+185 -188 V
+184 -264 V
+184 506 V
+185 235 V
+184 -289 V
+184 -188 V
+185 -264 V
+184 508 V
+185 235 V
+184 -291 V
+184 -186 V
+185 -266 V
+184 506 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+1440 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+LCb setrgbcolor
+729 2897 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+LCb setrgbcolor
+3191 1589 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2088 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2088 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2304 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2304 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2520 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2520 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2736 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2736 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2951 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2951 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 3167 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 3167 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 3383 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 3383 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 3599 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 3599 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5808 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5808 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+5808 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+6246 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+6246 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+6246 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+6684 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+6684 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+6684 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+7122 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+7122 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+7122 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (P4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+7560 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+7560 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+7560 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+7997 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+7997 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+7997 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM6)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+8435 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+8435 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+8435 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS7)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+8873 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+8873 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+8873 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C8)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+9311 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+9311 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+9311 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C9)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+5808 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+5983 3626 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(e\) 1 DePh)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+5808 3239 M
+438 -324 V
+438 -63 V
+438 -274 V
+438 -91 V
+437 0 V
+438 346 V
+438 224 V
+438 63 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+5808 3299 M
+438 -291 V
+438 -143 V
+438 -252 V
+438 -123 V
+437 -3 V
+438 365 V
+438 270 V
+438 65 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+5808 3247 M
+438 -287 V
+438 -153 V
+438 -246 V
+438 -143 V
+437 -4 V
+438 389 V
+438 261 V
+438 52 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+5808 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+LCb setrgbcolor
+5529 2897 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+LCb setrgbcolor
+7559 1589 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2088 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2088 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2304 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2304 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2520 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2520 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2736 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2736 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2951 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2951 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 3167 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 3167 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 3383 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 3383 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 3599 M
+3503 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 3599 M
+63 0 V
+3440 0 R
+-63 0 V
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10176 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10176 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10176 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10382 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10382 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10382 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10588 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10588 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10588 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+10794 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+10794 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+10794 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (P4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11000 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11000 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11000 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11206 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11206 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11206 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM6)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11412 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11412 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11412 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS7)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11618 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11618 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11618 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C8)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+11824 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+11824 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+11824 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C9)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12031 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12031 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12031 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C1)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12237 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12237 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12237 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C2)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12443 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12443 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12443 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS3)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12649 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12649 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12649 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (P4)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+12855 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+12855 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+12855 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM5)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13061 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13061 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13061 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OM6)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13267 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13267 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13267 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (OS7)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13473 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13473 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13473 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C8)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+13679 2088 M
+0 1619 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+13679 2088 M
+0 63 V
+0 1556 R
+0 -63 V
+stroke
+13679 1980 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (C9)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+10176 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+1.000 UP
+LCb setrgbcolor
+10351 3626 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (\(f\) 2 DePh)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+432 3600 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Distance/nm)]
+] -60.0 MLshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LCb setrgbcolor
+7200 1440 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 (Atom Type)]
+] -60.0 MLshow
+/Times-BoldItalic findfont 180 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+% Begin plot #1
+2.000 UL
+LTb
+0.00 0.00 0.00 C
+10176 2915 M
+206 19 V
+206 -67 V
+206 -257 V
+206 -92 V
+206 13 V
+206 367 V
+206 58 V
+206 326 V
+207 -367 V
+206 15 V
+206 -65 V
+206 -257 V
+206 -90 V
+206 13 V
+206 367 V
+206 62 V
+206 324 V
+% End plot #1
+% Begin plot #2
+stroke
+LTb
+0.00 0.64 1.00 C
+10176 2891 M
+206 60 V
+206 -84 V
+206 -250 V
+206 -112 V
+206 -3 V
+206 378 V
+206 46 V
+206 330 V
+207 -369 V
+206 62 V
+206 -86 V
+206 -248 V
+206 -115 V
+206 2 V
+206 378 V
+206 46 V
+206 330 V
+% End plot #2
+% Begin plot #3
+stroke
+LTb
+1.00 0.00 0.00 C
+10176 3003 M
+206 9 V
+206 -184 V
+206 -256 V
+206 -130 V
+206 6 V
+206 383 V
+206 207 V
+206 267 V
+207 -304 V
+206 7 V
+206 -184 V
+206 -255 V
+206 -129 V
+206 6 V
+206 380 V
+206 210 V
+206 269 V
+% End plot #3
+stroke
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+10176 3707 N
+0 -1619 V
+3503 0 V
+0 1619 V
+-3503 0 V
+Z stroke
+LCb setrgbcolor
+9897 2897 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+grestore
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+LCb setrgbcolor
+11927 1589 M
+[ [(Times-BoldItalic) 180.0 0.0 true true 0 ( )]
+] -60.0 MCshow
+/Times-BoldItalic findfont 180 scalefont setfont
+LTb
+1.000 UP
+1.000 UL
+LTb
+LCb setrgbcolor
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Times-BoldItalic

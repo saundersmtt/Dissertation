@@ -1,0 +1,1971 @@
+\documentclass[12pt,openany,final]{book}
+\usepackage[letterpaper,margin=1in,footskip=0.25in]{geometry}
+\fontfamily{cmr}
+\usepackage[final]{changes}
+\usepackage{lipsum}
+\usepackage[nottoc]{tocbibind}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{flafter}
+\usepackage{floatrow}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+%\usepackage{floatflt}
+
+\usepackage{placeins}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\graphicspath{{figures/}}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{appendix}
+\usepackage{amsmath}  % usually already loaded
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{cases}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage{indentfirst}
+\usepackage{hyphenat}
+\usepackage{xspace}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{xcolor}
+\usepackage{lineno}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[superscript]{cite}
+\usepackage{lineno}
+\titleformat
+{\chapter} % command
+[display] % shape
+{\centering\sc\LARGE} % format
+{\centering Chapter \thechapter} % label
+{0.2ex} % sep
+{
+} % before-code
+\titlespacing*{\chapter}{0pt}{0.5in}{0.25in} %{0.5in}{0.25in}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\hbadness=99999
+%\epstopdfDeclareGraphicsRule{.tga}{png}{.png}{
+%    convert #1 \OutputFile
+%}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[titles]{tocloft}
+\setlength\cftbeforechapskip{\baselineskip}
+\setlength\cftbeforefigskip{\baselineskip}
+\setlength\cftbeforetabskip{\baselineskip}
+\setlength\cftfigindent{0in}
+\setlength\cfttabindent{0in}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+\usepackage{url}
+\urlstyle{same}
+
+%\newcommand{\cmpersec}{$\frac{\text{cm}}{\text{s}}$~}
+\newcommand{\cmpersec}{cm/s~}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\PM}{$\pm$~}
+\newcommand{\invnm}{$\text{\si{\nm}}^{-1}$~}
+\newcommand{\nmeter}{\si{\nm}~}
+\newcommand{\tbxmulticol}[3]
+    {\multicolumn{#1}
+                 {>{\centering\hsize=\dimexpr#1\hsize+#1\tabcolsep+\arrayrulewidth\relax}#2}
+                 {#3}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+%\newcommand{\cmpersec}{$\frac{\text{cm}}{\text{s}}$~}
+\renewcommand{\arraystretch}{1.8}
+\newcommand{\sigmaij}{$\sigma_{ij}$}
+\newcommand{\epsilonij}{$\epsilon_{ij}$}
+\newcommand{\db}{$\text{D}_\text{B}$}
+\newcommand{\dhh}{$\text{D}_\text{hh}$}
+\newcommand{\dc}{$\text{2D}_\text{C}$}
+\newcommand{\al}{$\text{A}_{\text{L}}$}
+\newcommand{\vl}{$\text{V}_{\text{L}}$}
+\newcommand{\vh}{$\text{V}_{\text{H}}$}
+\newcommand{\vc}{$\text{V}_{\text{C}}$}
+\newcommand{\sig}{$\sigma$}
+\newcommand{\eps}{$\epsilon$}
+\newcommand{\na}{Na\textsuperscript{+}}
+\newcommand{\li}{Li\textsuperscript{+}}
+\newcommand{\mg}{Mg\textsuperscript{2+}}
+\newcommand{\cl}{Cl\textsuperscript{-}}
+\newcommand{\mgcl}{MgCl\textsubscript{2}}
+\newcommand{\nacl}{NaCl}
+\newcommand{\licl}{LiCl}
+\newcommand{\mbnbfix}{MB-NB-fix~}
+\newcommand{\mbnbfixmicro}{Grotz \etal~} %CHANGED THIS
+\newcommand{\nambnbfix}{Na\textsuperscript{+}--Saunders \etal}
+\newcommand{\limbnbfix}{Li\textsuperscript{+}--Joung and Chetatham}
+\newcommand{\mgmbnbfix}{Mg\textsuperscript{2+}--Li \etal} %CHANGED THIS
+\newcommand{\mgmicro}{Mg\textsuperscript{2+}--Grotz \etal}
+\newcommand{\mglbrules}{Mg\textsuperscript{2+}--Li \etal}
+\renewcommand{\arraystretch}{1.8}
+%\newcommand{\hl}{\added}
+%\newcommand{\sout}{\deleted}
+\newcommand{\TODO}{\hl{TODO}~}
+\newcommand{\about}{$\sim$}
+\newcommand{\aangstroms}{{\aa}ngstr{\"o}ms}
+\newcommand{\aangstrom}{{\aa}ngstr{\"o}m}
+\newenvironment{hle}{\color{red}}
+
+\newcommand{\beginsupplemental}{%
+    \setcounter{table}{0}
+    \renewcommand{\thetable}{S\arabic{table}}%
+    \setcounter{figure}{0}
+    \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+\renewcommand{\bibname}{References}
+\titleformat{\chapter}
+{\normalfont\normalsize\bfseries\centering}{\thechapter}{1em}{}
+\titleformat{\section}
+{\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+%\cftsetpnumwidth{0.5in}
+%\setlength{\cftbeforefigskip}{-\baselineskip}
+%\setlength{\cftbeforetabskip}{-\baselineskip}
+\cftsetpnumwidth{0.5in}
+\cftsetrmarg{0.5in}
+\renewcommand{\cftdot}{}
+\renewcommand{\cftchapfont}{\normalsize}
+\renewcommand{\cftchappagefont}{\normalsize}
+%\setcounter{tocdepth}{3000}
+
+\author{Matthew Saunders}
+\begin{document}
+
+\pagestyle{plain}
+%\maketitle
+\begin{titlepage}
+\begin{centering}
+
+~\\[1in]
+Parameterizing Ion–Lipid Interactions from Local Clusters to Reproduce Bulk and Interfacial Properties in Lipid Bilayers
+~\\[3\baselineskip]
+by
+~\\[3\baselineskip]
+Matthew W. Saunders
+~\\[4\baselineskip]
+A thesis submitted in partial fufillment\\
+of the requirements for the degree of\\
+Doctorate of Philosophy in Biology \\ with a concentration in Cell \& Molecular Biology\\
+Department of Molecular Biosciences\\
+College of Arts and Sciences\\
+University of South Florida
+~\\[2\baselineskip]
+Co-Major Professor: Sameer Varma, Ph.D.\\
+Co-Major Professor: Sagar Pandit, Ph.D.\\
+Jianjun Pan, Ph.D.\\
+Libin Ye, Ph.D.\\
+Stanley Stevens, Ph.D.
+~\\[2\baselineskip]
+Date of Approval:~\\
+TBD
+~\\[3\baselineskip]
+Keywords: Molecular Dynamics, ???\\
+~\\
+Copyright \textsuperscript\textcopyright~2025, Matthew W. Saunders\\
+
+\end{centering}
+\end{titlepage}
+\tableofcontents
+\pagenumbering{roman}
+\listoftables
+\listoffigures
+\bibliographystyle{elsarticle-num}
+\doublespacing
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+
+\chapter[Introduction]{Introduction\footnote{Will I be reusing part of a publication here???}}
+\pagenumbering{arabic}
+\section{}
+
+\chapter[A high dimensional parameter search method to...]{A high dimensional parameter search method to determine force field mixing terms in molecular simulations\footnote{FOOT!!}}
+Molecular dynamics (MD) force fields for lipids and ions are typically developed independently of one another. 
+In simulations consisting of both lipids and ions, 
+lipid-ion interaction energies are estimated using a predefined 
+set of mixing rules for Lennard-Jones (LJ) interactions. 
+This, however, does not guarantee their reliability. 
+In fact, compared to the quantum mechanical reference data, 
+Lorentz-Berthelot mixing 
+rules substantially underestimate binding energies of \na~ ions with small 
+molecule analogues of lipid headgroups, yielding errors on the order of 80 and 130 kJ/mol, 
+respectively for methyl acetate and diethyl phosphate. Previously, errors 
+associated with mixing force fields have been reduced using approaches like `NB-fix' 
+in which LJ interactions are computed using explicit cross terms rather than 
+those from mixing rules. Building on this idea, we derive explicit 
+lipid-ion cross terms that also may implicitly include many-body 
+cooperativity effects.
+Additionally, to account for interdependency between cross terms, 
+we optimize all cross terms simultaneously by 
+performing high-dimensional searches using our ParOpt software. 
+The cross terms we obtain reduce the 
+errors due to mixing rules to below 10 kJ/mol. 
+MD simulation of lipid bilayer conducted using these 
+optimized cross terms resolve the structural discrepancies between our previous
+simulations and small-angle X-ray and neutron scattering experiments. 
+These results demonstrate that simulations of lipid bilayers with ions that are 
+accurate up to structural data from scattering experiments 
+can be performed without explicit polarization terms. 
+However, it is worth noting that such NB-fix cross terms are
+not based on any physical principle; a polarizable lipid model would be more 
+realistic, and is still desired. 
+Our approach is generic and can be applied to 
+improve accuracies of simulations employing mixed force fields.
+
+
+\section{Introduction}
+
+Cellular membranes function as highly dynamic interfaces with many diverse components, 
+including lipids, peptides, carbohydrates, and charged species like ionic salts.
+Studies of these complex systems often benefit from computational methods, 
+particularly molecular dynamics (MD) simulations~\cite{berkowitz:2019}. 
+In our previous MD simulation studies, we characterized the effects of various 
+monovalent and divalent ions on model 1-palmitoyl-2-oleoyl-sn-glycero-phosphatidylcholine (POPC) 
+bilayers~\cite{pandit:2008:simulationtextbook,kruczek:2017,kruczek:2019,saunders:2019}. 
+We reported that ions modify POPC bilayer structure with significant
+effects on area per lipid and bilayer thickness. Similar results were also reported in MD simulations by
+others~\cite{Bockmann:2003,cordomi:2008,gurtovenko:2008,Cordomi:2009,jurkiewicz:2012}.
+Experiments characterizing bilayer structures in the presence of ions
+have not been as numerous as simulation studies. However, experimental findings indicate that 
+dissolved salts at physiological concentrations do not modify bilayer structure
+significantly~\cite{pabst:2007,petrache:2006:swelling,uhrikova:2008}.
+Specifically, Petrache \etal~ performed small angle X-ray scattering (SAXS) experiments on
+multilamellar vesicles of 1,2-dilauroyl-sn-glycero-3-sn-glycero-phosphatidylcholine 
+as well as other lipids in KCl and BrCl salt solutions, 
+and reported that while small changes can be seen in the
+X-ray scattering form-factor due to the 
+salts, 
+the fitted electron density profiles are essentially identical for
+systems with and without 
+salt~\cite{petrache:2006:swelling}. 
+Similarly, Pabst \etal~found no significant change in bilayer structure 
+for POPC bilayers in NaCl salt at or below 1 M concentration~\cite{pabst:2007}.
+Furthermore, Uhrikova \etal~reported small structural changes using small angle neutron scattering
+(SANS) experiments on 1,2-dipalmitoyl-sn-glycero-3-sn-glycero-phosphatidylcholine 
+vesicles interacting with CaCl$_{2}$~\cite{uhrikova:2008}. 
+Taken together, these results point to a general discrepancy between structural data 
+from MD simulations and scattering experiments.
+
+The reliability of MD simulations depends greatly on the force field (FF) parameters 
+used for describing intra- and inter-molecular interactions. 
+While FF parameters of lipids, including ours, are developed with great accuracy and care, 
+we note that they are derived in the absence of ions. 
+Similarly, ion parameters are also derived in the absence of lipids~\cite{joung:2008}. 
+When simulations of bilayers are conducted in salt solution, 
+ion-lipid interactions are computed using FF mixing rules. 
+In our previous MD simulations of POPC bilayers in salt solutions, 
+we employed our gromos43A1-S3 lipid FF parameters~\cite{chiu:2009} 
+that were developed for use with SPC/E water to determine lipid-lipid and lipid-water interactions. 
+Ion-ion and ion-water interactions were described using Joung and Chetham~\cite{joung:2008} parameters, 
+also developed for use with SPC/E water. 
+Lipid-ion interactions were estimated using Lorentz-Berthelot (LB) 
+mixing rules for Lennard-Jones (LJ) components
+, and there was a significant change in bilayer 
+structure compared to that of the bilayer without salt despite the relatively small initial salt concentration of 200 mM.
+Does this suggest that the discrepancy between our MD predictions and experiments 
+is the result of the LB mixing rules?  
+Note that none of the MD simulations of lipid-ion interactions discussed above
+include explicit terms to describe electronic polarization. 
+Errors in mixing rules may, therefore, 
+emerge if the high electric fields of ions induce 
+cooperativity effects in lipid groups 
+differently from those in water. 
+Quantum mechanical (QM) studies, in fact, suggest that many-body 
+cooperativty effects, such as polarization depend \deleted{strongly} 
+strongly on ion-coordinator chemistry~\cite{varma:2010,wineman:2019}. 
+It has also been postulated that these effects, and specifically 
+electronic 
+polarization may play an
+important role in determining the structure and dynamics of lipid
+bilayers
+-- especially when interacting with 
+ions~\cite{vacha:2010,vorobyov:2010,melcr:2018,chen:2021,lee:2008:origin}.
+
+Small deviations from LB rules have been shown to have a significant
+    effect on the behavior of systems of particles\cite{boda:2008:effects}, and
+    it is possible that a systematic tuning of these parameters could be used to correct 
+    for artifacts in a simulation~\cite{baker:2010:accurate,yoo:2012:improved,fyta:2012:ionic,mamatkulov:2013:force,venable:2013,
+savelyev:2014:balancing,li:2015:representation,savelyev:2015:competition,jing:2017:study,reif:2017,wineman:2019}.
+Such a `Non-Bonded-fix' (NB-fix) strategy has been shown to effectively improve 
+protein-ion 
+, protein-nucleotide, and ion-membrane interactions 
+while retaining the commonly used form of the LJ 6-12 potential~
+\cite{baker:2010:accurate,yoo:2012:improved,fyta:2012:ionic,mamatkulov:2013:force,venable:2013,
+savelyev:2014:balancing,li:2015:representation,savelyev:2015:competition,jing:2017:study,reif:2017,wineman:2019}. 
+Building on this idea, here we propose a more 
+general approach to optimize interaction cross terms
+for use with the 6-12 potential, 
+and also validate its prediction in condensed phase simulations.  
+We expand on the NB-fix method by
+(a) optimizing all ion-lipid LJ cross terms simultaneously, and 
+(b) implicitly including many-body cooperativity effects.
+We consider simultaneous optimization of all cross terms to be critical, 
+because of their strong, interdependent correlation with the target results~\cite{fogarty:2014:paropt}.
+This high-dimensional optimization is performed using our software tool
+ParOpt~\cite{fogarty:2014:paropt,fogarty:2014:thesis}.
+Many-body cooperativity effects have been shown to be a major contributor to ion 
+binding~\cite{varma:2010}
+. Thus, it is important to include them in lipid bilayer simulations where ions are known
+to coordinate simultaneously with multiple ligands~\cite{kruczek:2019}.
+
+We show that the cross terms we obtain from this approach substantially improve 
+ion-lipid interaction energies over those obtained from LB mixing rules. 
+MD simulation of a POPC bilayer
+ in 200~mM NaCl initial solution 
+conducted using these optimized cross terms also 
+resolves the structural discrepancies between our 
+previous MD simulations and small-angle X-ray and neutron scattering experiments 
+at low salt concentrations.
+
+
+\section{Methods}
+
+The method proposed here is generic and can be applied to any pair of
+interacting species that use cross terms, and ensures that we are
+reproducing macroscopic results based on the most accurate
+representation of the local inter-molecular interactions.  We chose
+small molecular analogues of the important ion binding
+sites in the polar region of phospholipid
+molecules. These molecules were also used as building block molecules in development of our lipid
+FF~\cite{kruczek:2017,chiu:2009}. Specifically, we selected
+methyl--acetate (MeAc) to represent the ester group binding the
+acyl--chain to the glycerol backbone, and diethyl--phosphate (DePh) to
+represent the headgroup phosphate and surrounding carbons (See insert on figure~\ref{fig:energies}). 
+The overall goal was to take the substitution energy of ions from
+water to the selected molecules, along with the corresponding
+geometries, all computed using a benchmarked quantum mechanical framework, 
+and optimize the interaction cross terms to reproduce these target data 
+within the Molecular Mechanics force-field.
+
+Combined analysis of results from experiments and \emph{ab initio} molecular dynamics simulations
+in the aqueous phase suggest that~\na~ions prefer to directly coordinate 
+with $\sim 5-6$ water molecules~
+\cite{varma:2006:coordination,mason:2006:neutron,galib:2017:revisiting,timko:2010:dissociation,smirnov:2020}.
+However, when coordinating with MeAc molecules, steric hindrance restricts the 
+number of binding partners to fewer than four coordinating molecules.  
+Thus, we limited the size of our MeAc clusters to up to four molecules around an ion. 
+DePh has resonant oxygens on each molecule that potentially act as two binding sites, so we
+limited these clusters to up to two molecules around a \na. These were
+compared to the clusters of \na surrounded by up to four water
+molecules.
+In this work, we forgo modifying terms for \cl, as we have found in our previous work 
+that anions do not bind to the bilayer headgroup significantly, and remain solvated 
+by water molecules~\cite{kruczek:2017}.
+
+\subsection{Quantum Mechanical Calculations}
+
+Target data for our parameter optimization consisted of energies and geometries 
+computed using a benchmarked density functional theory as implemented in  
+the FHI-Aims software package~\cite{fhiaims}. 
+Geometry optimizations were performed on the \na--(Water)$_{n}$,
+\na--(MeAc)$_{n}, n\leq4$, and \na--(DePh)$_m, m\leq2$ clusters.
+These clusters were first optimized using the MM force field used in 
+Kruczek \etal and Saunders \etal~\cite{kruczek:2017,saunders:2019}. 
+MM optimized structures were then further
+optimized using the PBE0 functional~\cite{perdew:1996:generalized,adamo:1999:toward} 
+with self-consistent vdW corrections~\cite{tkatchenko:2009}. 
+We used the \emph{really tight} basis sets included in the FHI--aims software. 
+This functional and basis set combination 
+has been shown to perform well compared to
+experiment and high-level quantum methods for many different chemistries of ion-ligand clusters~\cite{wineman:2019,wineman:2020:transferable,wineman:2020:improved}. 
+Optimizations were performed with a force 
+maxima of $10^{-3}$ $\text{eV}/\text{\AA}$~, with total energies converged
+to within $10^{-6}$~eV. 
+We computed substitution energies of these clusters as:
+\begin{equation}
+    \begin{split}
+        E^{n}_\text{MeAc}&=E_{\text{\na--(MeAc)}_n}-nE_\text{MeAc}-E_{\text{\na--(Water)}_n}+nE_\text{Water}\\ 
+        E^{n}_\text{DePh}&=E_{\text{\na--(DePh)}_n}-nE_\text{DePh}-E_{\text{\na--(Water)}_{2n}}+2nE_\text{Water}\text{,}
+    \end{split}
+    \label{eq:substitution}
+\end{equation}
+where $n$ is the number of solvent molecules
+(see tables~\ref{tab:qmbinding} and~\ref{tab:qmself} for all of the QM
+data used for this computation).  These substitution energies and
+corresponding configurations were used as targets for the parameter
+optimization.
+
+\begin{table}[h!]
+    \caption[Total enegies of systems of small molecules...]{Total energies of systems of small molecules from QM calculations. 
+These energies are computed by taking the total energy from the final step of geometry optimization 
+on clusters of our selected small molecules around a single \na following
+the procedure outlined in the methods section. We computed binding energies using these values.}
+\label{tab:qmbinding}
+\begin{tabularx}{\textwidth}{X|X|X|X}
+    Cluster Size & Water (kJ/mol)& MeAc (kJ/mol) & DePh (kJ/mol)\\\hline
+    1&$-9.048\times10^{5}$&$-1.130\times10^{6}$&$-2.528\times10^{6}$\\ \hline
+    2&$-1.609\times10^{6}$&$-1.834\times10^{6}$&$-4.630\times10^{6}$\\\hline
+    3&$-2.313\times10^{6}$&$-2.538\times10^{6}$& N/A \\\hline
+    4&$-3.018\times10^{6}$&$-3.243\times10^{6}$& N/A \\\hline
+\end{tabularx}
+\end{table}
+\begin{table}[h!]
+    \caption[Self energies of isolated molecules]{Self 
+    energies of isolated molecules. These are computed by performing geometry optimization on an isolated molecule following the procedure outlined in the methods.}
+    \label{tab:qmself}
+    {\footnotesize
+\begin{tabularx}{\textwidth}{X|X|X|X|X}
+               & Water         & \na           & MeAc          & DePh \\\hline
+    Energy (kJ/mol)&-2.006E+05&-4.253E+05&-7.042E+05&-2.102E+06
+\end{tabularx}
+}
+\end{table}
+
+\subsection{Parameter Optimization}
+
+Parameter optimization is performed using our ParOpt software package~
+\cite{fogarty:2014:paropt,fogarty:2014:thesis}.
+This software is available for download at
+\texttt{https://csmlabfs1.cas.usf.edu/Sites}.
+We utilized the Nelder-Meade method to perform a search to simultaneously optimize 
+all \sigmaij~and \epsilonij~ cross terms of \na~ions with MeAc and DePh molecules. 
+Specifically, there are seven atom types in these two small molecules (table~\ref{tab:paropt}), and so we optimized
+14 cross terms for the 6-12 LJ potential.
+Error was
+determined by comparing the optimized
+geometries and substitution energies of each new parameter set to the
+reference data from QM.  
+
+Boundary constraints were imposed on \epsilonij~and \sigmaij~ to keep
+the search space finite.  Table S3 in supporting information shows all of the
+constraints placed on the parameter search. 
+Additionally, we
+constrained the NA--OM\* \sigmaij~ to be smaller than the \sigmaij~ for
+NA--P to avoid unphysical conformations of DePh.  Boundary constraints are enforced 
+by reassigning \sigmaij~or \epsilonij~ values that violate the bound to the boundary value. 
+Throughout optimization we monitored constraint
+violations and ensured that we did not select a final parameter set
+that is the result of a constraint violation.  High--dimensional optimizations of
+this nature may not have a unique solution; thus, we performed 200
+independent optimizations with random initial parameter values. We
+compared the parameter sets that best improved the substitution energy
+without significantly compromising the conformational geometries.
+Table~\ref{tab:nmconstrain} shows all constraints used in this parameter search.
+\begin{table}
+    \caption[Nelder-Meade constraints]{Nelder--Meade constraints. These values were used to constrain the parameter search space during the NM--optimization.}
+    \label{tab:nmconstrain}
+    {\tiny
+    \begin{tabularx}{\textwidth}{X|X|X|X|X|X|X|X|X|X|}
+	        &\tbxmulticol{2}{X|}{NA-CH3}&\tbxmulticol{2}{X|}{NA-CH2}&\tbxmulticol{2}{X|}{NA-CO*}&\tbxmulticol{2}{X|}{NA-OA,-OM*,-O*,-P}&Additional Constraints\\\hline
+		&Min&Max&Min&Max&Min&Max&Min&Max&N/A\\\hline
+	\sigmaij (nm)&0.2&0.5&0.2&0.5&0.2&0.5&0.2&0.5&$\sigma_{ij}^{\text{NA-OM*}}
+        \leq \sigma_{ij}^{\text{NA-P}}$ \\\hline
+	\epsilonij (kJ/mol) &0&0.79&0&0.81&0&0.83&0.05&7&N/A\\\hline
+    \end{tabularx}
+    }
+\end{table}
+
+Figure~\ref{fig:nmerror}a illustrates a representative
+NM--trajectory that follows NM--error as a function of optimization step. In this case, the NM--error is
+defined as an
+equally--weighted combination of the mean absolute error of the
+substitution energy and the distances between each atom in the cluster and the \na~ion. 
+\begin{figure}[h!]
+    \caption[Representative Nelder--Meade (NM) optimization run]{
+    (a) Representative Nelder--Meade (NM) optimization run. Each point
+    represents a move that the NM simplex can make while navigating the parameter space 
+    (See Fogarty \etal~for a full description of the
+    Nelder--Meade algorithm and available moves~\cite{fogarty:2014:paropt}). The insert illustrates the 
+    RMSD between the simplex vertices.
+    The optimization is considered converged when the simplex collapses, which is defined by an RMSD~$\leq 10^{-10}$.
+    (b) Map of all \sigmaij~ and \epsilonij~ tested for interactions of \na~with non--carbon atom types 
+    in the 200 optimizations performed to find our final optimized set of cross terms. A total of
+291,870 combinations of parameters were tested, shown color-coded according to their NM error.}
+    \label{fig:nmerror}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 -3cm]{7_NA_RERUN_CCONSTRAINED_EQ_3_ch1.eps}
+    \includegraphics[width=\textwidth,trim=-3cm 0 0 -3cm]{figure_2_ch1.eps}
+\end{figure}
+Each NM--move used is illustrated
+as a point on the error curve 
+(see Fogarty \etal~for complete description of NM algorithm and
+moves~\cite{fogarty:2014:paropt}).
+The insert shows the root-mean squared distance (RMSD) between the simplex vertices at each step. 
+As is typical with the NM method, error drops exponentially during the
+initial steps, and slows down towards the end of the optimization
+process. The termination condition for the optimization run is the
+collapse of the NM--simplex (defined by the RMSD~$\leq 10^{-10}$).
+Figure~\ref{fig:nmerror}b shows all of the 291,870 \sigmaij-\epsilonij~ pairs tested 
+between \na~ions and the non--carbon atoms in the 200 independent optimization runs,
+and provides a visual perspective of the sampled parameter space.
+The parameter set that yielded the lowest error, as discussed in the results section, was
+chosen to perform MD simulations of a POPC bilayer.
+
+\subsection{Bilayer Construction}
+
+We first constructed a monolayer of POPC lipids by placing 100 lipids on
+a 10 nm by 10 nm grid, with excess space between the lipids to avoid overlaps in the lipid chains. 
+Then we reflected this grid to create the second 
+leaflet of the bilayer, resulting in a bilayer of 200 lipids. 
+
+Assuming a conservative estimate of one binding site per lipid, we
+need at least 200 \na~ ions in bulk solvent at the beginning of the simulation
+to avoid complete depletion of bulk ions after equilibration. 
+In order to do this we constructed a system with
+double the size of the solvent block used in our previous
+works~\cite{kruczek:2017,kruczek:2019}.  This larger system was
+constructed by adding 60,000 waters to the system on a 3-D grid with
+    excess space between waters, and randomly
+replacing water molecules with 216 \na and 216 \cl. 
+This results in an initial concentration of 200~mM, similar to our previous simulations.
+This process resulted in a simulation box with dimensions $9.75  \text{~nm}\times9.75  \text{~nm}\times59.84 \text{~nm}$.
+
+We energy-minimized the simulation box using the steepest descent
+algorithm with a force tolerance of 50 $\text{kJ mol}^{-1}\text{nm}^{-1}$. 
+Neighbor searching was performed every 2 steps. 
+The PME algorithm was used for electrostatic interactions with a cut-off of 1.6~nm. 
+A reciprocal grid with a spacing of 0.12~nm$^{-1}$ was used with 6th order B--spline interpolation. 
+A single cut-off of 1.6~nm was used for van der Waals interactions.
+
+We then performed a 200~ps constant pressure simulation at 290~K to
+ensure the system was relaxed enough for further annealing. 
+The box dimensions at the end of this were $7.86\text{~nm}\times7.86\text{~nm}\times32.90$\text{~nm}.
+Annealing was started at 400~K, and the system was cooled to the production
+simulation temperature of 300~K in steps of 10~K. 
+Each step was simulated for 150~ps, giving a total annealing time of 1.5~ns. 
+The annealing process shrunk the box dimensions to $7.97\text{~nm}\times7.97\text{~nm}\times32.14\text{~nm}$.
+This final structure 
+was used as the starting point for production run.
+
+\subsection{Molecular dynamics}
+
+All molecular dynamics simulations were performed with the GROMACS software package, 
+version 5.1.6~\cite{abraham:2015,pall:2014,van:2005,lindahl:2001,berendsen:1995}.
+We have utilized the SPC/E model for all waters~\cite{spce}. Lipid interaction
+terms are described using the parameters in the gromos43A1-S3
+parameter set developed by our group in previous work~\cite{chiu:2009}. 
+The system temperature was held constant at the production run 
+temperature of 300K using the Nos\`e--Hoover thermostat
+with a coupling constant of 0.5~ps~\cite{nose:1983}. 
+Pressure coupling was performed using the Parrinello-Rahman semiisotropic barostat,
+which held the system pressure constant at 1 atm with a coupling
+constant of 1.5~ps~\cite{parrinello:1981}. 
+The P--LINCS algorithm was used to constrain all bonds in the system to allow for a 4~fs
+integration timestep~\cite{lincs}. 
+Integration was carried out using the Verlet scheme, 
+with neighbor-list updates taken on every other integration step. 
+We used a cutoff of 16~\AA for short--range electrostatics. 
+Beyond this cutoff, we have used the smooth particle--mesh 
+Ewald summation method to describe electrostatics~\cite{essmann:1995}. 
+LJ interactions were calculated with a cutoff of 16~\AA. 
+For all systems described, we have simulated continuously for 0.7~$\mu$s.
+
+Simulated trajectories were analyzed using a combination of GROMACS
+built--in analysis tools and in--house software developed on the
+GROMACS API.
+
+\section{Results and Discussion}
+
+\subsection{Optimized Cross-Terms}
+
+The final optimized parameters are detailed in table~\ref{tab:paropt}
+alongside the original parameters computed using LB rules.  
+\begin{table}
+    \caption[Force--field cross terms]{
+Force--field cross terms. Original terms, as used in the system simulated with LB rules were computed by applying Lorentz-Berthelot mixing rules to the LJ parameters of \na and each lipid component atom type. Optimized parameters are the result of the NM--optimization using ParOpt~\cite{fogarty:2014:paropt,fogarty:2014:thesis}. All constraints
+on the search space can be seen in figure S3 in supporting information.}
+    \label{tab:paropt}
+    {\footnotesize
+    \begin{tabularx}{\textwidth}{X|X|X|X|X|}
+              &\tbxmulticol{2}{X|}{Original}&\tbxmulticol{2}{X|}{Optimized}\\\hline
+              &\sigmaij (nm) &\epsilonij (kJ/mol) &\sigmaij (nm) &\epsilonij (kJ/mol)\\\hline
+        NA-CH3&0.295&1.100&0.235&0.700\\
+        NA-CH2&0.312&0.772&0.237&0.809\\
+        NA-OA &0.256&1.120&0.211&3.035\\
+        NA-P  &0.277&1.900&0.301&0.483\\
+        NA-OM*&0.252&1.221&0.211&1.445\\
+        NA-CO*&0.335&0.362&0.315&0.758\\
+        NA-O* &0.251&1.221&0.216&2.440\\
+              \end{tabularx}
+          }
+\end{table}
+We immediately note a general trend of an increase in the value of \epsilonij~ for the
+non-carbon atom types. With our constraints on the carbon atoms, we have nudged the optimization
+into gaining the binding energy by increasing the \epsilonij~ for the specifically electronegative atoms.
+Values of \sigmaij~ have changed, but remained 
+close to the original values in general, suggesting that the optimum 
+distance to the minimum energy of the LJ potential is estimated well by LB rules. 
+We can also see that no values of \sigmaij~ or \epsilonij~ violate the 
+constraints described in table S3 in supporting information. 
+We examined substitution energies and corresponding conformational geometries by running energy
+minimization of the QM--optimized structures using the final parameter set. 
+These were then analyzed using the GROMACS built--in energy and distance tools. 
+The substitution energies and the conformations for
+this parameter set are shown in figure~\ref{fig:energies:ch1} 
+and in figure~\ref{fig:distances:ch1}, respectively. 
+\begin{figure}[h!]
+    \caption[Substitution energies for \na~clusters computed as described
+    in equation~\ref{eq:substitution}]{
+Substitution energies for \na~clusters computed as described
+in equation~\ref{eq:substitution}. 
+In black we see the energies of systems computed using the standard 
+mixing rules, in red we have the energies from benchmarked DFT, 
+and in blue the optimized results. 
+We see a significant
+error with the standard LB mixing rules, which is substantially improved with our new optimized cross terms. 
+The insert shows an diagram of POPC, and
+the small molecules Methyl-Acetate (MeAc) and Diethyl-Phosphate (DePh) 
+that were used to represent the major \na~interaction sites on the POPC molecule.}
+    \label{fig:energies:ch1}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{energies_combined_final_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=0cm 0 0 0]{figure_1_ch1.eps}
+    %MOLECULE ON THE SIDE
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \caption[Distances from \na to each component atom in sample clusters.]{Distances from \na to each component atom in sample clusters. We compute the geometry of our sample clusters by computing the distance from
+    the ion to each other atom in the system, shown per atom type.
+    These distances are used in combination with the substitution energies in figure 2 to compute the
+error for the NM optimization.}
+    \label{fig:distances:ch1}
+    %\includegraphics[width=0.8\textheight]{distances_combined_final_ch1.eps}
+    \includegraphics[width=\textwidth]{figure_s1_ch1.eps}
+\end{figure}
+We can see that for MeAc we have substantially improved substitution
+energies relative to those obtained from using LB mixing rules, 
+which started with an discrepancy of around 30--80~kJ/mol. We have also
+improved the relative substitution between the clusters of various sizes. 
+The substitution energies for DePh have also improved by a similar magnitude. 
+The conformational geometries are largely unchanged, 
+with a general trend of the binding distance to OM\* shrinking on the order of 0.25~\AA~in DePh. 
+This shrinkage is common when optimizing both energies and conformations
+with the relatively small number of free parameters corresponding to
+the LJ cross terms~\cite{wineman:2019}.
+
+We also note that the substitution energies for both molecule types improve more in the
+larger cluster sizes. Larger clusters are more relevant to the dense
+environment in the lipid headgroup region of the bilayer, 
+as few, if any, ions bind to a single lipid at a time~\cite{kruczek:2017}. 
+Furthermore, the substitution energy profile for MeAc has become much closer to that of the QM profile. 
+Thus, these new parameters substantially improve the energetic balance
+between the lipid--ion, lipid--water and ion--water interactions.
+
+The conformational geometries were mostly unchanged with the new
+parameter set, as even the original parameters do a good job in reproducing the QM--configurations. 
+The least precise cluster appears to be for 4 MeAc, 
+where the original LB parameters poorly represent the symmetries exhibited in the QM data. 
+Even with the improvement from our new parameters, 
+we may be missing behavior from explicit polarization effects that
+cannot be captured properly by a non--polarizable model~\cite{varma:2010}.
+
+\subsection{Validation of Parameters}
+
+In order to characterize our new parameter set in a bilayer, 
+we generated a 700~ns simulation of a bilayer of POPC lipids in NaCl salt solution, 
+and we compared the results against a similar system that we simulated using
+LB rules in our previous works~\cite{kruczek:2017,kruczek:2019}. 
+These older trajectories for systems both with salt and without will be referred to, 
+respectively, as  LB and `without salt.'  
+We simulated our system with optimized cross terms, 
+hence forth will be referred to as the `optimized' system, 
+long enough to equilibrate the number of bound ions (see figure~\ref{fig:ioncoodcount}). 
+We will further characterize this ion binding in a subsequent section.
+
+\subsubsection{Bilayer Structure}
+
+Bilayer structural parameters can be seen in table~\ref{tab:struc}.
+\begin{table}
+    \caption[Bilayer structural parameters]{
+        Bilayer structural parameters. \dhh~is the peak--to--peak distance from the electron density of the
+        lipid bilayer, and is a measure of bilayer thickness. Bilayer thickness \db~and chain thickness \dc~are computed from
+        number densities of the solvent and the lipid chains, respectively. $V_H$, and $V_C$ are the volumes of the headgroup and lipid chains computed
+        using the method from Petrache \etal~\cite{petrache:1997}. $V_L$ is the sum of $V_H$ and $V_C$. 
+        Rows 7-11 contain kinetic parameters for ion binding to membrane. These parameters come from fitting 
+        the equation $ N_b(t)= \frac{K_{a}}{K_{a}+K_{d}} 
+            N\left(1-\exp\left[-\left(K_{a}+K_{d}\right)\left(t-t_0\right)\right]\right)$ to the data for the number of ions
+            bound to the lipid bilayer across the simulation time. 
+            $A$ is the asymptotic number of ions bound to the lipid bilayer, and can be used as the expected number of ions
+        that will bind to the system at equilibrium. $\tau$ is the characteristic timescale of the fitted function. $n_0$ is the number of ions bound at the beginning
+        of the production run of the simulation. $K_D$ and $K_A$ are the computed binding association and dissociation constants, and $K_A/K_D$ is the binding
+    rate constant.}
+    \label{tab:struc}
+    {\footnotesize
+    \begin{tabularx}{\textwidth}{X|X|X|X}
+                            & Without salt       & LB                                      & Optimized\\\hline
+        $D_{HH}$~(\AA)      & 37.44 $\pm$ 1.07   & 40.18 $\pm$ 1.04                        & 37.64 $\pm$ 0.88 \\
+        $D_B$~(\AA)         & 36.54 $\pm$ 0.47   & 40.90 $\pm$ 0.31                        & 39.36 $\pm$ 0.43\\
+        $2D_C$~(\AA)        & 27.07 $\pm$ 0.34   & 30.33 $\pm$ 0.29                        & 28.97 $\pm$ 0.34     \\
+        $V_H$~(\AA$^3$)     & 310.68 $\pm$ 1.14  & 316.13 $\pm$ 0.83                       & 314.81 $\pm$ 0.75          \\
+        $V_C$~(\AA$^3$)     & 904.89 $\pm$ 1.28  & 891.79 $\pm$ 1.65                       & 896.50 $\pm$ 1.19         \\
+        $V_L$~(\AA$^3$)     & 1215.57 $\pm$ 1.00 & 1207.92 $\pm$ 1.57                      & 1211.32 $\pm$ 1.21    \\
+        $K_{A}$ (ns$^{-1}$) & N/A                & $7.12\times10^{-3}\pm8.18\times10^{-5}$ & $2.65\times10^{-3}\pm1.74\times10^{-5}$ \\
+        $K_{D}$ (ns$^{-1}$) & N/A                & $3.20\times10^{-3}\pm4.75\times10^{-5}$ & $3.58\times10^{-3}\pm2.83\times10^{-5}$ \\
+        $A$                 & N/A                & $74.51$                                 & $91.88$ \\
+        $\tau$      (ns)    & N/A                & $96.73$                                 & $160.54$ \\
+        $K_{A}/K_{D}$       & N/A                & $2.225$                                 & $0.74$ \\
+        \end{tabularx}
+        }
+\end{table}
+The phospholipid component volumes $V_H$ and $V_C$ (lines 1 and 2) are
+computed following the procedure outlined by Petrache \etal~\cite{petrache:1997}. 
+The lipid chains are identified as starting at the first carbon attached to the lipid chain carbonyl oxygen, including the oxygen.
+The atom groups not part of the lipid
+chains are partitioned into the headgroup volume. 
+We take the number--density of these component groups along with that of the solvent, 
+and use them to optimize the objective function:
+\begin{equation}
+    \label{eq:volumeobj}
+    \Omega(v_i)=\sum^{\rho_s}_{z_j}(1-\sum^{N_{\text{Groups}}}_{i=1}{(\rho_i(z_j)v_i)^2})\text{,}
+\end{equation}
+In the equation above, $\rho_i(z_j)$ is the number density of the $i$ component in the
+$z_j$ slice of the box and $v_i$ is the corresponding component volume. 
+The component volumes are then multiplied by the corresponding
+number of particles per molecule per group -- 32 for the chain
+particles, and 20 for the headgroup. 
+This gives us the total volume per molecule for each group. 
+The total lipid volume $V_L$ (line 3 in table~\ref{tab:struc}) 
+is taken to be the sum of these two values. 
+These remain relatively similar in all three systems, 
+as this value is intrinsic to the lipid molecule 
+and should not change with the inclusion of ions.
+
+Structural data are obtained for lipid bilayers via small angle X-ray and neutron scattering
+experiments as a one--dimensional form--factor. Data are then
+fitted to a continuous function to retrieve number and electron
+densities for the various lipid components~\cite{nagle:2000,fogarty:2015}. 
+Our simulations allow us direct access to the electron densities and number densities. 
+The entries in table~\ref{tab:struc} are determined from these densities.
+
+Figure~\ref{fig:eldens} shows the electron densities and corresponding bilayer form-factors. 
+\begin{figure}[h!]
+    \caption[Electron densities]{
+    Electron densities of the simulated bilayers (a), and corresponding bilayer form--factors (b).
+    Electron densities as obtained using the GROMACS density tool,
+    centered at the minimum to define the bilayer center, and with the electron density of solvent subtracted.
+    The simulated with optimized parameters appears to lack the large peak seen in the system simulated
+    with LB rules, and appears more similar to the
+bilayer structure of a bilayer simulated without salt. 
+This is further reflected in the bilayer form--factor, 
+computed by taking the cosine--transform of electron density. Experimental
+SAXS results are for a POPC bilayer in pure solvent~\cite{fogarty:2015}. We see the first lobe
+of the optimized system moves closer to the experimental results and the form--factor of a system without salt. This lines up with experimental results, that have shown small, if any, change
+in the bilayer SAXS form--factor~\cite{pabst:2007,petrache:2006:swelling,uhrikova:2008}.}
+    \label{fig:eldens}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{ele_dens_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_4_ch1.eps}
+\end{figure}
+Form--factors are computed by taking the cosine--transform of the symmetrized electron densities.   
+We note that the simulations carried out using LB rules produced a
+thicker bilayer and had different details at the peak region of the density. 
+The new parameter set results in similar electron density to that of the system without salt.
+This is similar to the results reported by Petrache
+\etal~ and Pabst \etal, where for systems with less than 1~M NaCl, 
+the differences in the electron densities were not
+discernible~\cite{petrache:2006:swelling,pabst:2007}. 
+These electron densities are used directly to measure the value of \dhh, 
+defined as the peak--to--peak distance (see table~\ref{tab:struc} line 4). 
+The new parameter set corresponds to a smaller \dhh, similar to the system without salt.
+
+In addition to \dhh, different measures are used to assess the bilayer thickness 
+that relies on the probability densities of different components of the system.
+It can be shown that \db~(see table~\ref{tab:struc} line 5) computed by integrating one minus
+the probability density of solvent and ions is equivalent to the computation of the 
+Luzzati thickness of the total bilayer~\cite{fogarty:2015,chiu:2009}.
+We define probability of finding a particular component in a slice of the box as,
+\begin{equation}
+    \label{eq:probability}
+    P_{i}(z) = \frac{\rho_i(z)}{\sum^n_{j}\rho_{j}(z)}\text{,}
+\end{equation}
+where $\rho_{i}(z)$ are the number densities for the 
+component particles ($i$) of the system as a function of the 
+z-position of each slice of the box, and the summation
+ranges over all components in the particular slice.
+Thus, 
+\begin{equation}
+\text{\db}=\int_{\text{Box length}}\big(1-P_{\text{water}+\text{ions}}(z)\big)\;dz\text{.}
+\end{equation}
+In table~\ref{tab:struc} line 2, the \db~is larger for the systems
+with ions, but the value obtained using our new parameter set is closer to that of
+the bilayer simulated without salt.
+
+We use a similar definition of probability density for \dc, 
+computed from the probability distribution of the lipid chains. 
+This component is defined by the hydrocarbon chains starting after the ester--linkage
+on both the Sn1 and Sn2 terminal of the lipid backbone. 
+This value (line 6 in table~\ref{tab:struc}) is increased in the system simulated
+with LB rules over the system without salt, 
+as we reported in our previous work. 
+However, the new parameter set yields a value similar to the system without salt, 
+which is consistent with the smaller overall thickness of the bilayer 
+simulated with optimized cross terms.
+
+The differences in bilayer thickness are closely related to the
+packing of the lipid chains in the hydrophobic core of the bilayer. 
+When the chains become more disordered, 
+the bilayer thickness typically drops~\cite{nagle:2000}. 
+Lipid chain ordering can be determined experimentally by performing NMR 
+on specifically deuterated hydrocarbon chains. 
+Since we lack hydrogen on our coarse--grained lipid chains, 
+we cannot directly access the C--D ordering. 
+Instead, we compute the chain order tensor $S_{\alpha\beta}$ defined as
+\begin{equation}
+    S_{\alpha\beta}=\frac{1}{2}\big\langle
+    3\cos{\theta_\alpha}\cdot\cos{\theta_\beta}-\delta_{\alpha\beta}\big\rangle,
+    \nonumber
+\end{equation}
+where the angles $\theta_\alpha$ and $\theta_\beta$ are the angles between the molecular
+axis and the box z-direction. 
+We then use this tensor to calculate the $S_{CD}$ as
+\begin{equation}
+    -S_{CD}^{\text{Saturated}}=\frac{2}{3}S_{xx}+\frac{1}{3}S_{yy}
+\end{equation}
+for saturated carbons~\cite{egberts:1988}, and as
+\begin{equation}
+-S_{CD}^{\text{Unsaturated}}=\frac{1}{4}S_{zz}+\frac{3}{4}S_{yy}\mp \frac{\sqrt{3}}{2}S_{yz}
+\end{equation}
+for unsaturated carbons~\cite{Douliez:1995}.  
+These values are plotted per each carbon in the lipid chain in figure~\ref{fig:op:ch1} in supporting
+information.
+\begin{figure}[h!]
+    \caption[Acyl-chain order parameters]{ Lipid chain deuterium order parameters. $S_{CD}$s are computed for each carbon
+        for the chains Sn1 (a) and Sn2 (b), starting at the second carbon in the chain. We see that the optmized system is still showing significant ordering in the lipid
+    chains as a result of ion binding; however, the ordering is less pronounced than in the system simulated with LB rules, 
+    and is closer to that of the simulation without salt. This
+result corresponds with the smaller bilayer thickness in the optimized system.
+}
+    \label{fig:op:ch1}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{chainorder_ch1.eps}
+%    \includegraphics[width=\textwidth,trim=-3cm 0 0 0]{figure_4_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_s2_ch1.eps}
+\end{figure}
+As reported in our previous simulations, 
+the addition of salt has an ordering effect on the lipid chains. 
+This effect is also seen in our new parameter set; however, the ordering is less pronounced, 
+which is consistent with the notion that the bilayer structure is not significantly altered 
+at physiological salt concentration~\cite{pabst:2007,petrache:2006:swelling}.
+
+While this result indicates a structure more consistent with experimental results, 
+the detailed structure of a lipid bilayer is a result of the
+delicate balance between ion--lipid, lipid--water, and ion--water interactions.
+In order to fully understand how our new parameter set has altered the
+overall bilayer structure, we next characterize the specific interactions
+between these moieties.
+
+\subsection{Membrane-Salt Interactions}
+
+Both ions and solvent compete for the binding sites on the lipid headgroup. 
+As seen in figure~\ref{fig:energies}, the new cross terms
+produce a relatively stronger interaction between \na and lipid
+headgroup components compared to that of the LB rules. 
+Thus, there is potentially a reduction in the available binding sites for the solvent. 
+To examine how the new cross terms have altered ion interactions with lipids in the bilayer, 
+we first characterize the dynamics of ion binding to the lipid bilayer.
+
+We define ion binding to the lipid bilayer when half or fewer
+of its first shell coordinators are not waters. 
+In order to compute the equilibrium binding constant, 
+we must determine the equilibrium number of bound ions to the lipid surface. 
+Figure~\ref{fig:ioncoodcount} shows the number of bound ions as a
+function of time over the entire duration of the simulation. 
+\begin{figure}[h!]
+    \caption[Number of ions bound to the bilayer vs time]{
+Number of ions bound to the lipid bilayer as a function of simulation time. 
+The exponential fits to this data are also shown. These fits are used to compute the asymptotic
+number of ions bound as well as binding rate constants.
+`Total' refers to the total number of ions in each simulation box.
+A membrane bound ion is defined as having half or fewer of its first coordination shell
+occupied by water molecules.}
+    \label{fig:ioncoodcount}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{ion_cood_count_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_3_ch1.eps}
+    %RENAME n(t) to fit
+\end{figure}
+We note that even after 700~ns of simulation time, the number of bound ions
+are not fully equilibrated. 
+Thus, we use first--order reaction kinetics to
+estimate the asymptotic number of bound ions.  
+The first--order reaction kinetics are modeled as a differential equation:
+\begin{equation}
+    \frac{dN_b}{dt}=K_a \left(N-N_b\right)- K_d N_b,
+\end{equation}
+where $N_b$ are the number of bound ions, and $K_a,K_d$ are the association and dissociation
+time constants, respectively.
+The solution of this differential equation is:
+\begin{equation}
+    N_b(t)= \frac{K_{a}}{K_{a}+K_{d}} N
+    \left(1-\exp\left[-\left(K_{a}+K_{d}\right)\left(t-t_0\right)\right]\right).
+    \label{eq:ioncoodnumfit}
+\end{equation}
+This solution is fit to the data in figure~\ref{fig:ioncoodcount}, 
+and the resulting fit is also plotted. 
+The fitting parameters are listed in table~\ref{tab:struc}.
+The first--order reaction kinetic model fits reasonably well to the 
+data from both the systems, except in the beginning of
+the simulation where the effect of the annealing process is more pronounced; 
+however, we are only interested in the asymptotic
+behavior of the fit as this is representative of the equilibrium state of the system. 
+The asymptotic number of bound ions as $t\to\infty$, $A=\frac{K_{a}}{K_{a}+K_{d}} N$ 
+(table~\ref{tab:struc} row 9), is larger in the system simulated with optimized terms.
+We also report the timescale of ion binding $\tau=\frac{1}{\left(K_{a}+K_{d}\right)}$
+for both systems (table~\ref{tab:struc} row 10). 
+The timescale of binding in the system using optimized  cross terms is longer, 
+and suggests that this system would need more time to equilibrate than the system simulated with LB rules.
+Finally, we report the value of $\frac{K_a}{K_d}$ 
+(table~\ref{tab:struc} row 11), which
+we observe is much smaller with the new parameter set than compared to that
+of the system simulated with LB rules.
+
+To examine how specific interactions between ions and lipids are modified by the new parameters, 
+we tracked the binding partners of ions across the box over the last 150~ns of simulation time. 
+Moieties are considered to be bound to an ion if they are within a distance of 3.3 \AA~from the \na~ion. 
+Several electronegative groups in the simulation can potentially bind to the \na~ion. 
+We compute the number of these potential binding partners within the first shell of each \na~ion
+across the simulation box. 
+Ions are then sorted according to their box z-positions, and then the data are averaged over the last 150~ns. 
+This is plotted in figure~\ref{fig:cood}. 
+\begin{figure}[h!]
+    \caption[\na inner shell coordination]{
+Chemistry of \na~inner shell coordination as a function of distance from bilayer
+center. Compared to the system simulated with LB rules (a), the system simulated with optimized cross terms (b)
+        yields a lower \na~total coordination number within the headgroup region of the bilayer. 
+    This drop in coordination appears to be due to a greater dehydration of the ions in this system.}
+    \label{fig:cood}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{cood_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_5_ch1.eps}
+\end{figure}
+We note first that the total number of solvating oxygens of ions within the bilayer headgroup
+region with the optimized parameter set has dropped by $\sim 1$ when
+compared to ions in similar locations in the system simulated using LB rules. 
+This is not surprising, given the dependence of ion coordination
+preferences on the local environment~\cite{varma:2008:JACS}. 
+The binding to other lipid oxygens has not been altered much by the new parameter set; 
+however, we do note that water within the headgroup region does not appear to be strongly associated with ions. 
+
+\subsection{Water Structure and Dynamics}
+
+To further characterize the dehydration of ions in the new simulated system, 
+we look to the lipid-- and ion--water interactions.
+Figure~\ref{fig:waterdens} shows the number density of water as a
+function of distance from the bilayer center for each of our simulated
+systems, with the \dc~and \db~illustrated as dotted lines.  
+\begin{figure}[h!]
+    \caption[Water density at the bilayer interface]{
+    Water density at the bilayer interface. We illustrate the regions regions $B_{-1}$, $B_+$, $B_{-2}$ and $Bulk$ for each system with dotted lines.
+    We see that the optimized cross terms yield a greater density 
+    of solvent in the $B_{+}$ and $B_{-1}$ regions over the system simulated with LB rules. 
+We also see the density in these regions of the system optimized
+with optimized cross terms is more similar to that of the system without salt.}
+    \label{fig:waterdens}
+    %\includegraphics[width=\textwidth,trim=-3cm 0 0 0]{dens_water_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_6_ch1.eps}
+\end{figure}
+We see that our new parameter set produces a bilayer
+interface that has more solvent inside the headgroup region, 
+between $10-25$~\AA~from the bilayer center. 
+This density is more similar to that of the system simulated without salt. 
+This suggests that the dehydration of ions in the system simulated with optimized parameters
+does not correspond to a dehydration of the lipid bilayer.
+
+Next, we characterize the orientational structure of the water.
+Figure~\ref{fig:waterorder} examines the water order parameter across the simulation box. 
+\begin{figure}[h!]
+    \caption[Water orientational order parameters]{
+Water orientational order parameters $P_1$ (a) and $P_2$ (b), 
+and the product of the water number density and $P_2$ (c). We see in $P_1$ and $P_2$ less
+    ordering in the waters in the optimized system, suggesting that waters may be less strongly interacting with ions or lipid components. We denote the four regions of the lipid bilayer based on the shape of the $P_2$ data as dotted lines
+    in (b)~\cite{saunders:2019}. We have not included these regions
+ for the system without salt, as the $P_2$ data does not include the same details as the systems with salt. The integral of (c) is related to the
+ quadrupolar splitting constant $\Delta \nu$ found in deuterium NMR experiments. This also gives a closer look at how solvent is ordered in the headgroup while
+ accounting for the amount of solvent in the region. We see that optimized cross terms result in a significant drop in the area under the curve, which is much closer
+ to the shape of the data from the system without salt. 
+ The regions $B_{-2}$ and $Bulk$ are not within the bilayer
+headgroup, and are expected to be less affected by the new parameter set.}
+    \label{fig:waterorder}
+    %\includegraphics[height=0.9\textheight,trim=-3cm -3cm 0 0]{h2order_ch1.eps}
+    \includegraphics[width=0.5\textwidth,trim=-0cm -0cm 0 0]{figure_7_ch1.eps}
+    %SAME line thickness as others
+\end{figure}
+We identify perturbed water structure by examining first ($P_1$) and second ($P_2$) 
+orientational order parameters for the
+OW$\rightarrow$HW1 bond of water with respect to the z-axis of the simulation box ($\beta$). 
+These order parameters are defined using the first and second 
+Legendre polynomials with respect to the angle $\beta$,
+\begin{equation}
+    \begin{split}
+    P_1&=\langle \cos\left(\beta\right) \rangle
+    \\ P_2&=\frac{1}{2}\bigg\langle\left(3\cos^2\left(\beta\right)-2\right)\bigg\rangle
+    \text{,} 
+\end{split}
+\end{equation}
+where average is over all the waters in a particular volume slice of the box 
+and then over simulation time.  
+We plot these values as a function of distance from the bilayer center. 
+$P_1$ denotes dipolar ordering of the bond vector and the bilayer normal direction, 
+with a positive value indicating an average outward orientation 
+and a zero value corresponding to an average perpendicular orientation to the
+bilayer normal or a uniformly random orientation. 
+We observe a similar pattern of ordering across the box in all systems; 
+however, we see an overall reduction in ordering with our new parameter set when
+compared to both the LB and the no--salt system. 
+We also see the inner minimum of the order parameter moved further into the bilayer
+when compared to LB, 
+which is consistent with the larger quantity of water 
+in this region that we observe in the water densities.
+
+Following the protocol established in our previous work~\cite{saunders:2019}, 
+we identify three regions within the bilayer interface, $B_{-1}, B_{+}, B_{-2}$. 
+The $B_{-1}$ region is defined as the region of negative ordering starting at the bilayer center, and ending 
+    when the order parameter values cross zero at the start of the $B_{+}$ 
+    region. The $B_{+}$ region starts at the end of the $B_{-1}$ region, and 
+    is the area of positive ordering, ending where the order parameter crosses
+    zero again. The $B_{-2}$ region starts at the end of the $B_{+}$, and extends out to where the 
+    second order parameter goes to zero. This was found by fitting an exponential function to this region 
+    and taking the \replaced{scale parameter}{timescale} from that fit as the boundary with bulk solvent.
+We find that water is significantly less perturbed by the bilayer with our new parameter set.  
+We have also computed $P_2\cdot\rho_{\text{Water}}$, shown in shown in figure~\ref{fig:waterorder}(c). 
+This value relates the amount of water in each region of the box and 
+the overall ordering in the region. 
+We still see significantly less ordering with the new parameter set, 
+and even with the larger number of waters in the bilayer headgroup. 
+The integral of this curve is related to the quadrupole splitting $\Delta \nu$ observed in
+in deuterium NMR experiments~\cite{aaman:2003,kruczek:2017}.
+
+This suggests that while there is more solvent in the interface, it is perhaps not
+associated with either \na or lipids, and may remain less structured than
+in the system simulated with LB rules.  
+This can be further ascertained by the diffusion coefficients of waters 
+in each of the regions defined by $P_2$. 
+We compute the mean square displacement (MSD) for water oxygens
+in each region by first tracking which waters remain in the region. 
+Any waters that leave the region are removed from the MSD calculation. 
+We chose a duration of 100~ps to track the MSD in order
+to have a sufficiently long time for the MSD to become linear, 
+while still maintaining a statistically significant number of waters in the slice. 
+A line is fit to the middle 80\% of the MSD, and the fitted
+slope is used to calculate the diffusion coefficient following
+Einstiein's relation for 2D diffusion
+\begin{equation}
+\lim_{t \to \infty}\frac{\big\langle (r(t) - r(0))^2 \big\rangle}{(t-t_0)} = 6D. 
+\end{equation}
+These values can be seen in table~\ref{tab:diff}. 
+\begin{table}[h!]
+    \caption[Diffusion coefficients of water]{
+Diffusion coefficients of water in different regions of the lipid bilayer, 
+defined by the shape of the second orientational order parameter of water molecules in the box. 
+These regions are defined by the shape of the distribution of the second 
+    orientational order parameter across the simulation box. $B_{-1}$ is the region 
+    of negative ordering starting at the bilayer center, and ending 
+    when the order parameter values cross zero. 
+    $B_{+}$ starts at the end of the $B_{-1}$, and is the region of positive ordering ending where the order parameter 
+    becomes negative. This starts the $B_{-2}$ of negative ordering, extending out to where the 
+second order parameter goes to zero, where we have $Bulk$ solvent.
+We see that the optimized parameters result in slightly 
+    increased diffusion in the solvent, which correlates with the reduced
+    ordering of the water dipoles and quadrupoles in the
+system.}
+    \label{tab:diff}
+    {\footnotesize
+    \begin{tabularx}{\textwidth}{X|X|X|}
+              &LB ($\times 10^{-10} m^2/s$)&Optimized ($\times 10^{-10} m^2/s$)\\\hline
+        $B_{-1}$ &1.11 $\pm$ 1.10& 1.88 $\pm$ 2.41   \\
+        $B_+$    &4.23 $\pm$ 1.14& 6.11 $\pm$ 2.83  \\
+        $B_{-2}$ &18.11 $\pm$ 4.23&21.29 $\pm$ 4.12 \\
+        $Bulk$   &27.32 $\pm$ 1.15 &27.25 $\pm$ 1.36 \\
+              \end{tabularx}
+          }
+\end{table}
+We note that the water in the headgroup region, corresponding to $B_{-1}$ and $B_+$, 
+diffuses slightly faster with the new parameter set, 
+indicating more mobile water in these regions. 
+However, the computed diffusion coefficients are within the error bars that of the system simulated with LB rules. 
+Diffusion in the $B_{-2}$ and $Bulk$ regions are similar in both systems, 
+as these are mostly outside of the bilayer and should not be affected by the new parameter set.
+
+
+\subsection{Bilayer Electrostatics}
+
+We further characterize the electrostatic properties of our bilayer
+systems by computing the electrostatic potential across the simulation box. 
+We do this following the protocol used in Saunders \etal
+~\cite{saunders:2019}. We first compute the charge density of the
+system components. We integrate this distribution twice, setting both
+constants of integration to be zero to enforce a zero value for the
+electric field in bulk solvent and a zero electrostatic potential at
+the box edge. This is accomplished by taking the average value of the
+electric field in the \emph{bulk} region of the box defined earlier,
+and subtracting this value from all points. Due to the larger system
+size in the optimized system, we needed to compute the average value of a much
+larger region than in LB in order to apply boundary conditions. We
+then integrate again to get the electrostatic potential. This result
+can be seen in figure~\ref{fig:ch1} in supporting information. 
+\begin{figure}[h!]
+    \caption[Electrostatic potential]{ Electrostatic potential as a function of distance from bilayer center. The optimized
+cross terms yield a small change in the location of the peak of the potential in the
+bilayer simulated with optimized cross terms, as well as the loss of the valley behind the peak.
+}
+    \label{fig:potential:ch1}
+    \includegraphics[width=0.5\textwidth,trim=-0cm 0 0 0]{figure_s3_ch1.eps}
+\end{figure}
+The shape of the potential
+is largely unaltered within fluctuations. Systems simulated with the
+optimized parameters and with LB rules both have a similar bilayer dipole potential, 
+which remains elevated over
+the system without salt, by $\sim$ 220~mV.  We report 
+that the optimized system has a slightly
+elevated bilayer dipole potential compared to the system simulated with
+LB rules, increased by $\sim$ 12~mV.
+This may be a direct result of the larger number of
+ions bound to the bilayer in this system.  We also note the system simulated with optimized cross terms
+has different details
+throughout the electrostatic potential compared to the system simulated with LB rules and in the
+system without salt, however these are within fluctuations and cannot be used to draw conclusions.
+
+Poisson--Boltzmann (PB) theory is a mean field approximation for
+solvated ions near an interface. Experimentally PB theory is used to
+assess the surface potential of the lipid bilayers. We also examine
+the behavior of the ions in bulk solvent under the framework of PB
+theory. Following the procedure used in our previous
+work~\cite{saunders:2019}, we fit the number density of \cl ions in
+the solvent--occupied region of the box to a Poisson-Boltzmann
+distribution, using the inverse Debye length $K$ and the density of
+\cl at the center of the solvent occupied region of the box $\rho_0$
+as fit parameters. 
+The density is modeled as:
+\begin{equation}
+    \label{eq:gcdens}
+    \rho (z)= \rho _{0} \exp{(- \bar{z} e \beta \psi (z))},
+\end{equation}
+where $\rho_0$ is the number density of the ion at the center of the
+solvent--occupied region of the box, $\bar{z}=1$ is the valency of the
+ion in the system, $\beta=\frac{1}{k_b T}$, $e$ is the charge on an
+electron, and $\psi(z)$ is the electrostatic potential. We then assume
+the form of $\psi(z)$ to be the sum of two Debye-Huckel
+potentials~\cite{israelachvili:2011:intermol} reflected across the
+center of the solvent--occupied region of the box:
+\begin{equation}
+    \begin{split}
+    \psi_1(z)&=\psi_s \exp(-K(z+\frac{D}{2})) \\
+    \psi_2(z)&=\psi_s \exp(K(z+\frac{D}{2})) \\
+    \psi(z)&=\psi_1 + \psi_2\text{,}
+    \label{eq:gcpot}
+\end{split}
+\end{equation}
+where $D$ is the distance from the hydration boundary of one bilayer leaflet
+to the next across the solvent, $K$ is the inverse Debye length, and $\psi_s$ is the surface potential:
+\begin{equation}
+    \psi_s = \frac{\varsigma}{\varepsilon_0\varepsilon K}\text{.}
+\label{eq:gcspot}
+\end{equation}
+%, given by
+%\begin{equation}
+%K=\sqrt{\sum_i{\rho_{0,i}\bar{z^2_i}\frac{e^2}{\epsilon_0 \epsilon k_bT}}}
+%\label{eq:gcK}
+%\end{equation}
+\deleted{We used a value of $D=13.167$ nm for the LB system, and $D=27.01$ nm for the system simulated with optimized parameters. }
+\added{The LB system yielded a value of $D=13.167$ nm and the system }
+\added{simulated with optimized parameters, containing twice as many }
+\added{solvent molecules, }
+\added{gave a value of $D=27.01$ nm.}
+We take the surface charge density $\varsigma$ from the charge density inside
+of the hydration boundary of the lipid bilayer. Since only ions
+contribute a net charge to our system, we compute this using only the
+charge density of ions in the system. 
+This value was computed to be $\varsigma=0.13$ \emph{e} nm$^{-2}$ for the system simulated with LB rules, and 
+$\varsigma=0.11$ \emph{e} nm$^{-2}$ for the system simulated with the new parameters.
+Our fitting procedure yielded 
+number densities $\rho _{0}=0.043\text{nm}^{-3}$ for the system simulated with LB rules, 
+and $\rho _{0}=0.079\text{nm}^{-3}$ for the system simulated with optimized parameters.
+The fitted inverse screening lengths were found to be $K=0.91 \pm 0.014$ nm$^{-1}$ for the LB rules simulation 
+and $0.94 \pm 0.018$ nm$^{-1}$ for the system simulated with optimized parameters.
+The resulting fit and predicted
+density of \na ions and electrostatic potential can be seen in
+figure~\ref{fig:gouy:ch1} in supporting information. 
+\begin{figure}[h!]
+    \caption[Poisson-Boltzmann theory]{ Poisson-Boltzmann theory predictions and simulation results. (a) shows a snapshot of the 
+system simulated with optimized cross terms, translated
+to center the solvent occupied region. Water has been hidden
+for clarity. (b) and (d)
+    show the number density of ions in the solvent occupied region of the box. 
+    (c) and (e) show the corresponding electrostatic potential in solvent.
+    We illustrate theoretical predictions as solid lines, with corresponding 
+    simulation results as points with error bars. Red vertical lines denote the \emph{hydration boundary} of the lipid bilayer. 
+    \cl density data is used for fitting in both systems. 
+}
+    \label{fig:gouy:ch1}
+    \includegraphics[width=0.5\textwidth,trim=0 0 0 0]{figure_s4_ch1.eps}
+\end{figure}
+We see the results from our simulation
+represented by points with error bars, while PB theory results are
+shown in solid lines.  We see excellent agreement in the \na density
+profile away from the bilayer surface, and reasonable agreement in the
+electrostatic potential. From this we can see that the optimized and LB
+systems both exhibit similar ionic distributions with models used to
+describe electrophoretic mobility
+experiments~\cite{israelachvili:2011:intermol}.
+
+\section{Conclusions}
+
+Mixing rules are often relied upon to compute non--bonded cross terms 
+for interacting molecules in molecular simulations. 
+However, when mixing force--fields that have been developed independently of each other, 
+inaccuracies may develop. 
+Here we demonstrate one such case and propose a rigorous solution. 
+MD simulations conducted using predefined mixing rules for 
+non-polarizable force fields developed separately for ions and lipids 
+have always produced very pronounced salt-induced structural changes in lipid bilayers. 
+Contrary to this, most experimental observations point to a 
+moderate or even an insignificant change in bilayer structure at physiological salt concentrations. 
+We resolve this discrepancy by explicitly parameterizing ion--lipid cross terms
+using our procedure {\em ``Many Body Non Bonded fix''} (MB-NB-fix). 
+It is based on the NB-fix method employed in previous works
+~\cite{baker:2010:accurate,yoo:2012:improved,fyta:2012:ionic,mamatkulov:2013:force,venable:2013,savelyev:2014:balancing,li:2015:representation,savelyev:2015:competition,jing:2017:study}
+and utilizes ParOpt software developed in our lab~\cite{fogarty:2014:paropt}\cite{fogarty:2014:thesis}.
+We note that after applying the optimized parameters for \na--lipid interactions, the 
+bilayer structure conforms more to experimental
+observations while all other properties such as solvent structure,
+electrostatic potential, and dynamic properties are approximately
+similar to that obtained with those obtained with LB parameters. 
+We note that we have not applied this method to optimize \cl~ interactions terms, which
+may still further affect the bilayer structure. This will be the subject of future work.
+
+The MB-NB-fix method proposed here is a 
+general method which can be used to derive mixing
+terms for simulations with independently developed force fields. 
+This method will be used in future work to improve other sets of mixed force-fields, including 
+those of other monovalent ions and the gromos 43A1-S3 lipids, and between these lipids and amino-acids for use in proteins.
+Furthermore, many body cooperativity effects, such as ion-induced polarization 
+in lipid molecules may be critical to further improving
+the reproduction of lipid bilayer structure.
+A correct approach to incorporate these effects to our simulation 
+would be to have explicit polarization terms in 
+our simulation models. This is complicated, as most existing polarizable 
+simulation models are either not very effective
+at accurately reproducing polarization effects or are
+much more computationally expensive compared
+to classical non-polarizable simulations. The MB-NB-fix method
+has potential to become an ideal solution for mixing force-fields, including
+polarizable and non-polarizable models in the same system 
+to construct simulations that are tractable yet accurate.
+
+
+
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+
+\chapter[Adsorption modes of \na, \li, and \mg to a model zwitterionic lipid bilayer]{Adsorption modes of \na, \li, and \mg to a model zwitterionic lipid bilayer}
+    The adsorption of ions to soft-porous interfaces plays a critical role in 
+    many physical and biological processes, such as the function of electrochemical 
+    energy storage devices or 
+    the attachment of membrane proteins to cells surfaces. 
+    In this work we characterize different adsorption modes, and
+    describe the adsorption behavior of Na\textsuperscript{+}, Li\textsuperscript{+}, and Mg\textsuperscript{2+} 
+    {onto a porous substrate}.
+    We identify three categories of adsorption based on 
+    the degree of dehydration of the ion, 
+    viz., steric adsorption {corresponding to a lack of dehydration}, 
+    imperfect adsorption {with partial dehydration}, and 
+    perfect adsorption {representing total dehydration}.
+    Using 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphatidylcholine (POPC) 
+    in salt solution as a generic model system for salt at a soft and 
+    porous interface, based on the simulation model used we find that 
+    anions, \cl, always adsorb sterically. Among cations, the divalent
+    \mg does not dehydrate, and is {also} adsorbed sterically. 
+    On the other hand, \na  
+    adsorbed to a large fraction perfectly 
+    {and \li exhibits a significant fraction of imperfectly adsorbed ions,}
+    We demonstrate that, with everything else held fixed, the 
+    adsorption mode of a cation is determined
+    solely by the strength of the electric field produced by the 
+    ion at the distance of the hydration shell. 
+
+
+\section{Introduction}
+Interactions of ions with soft, porous, and charge-neutral substrates
+such as zwitterionic lipid bilayers are important and a common
+system of interest in soft matter physics and biophysics.
+Empirical studies towards these use simplified
+models to interpret observations, e.g. assuming the water as a
+dielectric continuum,
+or taking the ions as a spherical entity surrounded
+by a neatly organized hydration shell~\cite{israelachvili:2011:intermol}.
+
+A simple way of defining adsorption of ions to a substrate 
+comes from the Poission-Boltzmann (PB) theory~\cite{israelachvili:2011:intermol}.
+{This mean-field approximation predicts accumulation
+of ions near a surface due to the mutual electrostatic repulsion
+of the ions and entropic factors.}
+{Deviations in ion distribution from the predictions of PB theory near a substrate are
+    the defining characteristic of the specific adsorption phenomenon
+~\cite{stern:1924:theory,grahame:1947:electrical}.}
+
+Experimental studies of ion adsorption can be broadly
+classified into two main groups -- methods that examine the electric field/surface potential
+produced by the adsorbed ions, e.g, electrophoretic mobility~\cite{smith:2017:zeta} or 
+measurement of the forces between 
+bilayers~\cite{marra:1985:direct}, and methods
+that can more directly characterize the location and dynamics of ions such 
+as x-ray or neutron 
+scattering~\cite{fogarty:2015,nagle:2000,pan:2012,panff:2012,uhrikova:2008,mason:2006:neutron}, and
+NMR~\cite{nagle:2000,venable:2013,casal:1989}. 
+
+At the atomistic level, identifying adsorbed ions poses a different kind of challenge.
+We have addressed this issue previously,
+where we characterized adsorption by examining the dehydration of ions near the
+interface~\cite{kruczek:2019,kruczek:2017,pandit:2003:dppc:na,Berkowitz:2006}.
+This is similar to the kind of adsorption described 
+by the Langmuir isotherm model, where it is
+assumed that ions stick to a soft, porous interface 
+through direct interaction~\cite{kalinin:1996:ionbinding}.
+Adsorption defined thusly has been reported in our previous works for monovalent ions 
+such as \na and {\li}\cite{kruczek:2017,kruczek:2019,saunders:2019,saunders:2022}.
+Further, our previous work on divalent ions
+exhibited that \mg maintains its 
+hydration {structure} regardless of where the ion is located in the 
+lipid bilayer~\cite{kruczek:2019}, yet maintaining 
+a distribution distinct from that
+predicted by PB theory. Hence, {in this work
+    we characterize different modes of adsorption corresponding
+to different ions. Here we} categorize the 
+adsorption behavior based on degree of 
+dehydration, starting from no
+dehydration at all as in the case of \mg and Cl\textsuperscript{-}, 
+extending to complete dehydration as in the case with Na\textsuperscript{+}. 
+In {the somewhat different} 
+context of RNA, which is not a soft, 
+porous substrate, the specific binding of ions has been addressed
+extensively
+~\cite{bowman:2012,rulivsek:2003:outer,dudev:2003,porschke:1979:mode,petrov:2005}
+based on the mobility of cations and further 
+characterized by models that describe the 
+structure of their coordination shell.
+Cations bound to RNA are frequently distinguished as
+being diffuse {(similar to our steric adsorbed case)}, and the site-bound ions are further characterized
+by outer-shell {(again analogous to our steric adsorption ions)} 
+or inner shell binding 
+{(analogous to the imperfect or perfect adsorbed ions)}, depending on
+the folded conformation of the RNA or 
+nearby nucleotides~\cite{bowman:2012,rulivsek:2003:outer,dudev:2003,porschke:1979:mode,petrov:2005}. 
+
+Along with dehydration, we use specific 
+adsorption in the context of PB density 
+as the defining property
+of adsorption phenomenon. 
+Based on our previous as well as current atomistic simulations we broadly
+classify adsorption of ions into three categories -- viz. 
+\emph{perfect adsorption}, \emph{imperfect adsorption},
+and \emph{steric adsorption}. We also demonstrate that,
+using different
+force-field for \mg the predominant mode of adsorption
+of \mg to 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphatidylcholine (POPC) is 
+{always} \emph{steric adsorption}.
+
+\section{Methods}
+We perform multiple simulations of POPC bilayers
+with LiCl and MgCl$_{2}$ salt. Configurations for each simulation are listed in table~\ref{tab:ions:ch2}.
+\begin{table}
+    \caption[Simulation system details]{Simulation system details. Each simulated system is started with 200~mM salt, and the final bulk concentration 
+    is computed from the average number density of ions 
+    at the center of the solvent occupied region of the box, from the last 150~ns of simulation time. \nambnbfix
+    simulation trajectories are published in our previous work, and are re-analyzed in this work. 
+    The \mgmbnbfix system is extended to 2.5~$\mu$s to ascertain if any 
+    exchange of waters from the first shell of \mg could be observed. \li (a) parameters are obtained from 
+    the work by Joung and Chetatham III~\cite{joung:2008}. \mg (b-c) parameters
+    are obtained from Li \etal~\cite{merzparams} and Grotz \etal~\cite{microparams}, respectively.}
+    \label{tab:ions:ch2}
+    \begin{minipage}{\textwidth}
+    \tiny{
+    \begin{tabularx}{\textwidth}{X|X|X|X|X|X}
+        System & No. of Cations & No. of Anions & Starting Bulk Salt Concentration & Final Bulk Salt Concentration & Simulated Time \\\hline
+        \na{\tiny{From Saunders \etal 2022~\cite{saunders:2022}}}      & 216  & 216   &   200mM   & 103mM & 0.7$\mu$s\\\hline
+        \li (a)         & 216  & 216   &   200mM   & 102.0mM & 1$\mu$s  \\\hline
+        \mg (b)         & 216  & 432   &   200mM   & 152mM  & 2.5$\mu$s\\\hline
+        \mg (c)           & 216  & 432   &   200mM   & 153mM & 1$\mu$s\\\hline
+    \end{tabularx}}\par
+   \vspace{-0.75\skip\footins}
+   \renewcommand{\footnoterule}{}
+\end{minipage}
+\end{table}
+{Bilayers are constructed of 200 lipids, with 100 lipids per leaflet.}
+Simulations are all performed with 
+60,000 water molecules to ensure that the simulation box
+was large enough to have no long-range dipole moment, 
+and have a significant 
+sampling of bulk water. The inclusion of ions substantially increases the region of ordered 
+waters in the system~\cite{kruczek:2019,saunders:2022}.
+We simulate these systems with a starting concentration of 200~mM salt, in order to ensure
+that the equilibrium bulk concentration is physiologically relevant and 
+{yet} statistically viable.
+Systems with \mg are simulated with twice the number of 
+anions to counter the +2 charge of the cation. All the systems are simulated for 1~$\mu$s of simulated time. 
+The \mgmbnbfix system is extended to 2.5~$\mu$s to confirm the 
+long residence time of waters in the first coordination shell of \mg\cite{grotz:2021:optimized}. 
+It is observed that ions in the bilayer still do not
+exchange of waters from their first coordination shell, 
+so another 1~$\mu$s simulation is performed using the water-\mg 
+interaction model developed by Grotz \etal, which significantly increase the water-exchange rate to be closer 
+to the value observed experimentally~\cite{grotz:2021:optimized}.
+{All the} simulations are performed using the GROMACS molecular dynamics software package, 
+version 5.1.6~\cite{abraham:2015,pall:2014,van:2005,lindahl:2001,berendsen:1995}, and analysis is performed using 
+GROMACS built--in analysis tools and in--house software developed
+on the gromacs API or using the MDanalysis python package~\cite{gromacsmanual,mdanalysis1,mdanalysis2}.
+\subsection{Bilayer Construction}
+Lipid bilayers in solvent are constructed by placing POPC lipids on a 10 x 10 grid,
+and reflecting to create the second bilayer leaflet. 60,000 solvent molecules are then placed 
+into the box above the bilayer grid, with random solvent molecules replaced to 
+add ions (see table~\ref{tab:ions} for numbers of ions and types in each system).
+Systems are energy minimized using the steepest-descents algorithm to remove bad-contacts.
+Following energy-minimization, both systems are allowed to settle in an NPT dynamic
+run at a temperature of 250K for 1~ns. Systems are then annealed by heating to 350K, and
+cooling in steps of 10K to the simulation run temperature of 300K in steps of 
+155~ps. The final annealed configurations for each system are used as the initial
+configuration for the production molecular dynamics simulations.
+\subsection{Molecular dynamics}
+For total length of simulation runs, see table~\ref{tab:ions}.
+All systems are simulated with a time step of 4 fs.
+Neighbor searching is performed every 2 steps.
+The PME algorithm is used for electrostatic interactions~\cite{essmann:1995}.
+with a cut-off of 1.6 nm.
+A reciprocal grid of $56 \times 56 \times 224$ cells is used with 4th order B-spline interpolation.
+A single cut-off of 1.6 nm is used for Van der Waals interactions.
+Temperature coupling is imposed with the Nose-Hoover algorithm~\cite{nose:1983}.
+Pressure coupling is imposed with the Parrinello-Rahman algorithm~\cite{parrinello:1981}.
+
+\subsection{Force-field parameters}
+
+Lipid-lipid and lipid-water interactions are described using our 
+gromos43a1-s3 model~\cite{chiu:2009}, 
+which is calibrated to work with the SPC/E water model~\cite{spce}. 
+Li$^+$-water interactions 
+are described using Joung and Cheatham parameters~\cite{joung:2008}. 
+We use the method described in Saunders \etal 2022~\cite{saunders:2022} to compute non-aqueous
+cross-terms for \li (see supporting table S1,and figures S1 and S2 for details). \TODO{PUT THOSE HERE}
+Development of models describing the interactions of \mg with water remains an elusive
+problem, and there are numerous
+models developed to describe \mg--water interaction with varied levels of complexity~\cite{merzparams,villaparams,microparams,julian:2023:mg}.
+These models are optimized to improve the hydration free energies as well as
+binding energies with various solvent models~\cite{merzparams,villaparams,microparams}.  
+Previous work by our group has examined \mg models
+from Li \etal and Allner \etal~\cite{merzparams,villaparams} in simulations with POPC lipids~\cite{kruczek:2019}, 
+and found little variation among them in terms of their effects on lipid bilayer properties. 
+With this in mind, we chose to focus our work here on the parameters developed by Li \etal because
+their optimization procedures closely follow our focus on binding energies.
+In recent work it has been reported that the existing \mg parameters, 
+including those developed by Li \etal
+overestimate the residence time for a water molecule in the 
+first coordination shell of an ion~\cite{microparams}. 
+In our past works using this force-field we reported 
+insignificant Langmuir type adsorption of \mg ions to the POPC bilayer,
+with waters retained in the first coordination shell of the ion~\cite{kruczek:2019}. 
+We have also performed simulations with the parameters developed by Grotz \etal that directly
+reduce residence times while not significantly changing other solvation 
+properties of the ion~\cite{grotz:2021:optimized,microparams}. 
+This was done to study how the interactions with water
+could affect the first-shell coordination of \mg in the bilayer interface. 
+We have {computed} 
+the interaction cross-term for the \mg ion from Grotz \etal
+with SPC/E water explicitly, using {the Lorentz-Berthelot mixing rules.}
+\section{Results and Discussion}
+\subsection{Bilayer simulations of \li and \mg}
+\subsubsection{Lipid bilayer structure}
+The distribution of electron dense and heavy atoms is often studied by using
+scattering techniques, like small-angle x-ray and neutron scattering. 
+These methods
+yield a scattering form-factor.  Densities can be obtained from the form-factor by solving
+the inverse problem, which is a technically hard problem. In experiments this is usually solved by fitting a model to the form-factor.
+Simulations give us direct access to atomic positions, and consequently
+the densities. This allows us to compute a scattering form-factor by taking a cosine transform of the density{. The computed
+form-factor}
+can be compared with the direct measurements of the experiment.
+The simulated lipid bilayer x-ray scattering form-factors and associated 
+electron densities for each system are shown in figure~\ref{fig:eledens:ch2}.
+\begin{figure}[h!]
+    \caption[Formfactors and electron densities]{Comparison of x-ray scattering formfactors (a,b) and associated electron densities (c,d) for simulated systems. 
+    {The system with \li salt has a slightly thicker bilayer compared to \na and the simulation without salt (a,c) and},
+    \mg does not significantly change the bilayer thickness
+    under any parameter set studied (b,d). }
+    \label{fig:eledens:ch2}
+    \includegraphics[height=0.3\textheight]{Figure_1_ch2.eps}
+\end{figure}
+We compare all form-factors for each system to that of a system simulated without salt, published
+in our previous work~\cite{kruczek:2017}.
+The bilayer thickness \dhh~is determined by measuring the distance between the
+peaks in the electron density, which roughly localize the electron-dense phosphates in the
+lipid headgroup -- the values for this can be seen in table~\ref{tab:struc:ch2}.
+\begin{table}
+    \caption[Simulation details and structural parameters]{Bilayer simulation details, and structural parameters. Here we detail the various
+    structural measurements of each simulated bilayer.
+    \dhh~ is the distance measured between the peaks in the electron density, which localize the electron-dense phosphate moiety in the lipid headgroup.
+    \db~ is a distance between the Gibb's surfaces{\cite{fogarty:2015}} on the probability density of solvent as it approaches the lipid bilayer.
+    \dc~ is the distance between the Gibb's surfaces on the probability density of lipid chains, and represents the lipid chain thickness.
+    Volume per lipid \vl~ is measured by dividing the volume of the entire system into solvent and ions, and lipid following the method by Petrache \etal
+    {\cite{petrache:1997}}.
+    This \vl~ is the sum of the \vh~ and V\textsubscript{C}, which are the volume per lipid headgroup and volume per lipid chains respectively.
+    Area per lipid molecule \al~ is computed as the ratio of twice the lipid chain volume \vc~ with \dc. We also report the
+position of the hydration boundary of each system, which we compute as the point where the second water order parameter $P_2(cos(\beta))\approx 0$
+{as was done in Saunders \etal 2019~\cite{saunders:2019}}.}
+    \label{tab:struc:ch2}
+    {\tiny
+    \begin{tabularx}{\textwidth}{Y|Y|Y|Y|Y|Y}
+            &No Salt&\na&\li&\mgmbnbfix&\mgmicro\\\hline
+        \dhh (nm)    &3.744   $\pm$ 0.107  &3.764   $\pm$ 0.088 &3.864  $\pm$ 0.070&3.832  $\pm$ 0.364  &3.768  $\pm$ 0.525\\
+        \db  (nm)    &3.654   $\pm$ 0.047  &3.936   $\pm$ 0.043 &4.511  $\pm$ 0.048&4.325  $\pm$ 0.044  &4.213  $\pm$ 0.049\\
+        \dc  (nm)    &2.707   $\pm$ 0.034  &2.897   $\pm$ 0.034 &3.015  $\pm$ 0.034&2.880  $\pm$ 0.029  &2.809  $\pm$ 0.032\\
+        \vl  ($\times 10^{-3}\text{nm}^3$)&1215.57 $\pm$ 1.0   &1211.32 $\pm$ 1.21 &1201.2 $\pm$ 1.05&1219.8 $\pm$ 1.24  &1227.7 $\pm$ 1.24\\
+        \vh  ($\times 10^{-3}\text{nm}^3$)&310.68  $\pm$ 1.14  &314.81  $\pm$ 0.75 &306.0  $\pm$ 1.01&324.0  $\pm$ 1.26  &327.9  $\pm$ 1.10\\
+        \vc  ($\times 10^{-3}\text{nm}^3$)&904.89  $\pm$ 1.28  &896.50  $\pm$ 1.19 &895.3  $\pm$ 0.91&895.8  $\pm$ 1.05  &899.8  $\pm$ 1.06\\
+        \al  ($\times 10^{-2}\text{nm}^2$)&66.86   $\pm$ 0.85  &61.89   $\pm$ 0.73 &59.39  $\pm$ 0.69&62.21  $\pm$ 0.63  &64.35  $\pm$ 0.82\\
+        Hydration Boundary (nm) & 2.79 &3.69&3.63 &3.48&3.33  \\
+\end{tabularx}}
+\end{table}
+
+Experiments often report various types of thicknesses, volumes, and cross-sectional areas that are model dependent.
+We also compute these quantities to compare the simulation results with experiments. These values are presented in 
+table~\ref{tab:struc}.
+Based on the \dhh~and the \dc~ there is a slight thickening 
+of the bilayer in the \li {simulation} above that seen in the \na {simulation}.
+The \mg simulations {, irrespective of the parameter set, yield} much less thickening than {the}  
+Li\textsuperscript{+} {simulation.} 
+{The volumes per lipid (\vl), headgroup (\vh), and chains (\vc) are computed using the method of
+Petrache \etal~\cite{petrache:1997}. This is done by optimizing the function:
+\begin{equation}
+    \label{eq:volumeobj}
+    \Omega(v_i)=\sum^{\rho_s}_{z_j}(1-\sum^{N_{\text{Groups}}}_{i=1}{(\rho_i(z_j)v_i)^2})\text{,}
+\end{equation}
+where $\rho_i(z_j)$ is the number density of the $i$ component in the
+$z_j$ slice of the box and $v_i$ is the corresponding partial component volume. $N_\text{Groups}$ is the number
+of atom groups for which we are dividing the system volume into component volumes -- we have groups for solvent plus ions,
+lipid chain without the terminal methyls (CH\textsubscript{*}), terminal methyls (CH\textsubscript{3}), and the lipid headgroups (H).
+The lipid volumes are then computed as 
+\begin{equation}
+    \text{\vc}=N_{\text{CH}_*} \times v_{\text{CH}_*}+N_{\text{CH}_3} \times v_{\text{CH\textsubscript{3}}}
+\end{equation}
+and
+\begin{equation}
+    \text{\vh}=N_{H} \times v_{\text{headgroup}}\text{,}
+\end{equation}
+where $N_{\text{CH}_*}=30$, $N_{\text{CH}_3}=2$, $N_{\text{H}}=20$ are the number of united atoms per atom group for CH\textsubscript{*},
+CH\textsubscript{3}, and H.
+}{
+The chain volume \vc~ is similar for all systems studied, and there is some variation in the headgroup volume \vh~.
+However, this method of dividing up the volume is more prone to errors in the headgroup region due to 
+significant overlap between the headgroup and solvent densities. 
+Thus, we also see similar variation in the total lipid volume \vl. 
+}
+The two-dimensional area per lipid \al~is defined as
+{$\frac{2V_c}{2D_c}$ as is often reported from SAXS and SANS experiments~\cite{nagle:2000}, and is an important
+measure of how the lipids condense as the bilayer thickens.}
+{Both the simulations with \mg yield bilayers with a larger \al~ 
+    than the monovalent ions studied in this work, and are closer
+in area to the simulation without salt.
+}
+
+The detailed structure of molecules and their neighborhoods are often studied using 
+various nuclear magnetic resonance (NMR) techniques.
+{At present, these experiments with various salts are sparse.}
+{Thus,} we report these data with anticipation that future experiments will fill this gap and validate
+or invalidate
+these numbers.
+Lipid chain ordering is determined via the acyl chain $S_{CD}$ per carbon
+atom. These can be seen in figure~\ref{fig:op:ch2}. 
+\begin{figure}
+    \caption[Acyl-chain order parameters]{Acyl chain carbon-deuterium order parameters. These are computed for the Sn1 and Sn2 chains of each lipid starting at the 
+        second carbon in the chain\cite{egberts:1988,Douliez:1995}. We note that the lipids simulated in systems of monovalent ions (a,c) show a significant increase
+in the lipid chain ordering for both acyl chains. The systems simulated with \mg (b,d) are much closer in ordering to that of a system
+simulated without ions.}
+    \label{fig:op:ch2}
+    \includegraphics{Figure_2_ch2.eps}
+\end{figure}
+
+There is significant increase in chain ordering in the systems 
+with \na and Li\textsuperscript{+}, which {is} consistent with the slight thickening
+of the bilayer seen in the \db~ values. The less coordinated \mg systems have remained much closer to the 
+ordering seen in the no-salt simulation.
+
+
+\section{Specific ion adsorption}
+\subsection{Bulk ions}
+
+Interfaces in salt solutions give rise to a double layer of cations and anions at the surface~\cite{israelachvili:2011:intermol}. 
+Ions in these double layers get stuck to the surface, or adsorb, which is sometimes referred to as specific binding. Zwitterionic lipid bilayers have no net charge before ions are adsorbed,
+so this adsorption
+determines the surface charge density on the substrate. This charge is measured experimentally using the electrophoretic mobility of the vesicle. Interpretation
+of such experiments requires one to define a surface, often called the ``slip-surface'' where solvent 
+beyond that point
+can be represented by a dielectric continuum. The electrostatic potential at this surface is the $\zeta$--potential.
+In simulations the interface is not a simple surface, but a region {without a clear point of delineation}. 
+
+\subsubsection{Hydration boundary}
+We {identify} this 
+slip-surface boundary as the point where 
+water orientational ordering is negligible, i.e.
+beyond the ``slip-surface'' 
+boundary water {quadrupoles} are {sufficiently isotropic,
+giving dielectric properties of water similar to that of bulk solvent}.
+We compute this by first dividing the box into 
+slices along the direction normal to the bilayer. 
+For each water within a slice we 
+compute the average value of first and second order legendre polynomial of 
+the cosine of the angle between the box z-axis and
+the water O-H bond vector, and then average these values over the last 150 ns of simulated time.
+Figure~\ref{fig:h2order:ch2}~shows the water order parameters 
+as a function of the distance of a slice from the bilayer center.
+\begin{figure}
+    \caption[Water orientational order parameters]{Water order parameters.   
+        {The P1 and P2 calculated for monovalent cations (a,c) show greater 
+            organization in the bulk region and the B\textsubscript{-2} regions, and less organization within 
+            the lipid-occupied regions of the system (B\textsubscript{+} and B\textsubscript{-1}) compared to the simulation without salt. 
+        } 
+{On the other hand, with the presence of \mg salts we observe an overall less pronounced effect in the
+bulk and B\textsubscript{-2} regions compared to the system without salt (b,d).}
+}
+    
+    \label{fig:h2order:ch2}
+    \includegraphics[width=0.5\textwidth]{Figure_3_ch2.eps}
+\end{figure}
+
+The first order parameter describes the in-out ordering of the bond vector with respect to the 
+box z-axis -- a vector parallel to the axis and pointing normal to the bilayer would have a positive
+ordering, and a vector pointing into the bilayer would have a negative ordering. We see that waters at the surface
+of each bilayer have a significant outward orientation at the bilayer surface, and that reverses as we move
+closer to the bilayer center. When compared to the system simulated without ions, we see that
+the monovalent ions perturb the water in-out orientation 
+more than Mg\textsuperscript{2+}, especially in the case of the \mgmicro
+parameters.
+
+The second order parameter
+roughly describes the organization of the quadrupole moments of water, {and the value of this parameter
+can be used to compute the} quadrupolar splitting values determined in 
+deuterated water NMR experiments~\cite{aaman:2003,kruczek:2017:ether}.
+The vertical dotted lines in figure~\ref{fig:h2order:ch2} denote regions of interest in the bilayer 
+based on the {sign} of the second order parameter. We call the innermost region of negative ordering
+B$_{-1}$, which ends when the values become positive. This next region of positive ordering is
+called B$_{+}$, and the following region of negative ordering is B$_{-2}$. Each bilayer system with ions
+has these regions, but they are at differing distances from the bilayer center.
+It should be noted that beyond the $B_{-2}$ region the ordering does not abruptly reach zero in the systems
+simulated with salt.
+
+{
+    Figure~\ref{fig:h2order:ch2} shows monovalent ions have 
+    less organization in the B\textsubscript{-1} region (inside the lipid headgroup) when compared to that of the divalent ions,  
+    whereas in regions B\textsubscript{+} and B\textsubscript{-2} (closer to the bilayer surface) the divalent ions show significantly
+    less organization compared to that of monovalent salts.} 
+The hydration boundary is determined by  
+fitting an exponential decay to the second water order parameter starting
+at the minimum of the B$_{-2}$ of the histogram.
+The decay length is used to demarcate the point where the ordering becomes zero -- water beyond this region is
+regarded as bulk solvent. The location of the hydration boundary 
+is noted in figure~\ref{fig:h2order:ch2}, and the distance 
+to this point from the bilayer center is listed in table~\ref{tab:struc}.
+
+\subsubsection{Poission-Boltzmann Theory}
+With the boundary defined, we look to the region of bulk solvent to examine the behavior of ions and ascertain that
+they follow the predictions of PB-theory\cite{israelachvili:2011:intermol}. 
+The purpose of this endeavor is to distinguish the ions in bulk solvent from those that are adsorbed,
+as the density of the adsorbed ions are expected to deviate from PB-theory predictions.
+We must first compute all the model parameters for the number density and electrostatic potential predicted by
+PB-theory, and compare our simulation results to this prediction.
+The PB-theory assumes 
+that the number density of ions follow a Boltzmann distribution:
+\begin{equation}
+    \rho(z) = \rho_0 \exp\big({- \bar z \text{\si{\elementarycharge}} \beta \psi(z)}\big)\text{,}
+    \label{eq:gcnum}
+\end{equation}
+where $\rho_0$ is the ion density in the center of the dielectric continuum, $\bar z$ is the valency of the ion, 
+$\beta = (k_bT)^{-1}$, \si{\elementarycharge} is the charge
+on an electron, and $\psi(z)$ is the electrostatic potential. The surface is defined by the hydration boundary of each system. 
+The lengths of the solvent occupied regions, $D$, {in each system is} found by measuring the distance across the solvent from the 
+hydration boundary of one leaflet of the bilayer to the other. 
+These values are listed in table~\ref{tab:gctheory:ch2}.
+\begin{table}
+    \caption[Poisson-boltzmann theory parameters]{Poisson-boltzmann theory parameters. These parameters are computed for each
+    simulated system studied (excepting the bulk density $(\rho_{0,i})$, 
+    which we fit to our simulation results). These are then used to compute the
+    number density distribution and the electrostatic potential as described by 
+    Poisson-Boltzmann theory to compare to our simulation results.
+    \sig is the surface charge density of the bilayer, D is the length
+    of the bulk-solvent occupied region of the box, K is the Debye
+    screening length, and $\rho_{0,i}$ is the number density of the particular 
+    ion at the center of bulk solvent.}
+    \label{tab:gctheory:ch2}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}\hline
+        Parameter                    & \na  & \li    & \mgmbnbfix    & \mgmicro \\\hline
+        \sig ($e/nm^{2}$)            &0.161 &0.182   &0.0690  &0.0476     \\\hline
+        D~($nm$)                     &26.927&26.557  &26.658  &25.226     \\\hline
+        K~($nm^{-1}$)                &3.331 &3.333   &3.913   &3.921      \\\hline
+        $\rho_{0,cation}$~($nm^{-3})$&0.059 &0.060   &0.091   &0.092      \\\hline
+        $\rho_{0,anion}$~($nm^{-3})$ &0.062 &0.063   &0.183   &0.185      \\\hline
+    \end{tabularx}
+\end{table}
+This places the surfaces at $z=\pm D/2$~nm, where $z=0$ is the center of the solvent-occupied region of the simulation box.
+The electrostatic potential $\psi(z)$ is modeled as a sum between two Debye-Huckle potentials~\cite{israelachvili:2011:intermol}:
+\begin{align}
+    &\psi_{1}(z) = \psi_s \exp\bigg({-K(z+\frac{D}{2})}\bigg)\\
+    &\psi_{2}(z) = \psi_s \exp\bigg({K(z-\frac{D}{2})}\bigg)\\
+    \label{eq:gcpot}
+    &\psi(z) = \psi_1(z) + \psi_2(z) - \big({\psi_1(0)+\psi_2(0)}\big)\text{,}
+\end{align}
+where $\psi_s = \frac{\sigma}{\epsilon_0\epsilon} K$ is the electrostatic potential at the bilayer surface
+as defined by the hydration boundary, $\epsilon$ 
+is the dielectric constant of SPC/E water $\epsilon=70.7$~\cite{reddy:1989:dielectric}, and $\sigma$
+is the surface charge density of the bilayer leaflet~\cite{israelachvili:2011:intermol}. 
+
+$\sigma$ is determined for
+each system by integrating the charge density of all species within the hydration boundary on either side of the bilayer.
+This charge divided by the box area is the surface charge density.
+These values can be seen in table~\ref{tab:gctheory:ch2}. {Since our
+    phospholipid is zwitterionic, all of the surface charge comes from the
+ions that have accumulated within 
+the hydration boundary (see figure~\ref{fig:dens:ch2})}
+\begin{figure}
+    \caption[Number densities]{Number density of lipid headgroup species and
+    ions near the bilayer interface. (a-b) We report that the 
+    monovalent cations show peaks near the phosphate, with
+    accumulation of an anion peak that resembles the double layer.
+    (c-d) \mg does not show significant accumulation in the 
+    lipid bilayer headgroup compared to the monovalent ions,
+    with a similarly small anion peak. However, in all systems
+    studied, ions are accumulated near the phosphorus.
+    Integrating the number density of cations within the hydration boundary,
+    denoted by the purple vertical dashed line, gives the number of ions that are
+    sterically bound. The orange vertical dashed line delineates the \dhh~and the 
+    red vertical dashes
+delineate the D\textsubscript{C}~of the bilayer.}
+    \label{fig:dens:ch2}
+    \includegraphics[width=\textwidth]{Figure_4_ch2.eps}
+\end{figure}
+
+Returning to equation~\ref{eq:gcpot}, $K$ is the inverse Debye length,
+\begin{equation}
+K=\sqrt{\sum_{i} \rho_{0,i} \bar z_i^2\frac{\text{\si{\elementarycharge}}^2}{\epsilon_0 \epsilon k_bT}},
+\label{eq:debyelength}
+\end{equation}
+where $\rho_{0,i}$ is the density of each ion in a given system at the center of bulk solvent.
+This is taken as an average of the number density of each ion in the solvent occupied region of the box.
+
+Finally, we fit equation~\ref{eq:gcnum} to the density of anions in 
+bulk solvent via $\rho_0$. The comparisons
+can be seen in figure \ref{fig:catgcdens:ch2}.
+\begin{figure}
+    \caption[Ion number densities]{Number density of cations and anions in the bulk solvent-occupied region of each
+    simulated system, compared with theoretical predictions from PB-theory for each calculated $\sigma$. PB-theory predictions
+    correspond well with the simulation results within the region bounded by the hydration boundary.}
+    \label{fig:catgcdens:ch2}
+    \includegraphics[width=\textwidth]{Figure_5_ch2.eps}
+\end{figure}
+Past the hydration boundary of the lipid bilayer, it can be seen that the density of anions continues 
+to climb monotonically. Additionally, the density of cations 
+drops monotonically to a trough value before climbing closer to the bilayer center, near the phosphate groups 
+(see figure \ref{fig:dens:ch2} and \ref{fig:catgcdens:ch2}). 
+
+
+We also compare {the} 
+electrostatic potential from our simulations 
+to the potential from PB-theory 
+(figure \ref{fig:potgc:ch2}). 
+\begin{figure}
+    \caption[Electrostatic potential in bulk solvent]{Electrostatic potential in the bulk solvent-occupied region compared to predictions from PB-theory. We report good
+    agreement between the theoretical potential shown in green, and the simulation results shown in black, within the region bounded by the hydration
+    bounds of the lipid bilayer.}
+    \label{fig:potgc:ch2}
+    \includegraphics[width=\textwidth]{Figure_6_ch2.eps}
+\end{figure}
+The electrostatic potential for each simulated system can be computed 
+by twice integrating the Poisson equation 
+\begin{equation}
+    \phi(z)=-\frac{1}{\epsilon_0}\int_{0}^{z}\int_{0}^{z'}\rho(z) dz dz' + C_1z + C_2\text{.}
+    \label{eq:poissonint}
+\end{equation}
+We set the boundary conditions that
+the electric field in bulk solvent must be zero, and the electrostatic potential at the box edge must be zero.
+The electrostatic potential from simulation agrees well with the prediction from PB-theory.
+
+
+\subsection{Adsorbed ions}
+\label{sec:boundions}
+The total number of adsorbed ions are counted as the number of ions within the ``slip-surface'' or ``hydration-boundary'' of the bilayer, and
+further characterization is based on the level of hydration of the ion.
+Binding constants from the Langmuir Isotherm model are often computed in experiments to describe ion binding affinity for
+surfaces; however, this model requires a fixed number of binding sites per lipid. The actual number of binding sites
+per lipid is not known. Therefore, we report the number of ions adsorbed per lipid $(\theta)$, which 
+{is related to} 
+the binding affinity of each ion for the lipid bilayer.
+We observe 0.51 \na per lipid bound, 0.57 \li per lipid, 0.13 \mg per lipid in the \mgmbnbfix system, and 0.10 \mg per lipid
+in the \mgmicro system. We see a substantially larger number of \na and \li adsorbed per lipid than
+\mg, which may be reflective of the amount of space occupied by each ion, and seems to follow the
+binding modes such that the more dehydrated ions correlate with a larger number of ions adsorbed per lipid.
+The fraction of cations adsorbed in each mode of adsorption can be seen in table~\ref{tab:cationfrac:ch2}, and the fractions
+of \cl anions adsorbed can be seen in {supporting table S2}.
+\begin{table}
+    \caption[Fractions of ions adsorbed per lipid]{Fractions per lipid of cations perfectly adsorbed, imperfectly adsorbed, sterically adsorbed, and non-adsorbed cations
+        {averaged over the last 150~ns of simulation time}. These are computed
+    by counting the number of waters in the first-coordination shell of every ion in the simulation box in every frame. For the total number
+    of adsorbed ions, we
+    only check if the ion is within the hydration boundary of the bilayer. We then subtract the number within this region that are
+    completely dehydrated -- these are the perfectly adsorbed ions. We further subtract any ions that have lost 
+    one or more waters -- the imperfectly adsorbed
+    ions. The remaining are considered sterically adsorbed. 
+    We also report the total number of bound ions per lipid as a measure 
+    of the affinity of the ion to the lipid bilayer -- the number of \mg
+    ions per lipid is fall smaller than that for the more perfectly adsorbed ions \li and Na\textsuperscript{+}.}
+    \label{tab:cationfrac:ch2}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}\hline
+    Adsorbed cations / lipid & \na & \li & \mgmbnbfix   & \mgmicro \\\hline
+    Total     $\theta$       &{0.472}&{0.575}&{0.129}&{0.091}     \\\hline
+    Steric    $\theta_s$     &{0.010}&{0.015}&{0.116}&{0.071}     \\\hline
+    Imperfect $\theta_I$     &{0.068}&{0.165}&{0.008}&{0.020}     \\\hline
+    Perfect   $\theta_P$     &{0.394}&{0.395}&{0.005}&{0.000}     \\\hline
+    \end{tabularx}
+\end{table}
+\cl adsorption fractions follow a similar trend to that of the total number of cations bound, but adsorption
+is almost entirely in the steric modality.
+
+
+
+
+\subsubsection{Adsorption modalities}
+
+% The total number of adsorbed ions can be seen in~\ref{tab:struc}.
+Further characterization of the adsorbed ions begins by examining the first-shell coordination partners of cations in each system.
+This can be counted by first determining a cutoff value for the first hydration shell of each ion 
+-- the values for this cutoff are
+3.2~\AA~for Na\textsuperscript{+}, 2.7~\AA~for Li\textsuperscript{+}, 3.3~\AA~for Mg\textsuperscript{2+}, 
+and 3.0~\AA~for Cl\textsuperscript{-}. 
+These values are determined from radial distribution 
+functions for water oxygen (or water hydrogen in the case of \cl) around each. 
+This cutoff is used to produce a neighborlist for ions
+across each simulation in every frame, and count the number of neighbors within this cutoff. 
+These data {are} histogrammed and averaged over
+the last 150ns of simulation time. The results for this are presented in figure~\ref{fig:cood:ch2}.
+\begin{figure}
+    \caption[Coordination partners for \li and \mg]{First shell coordination partners 
+        for \li and \mg in each simulation. 
+        These are computed over the last 150ns of 
+        simulation time in each system by counting 
+        the atoms of each species within a cutoff 
+        of each ion in the system, and histogramming 
+        the data based on the position of the ion. 
+        The dotted vertical lines denote the various 
+        bilayer surfaces -- the vertical black
+        line delineates the hydration boundary of the bilayer,
+        the vertical blue line delineates the D\textsubscript{HH},
+        and the vertical red line delineates the D\textsubscript{C}.
+        \li (a) retains some water 
+        coordination well into the bilayer
+        interface.
+        \mgmbnbfix (b) on the other hand does not lose
+        nearly any first-shell coordinating
+        waters in the bilayer, with some exchange for phosphate
+        oxygens. The \mgmicro (c) parameters yield again more exchange but 
+        relatively far less than the monovalent
+    ions.}
+    \label{fig:cood:ch2}
+    \includegraphics[height=0.7\textheight]{Figure_7_ch2.eps}
+\end{figure}
+
+The number of perfectly adsorbed ions is determined by counting the number of ions without any remaining 
+waters in their first coordination shell. It is observed that in the \na system, a 
+majority of the ions adsorbed to the bilayer are completely dehydrated. %(see table~\ref{tab:cationfrac}). 
+The \li system has a similar fraction of perfectly adsorbed ions compared to Na\textsuperscript{+}, 
+and practically no perfectly adsorbed 
+ions are seen in any of the \mg simulations. \cl anions are not seen adsorbed perfectly in any simulation.
+
+Similarly to the perfect adsorption case, imperfectly adsorbed ions are counted as ions with one or more waters in their 
+first coordination shell, but missing at least one
+water from the shell. {We use the number of coordinating waters of an ion in the bulk solvent region
+    of our simulation as the maximum coordination number for the ion (Figure 7). This
+gives a coordination number of 4 for \li and 6 for 
+Mg\textsuperscript{2+}.} We calculate 
+{the number of imperfectly adsorbed ions} by counting the number of ions with 
+one or more water missing from their hydration shell, and then subtracting the number of perfectly adsorbed ions.
+We see more than twice the fraction of these ions in the \li system compared to the \na system. \mg shows an insignificant
+number of imperfectly adsorbed ions. \cl adsorbs in a large fraction imperfectly, as they begin to interact with the headgroup trimethylammonium.
+
+The remaining ions are considered sterically adsorbed -- this number is whatever ions remain after subtracting the 
+perfect and imperfectly adsorbed ions from the number of overall adsorbed ions based on the position of the hydration boundary. 
+\mg seems to have most of the ions in this adsorption mode, where \na and \li do not 
+adsorb in this way in significant numbers. Additionally, \cl shows significant steric adsorption.
+
+These data raise the question, what determines the mode of adsorption for a given ion? Since everything else, such as
+the substrate and the solvent, are held constant, the magnitude of the electric field at the position of the hydration shell
+of each ion is all that remains to determine the adsorption modality of the ion (figure~\ref{fig:cationfrac}).
+\begin{figure}
+    \caption[Ion adsorption modalities]{Fractions of ion-adsorption modality per each simulated system as a function of electric field strength. Here we 
+    show that the fractions of ions adsorbed in each modality follow a trend with an increasing electric field strength at the
+    hydration shell of the cation. The overall trend is that the cations with the weakest field at the hydration shell position
+    adsorb more perfectly, and as the field strength increases more ions adsorb imperfectly and then sterically. We note
+    that little correlation with field strength can be seen in the total number adsorbed per ion.}
+    \label{fig:cationfrac:ch2}
+    \includegraphics{Figure_8_ch2.eps}
+\end{figure}
+The electric field strength of each ion is calculated by applying Coulomb's law to a point charge, placing the test charge at the 
+position of the first hydration shell of the ion in question. We note that the \mgmbnbfix ion keeps waters slightly closer in the hydration shell
+compared to the \mgmicro model{,}{resulting in} a stronger electric field 
+produced at this point by that ion.
+The largest ion with the smallest charge-density \na dehydrates completely in the largest fraction. \li is smaller, and thus the field near
+the first shell is stronger and can hold waters a little better than \na. \mg is similar in size to \li, but has a 2+ charge and
+holds onto waters substantially more than either of the monovalent ions.  
+We also note that the $\norm{\vec{E}}$ does not exhibit strong correlation with the fraction of the total number of ions adsorbed in each system, it
+only determines the adsorption mode. 
+
+\section{Conclusions}
+Ion adsorption to porous interfaces is a complex interplay 
+between solvent--surface, solvent--ion, and solvent--solvent
+interactions. With the solvent--surface and solvent--solvent interactions 
+held constant, we identify
+three different adsorption modalities of ions based on the degree of 
+dehydration of the ion upon adsorption. 
+The binding modality of a particular ion is significantly correlated 
+with the electric field strength of the ion
+at the position of the first hydration shell, with stronger fields 
+encouraging less dehydration of the ion upon
+adsorption to the surface {(figure 8)}. This affect appears irrespective of the force-field 
+used in the case
+of \mg, which primarily adsorbs in the non-Langmuir type steric modality.
+
+
+Furthermore, we identify several bilayer structural
+parameters that can be verified experimentally via x-ray scattering, neutron
+scattering,
+or various NMR methods {(figures 1, 2, and 3 respectively).}
+While the effect on lipid bilayer structure is not obvious in
+the electron density {(figure 1)}, the pertubation can be seen in the \db~and water density --
+the less hydrated ions induce slight thickening of the lipid bilayer. This
+is reinforced by the chain ordering, where these ions increase chain ordering {(figure 2)} 
+while the hydrated ions leave the lipid bilayer structure similar to that of the no-salt case.
+These two results can be verified experimentally via solvent deuterium NMR, and lipid chain NMR.
+In the case of POPC, we expect deuterium solvent quadrupolar splitting values will be 
+{larger} 
+for the less hydrated ions \na and \li when compared to the more hydrated Mg\textsuperscript{2+} {(figure 3)}. 
+We also expect the lipid chain order parameters to follow the opposite trend,
+with the monovalent ions inducing more ordering and \mg inducing a smaller change from the no-salt system.
+We also expect that the adsorption of \mg will be less detectable via the 
+electrophoretic mobility of a vesicle in an MgCl salt solution, as
+the energy required to remove a hydrated ion from 
+beneath the slip-surface of a vesicle may be low enough to allow their escape, while a dehydrated ion may remain
+adsorbed.
+These experiments are needed to verify
+these conclusions. 
+
+\chapter[Alteration of bilayer structure by adsorbed ions]{Alteration of lipid bilayer structure by adsorbed ions}
+\chapter{Conclusions}
+IDK Man I don't know what to say here! I guess I should read all of that one more time before I write this part...
+\clearpage
+\bibliography{refs}
+\end{document}
+
+
