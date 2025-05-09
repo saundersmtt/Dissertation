@@ -1,0 +1,217 @@
+\documentclass{article}
+\usepackage[letterpaper,margin=1in,footskip=0.25in]{geometry}
+\fontfamily{cmr}
+\usepackage[final]{changes}
+\usepackage{lipsum}
+\usepackage[nottoc]{tocbibind}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{flafter}
+\usepackage{floatrow}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+%\usepackage{floatflt}
+
+\usepackage{placeins}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\graphicspath{{figures/}}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{appendix}
+\usepackage{amsmath}  % usually already loaded
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{cases}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage{indentfirst}
+\usepackage{hyphenat}
+\usepackage{xspace}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{xcolor}
+\usepackage{lineno}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[superscript]{cite}
+\usepackage{lineno}
+\newcommand{\sigmaij}{$\sigma_{ij}$}
+\newcommand{\epsilonij}{$\epsilon_{ij}$}
+\newcommand{\db}{$\text{D}_\text{B}$}
+\newcommand{\dhh}{$\text{D}_\text{hh}$}
+\newcommand{\dc}{$\text{2D}_\text{C}$}
+\newcommand{\al}{$\text{A}_{\text{L}}$}
+\newcommand{\vl}{$\text{V}_{\text{L}}$}
+\newcommand{\vh}{$\text{V}_{\text{H}}$}
+\newcommand{\vc}{$\text{V}_{\text{C}}$}
+\newcommand{\sig}{$\sigma$}
+\newcommand{\eps}{$\epsilon$}
+\newcommand{\na}{Na\textsuperscript{+}}
+\newcommand{\li}{Li\textsuperscript{+}}
+\newcommand{\mg}{Mg\textsuperscript{2+}}
+\newcommand{\cl}{Cl\textsuperscript{-}}
+\newcommand{\mgcl}{MgCl\textsubscript{2}}
+\newcommand{\nacl}{NaCl}
+\newcommand{\licl}{LiCl}
+\newcommand{\mbnbfix}{MB-NB-fix~}
+\newcommand{\mbnbfixmicro}{Grotz \etal~} %CHANGED THIS
+\newcommand{\nambnbfix}{Na\textsuperscript{+}--Saunders \etal}
+\newcommand{\limbnbfix}{Li\textsuperscript{+}--Joung and Chetatham}
+\newcommand{\mgmbnbfix}{Mg\textsuperscript{2+}--Li \etal} %CHANGED THIS
+\newcommand{\mgmicro}{Mg\textsuperscript{2+}--Grotz \etal}
+\newcommand{\mglbrules}{Mg\textsuperscript{2+}--Li \etal}
+
+\begin{document}
+Accurately modeling ion--lipid interactions remains a persistent challenge in computational biophysics.
+Alkali and alkaline earth metal cations associate with zwitterionic membranes, modulating the electrostatic
+potential near the bilayer and influencing lipid packing, water structure, and the behavior of membrane-
+associated proteins. These subtle but consequential effects impact processes such as signaling, fusion, and
+membrane phase behavior. However, widely used molecular dynamics (MD) model parameters (force-fields) often differ substantially
+in their predictions of ion dehydration and coordination.
+
+My dissertation focuses on improving and evaluating ion--lipid interaction terms in force-fields.
+I have developed parameters for \na{} and \li{}, and am currently characterizing two distinct \mg{} models
+in simulations of POPC and DMPC bilayers. Each \mg{} parameter set (2024 and 2025) is paired with
+two water--ion interaction models developed by other groups: one reproducing hydration free energies and the
+other tuned to match experimental water residence times. 
+
+The cation--lipid interaction terms were developed from DFT-optimized clusters using ligands representing the 
+ester and phosphate fragments of the lipid.
+In our newer (2025) parameterization of \mg, we preserve sixfold coordination by replacing missing ligands with
+water--an approach adapted from recent work with \mg{} and ATP. Unexpectedly, simulations of DMPC
+with the 2025 model resulted in a larger number of \mg{} adsorbed, despite DMPC having a smaller area per lipid than POPC.
+Tighter packing was expected to increase inner-shell coordination between \mg{} and lipid oxygens, but not necessarily increase adsorption overall. 
+This result has prompted a comparative study using the 2024 model in the same DMPC
+systems, which is currently ongoing and represents the final analysis needed to complete my dissertation.
+
+Beyond resolving force field behavior, this project supports a longer-term goal: enabling multiscale
+simulations of membrane organization. Our lab has previously used this lipid force field to develop parameters for mean-field modeling of
+cholesterol--phospholipid systems and systems containing lipid-like molecules such as sphingomyelin.
+However, we lacked reliable and experimentally validated parameters for ion--lipid interactions, 
+preventing their inclusion in these models. My current work addresses this limitation by
+identifying which ion observables--adsorption modes, and adsorbed charge density--may
+translate into new terms in mesoscopic models. Together with our validated monovalent ion models, these
+results will lay essential groundwork for future study of membrane, and membrane protein dynamics and organization 
+at the mesoscopic and cellular scale.
+
+During the Dissertation Completion Fellowship semester, I will complete the analysis of the DMPC+2024 simulations, 
+finalize the POPC/DMPC comparison, and integrate this work into my dissertation’s
+final chapter. I will also finish and submit the associated manuscript, prepare for my defense, and complete
+formatting and final revisions. I expect to defend by late September 2025 and submit my final ETD by early
+October.
+
+%Accurate modeling of ion--lipid interactions remains a persistent challenge in computational biophysics.
+%Alkali and alkaline earth metal cations associate with zwitterionic membranes, 
+%modulating electrostatic potential near the bilayer and influencing lipid packing, water structure, and the behavior of membrane-associated proteins.
+%These subtle but consequential effects propagate into processes such as signaling, fusion, and membrane phase behavior.
+%Yet, computational model parameters (force-fields) vary widely in their prediction of ion dehydration and coordination.
+%
+%My dissertation focuses on development and evaluation of ion--lipid interaction terms in molecular dynamics models.
+%I have developed interaction models for \na~and \li, and am currently characterizing two Mg\textsuperscript{2+} 
+%parameter sets in simulations of 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC) and 
+%1,2-dimyristoyl-sn-glycero-3-phosphocholine (DMPC) bilayers,
+%using two distinct water--ion interaction models developed by other groups:
+%one designed to match hydration free energies, and another tuned to reproduce experimentally motivated water residence times in the Mg\textsuperscript{2+} first coordination shell.
+%The Mg\textsuperscript{2+} parameters themselves were developed using ion clusters optimized with density functional theory (DFT),
+%where model lipid ligands were arranged to reflect typical phosphate and ester coordination environments.
+%In our more recent (2025) parameterization, the clusters retain sixfold coordination 
+%in systems with fewer ligands by substituting water for missing sites--an approach adapted from recent Mg\textsuperscript{2+}--ATP parameterization strategies.
+%This refinement led to unexpected behavior:
+%simulations using the 2025 Mg\textsuperscript{2+} model produced significantly more adsorption in DMPC than anticipated,
+%despite its smaller surface area-per-lipid.
+%While greater inner-shell coordination between ions and lipid oxygens was expected in DMPC, the total number of adsorbed ions was higher than expected.
+%These results have motivated a comparison with our previously published 2024 Mg\textsuperscript{2+} model,
+%which is currently being tested using both water--ion interaction models.
+%This work is already underway and represents the final stage of analysis needed to complete my dissertation.
+%
+%This project also supports a longer-term goal of enabling multiscale membrane modeling.
+%Our group previously applied this lipid force-field to cholesterol--phospholipid systems, and systems with lipid-like molecules like sphingomyelin, aiming to construct mesoscopic models of lateral domain formation.
+%However, the lack of reliable and experimentally-validated atomistic data on ion--lipid interactions prevented us from incorporating cations into our coarse-grained model.
+%The current work addresses that gap by identifying which observables--such as adsorption modalities, the quantity and density of adsorbed charges, and acyl-chain ordering—show patterns
+%that could inform new interaction terms in mesoscopic models.
+%Together with insights from our monovalent ion parameterizations, these data will lay 
+%essential groundwork for future efforts to simulate lateral membrane organization and protein distribution at whole-cell scales.
+%
+%During the Dissertation Completion Fellowship semester,
+%I will complete the analysis of the DMPC + 2024 Mg\textsuperscript{2+} simulations,
+%finalize the comparative POPC/DMPC ion binding study,
+%and incorporate this work into my final dissertation chapter.
+%I will also complete and submit the accompanying manuscript,
+%prepare for my defense,
+%and finalize formatting and revisions.
+%With this timeline,
+%I expect to defend by late September 2025 and submit my final ETD by early October.
+
+
+%This project addresses the need for accurate molecular modeling of ion interactions with lipid membranes
+%— a persistent challenge in biophysical chemistry. Divalent cations like Mg\textsuperscript{2+} can associate
+%with zwitterionic lipids, modulating the electrostatic potential near the membrane and influencing water
+%structure, lipid packing, and interactions with membrane-associated proteins. These subtle but significant
+%changes have downstream effects on processes such as signaling, fusion, and membrane phase behavior.
+%However, force fields vary widely in how they model these interactions, particularly with respect to ion
+%dehydration and coordination, making reliable simulation challenging.
+%
+%My dissertation focuses on evaluating and comparing two Mg\textsuperscript{2+} parameterizations across
+%POPC and DMPC bilayers, using two different water--ion interaction models: one designed to match hydration
+%free energies, and another optimized to reproduce realistic water residence times in the ion’s first coordination
+%shell. POPC and DMPC share the same headgroup but differ in acyl-chain composition and packing, offering a
+%useful contrast in membrane structure while controlling for headgroup chemistry.
+%
+%Our group has previously used this force field family to study cholesterol--POPC mixtures, with the goal of
+%constructing mesoscopic models for lateral domain formation. However, the lack of reliable atomistic data on
+%ion--lipid interactions prevented us from incorporating divalent cation effects into coarse-grained models.
+%This project addresses that gap by producing well-characterized atomistic simulations of Mg\textsuperscript{2+}
+%binding to simple membranes, identifying which observables (e.g., ion density profiles, adsorption depth,
+%and chain order) are robust across conditions and which are sensitive to force field choice. Together with
+%insights from our monovalent ion parameterization efforts, these results can serve as inputs or constraints
+%for future coarse-grained or continuum models --- a step toward simulating membrane behavior at whole-cell
+%scales.
+%
+%Recent results from DMPC simulations using the 2025 Mg\textsuperscript{2+} model showed a surprisingly high
+%degree of ion adsorption, despite the smaller area per lipid in DMPC that would normally reduce surface
+%availability. While increased inner-shell coordination between ions and lipids was expected, the total number
+%of ions bound to the bilayer was much higher than anticipated. This observation triggered a deeper comparison
+%with our earlier Mg\textsuperscript{2+} parameterization, which is now underway using 1000\,ns simulations
+%with both water--ion interaction models. The results of this comparison will complete my final dissertation
+%chapter.
+%
+%\vspace{1em}
+%\noindent\textbf{Timeline:}
+%\begin{itemize}
+%  \item \textbf{Summer 2025 (pre-fellowship):} Complete 1000\,ns DMPC + 2024 Mg\textsuperscript{2+}
+%    simulations; analyze coordination behavior and compare to POPC; finalize and submit POPC
+%    Mg\textsuperscript{2+} paper characterizing parameterization choices; draft and revise the
+%    DMPC/POPC dissertation chapter.
+%  \item \textbf{Fall 2025 (fellowship semester):} Complete the DMPC/POPC paper; integrate chapter
+%    into dissertation; revise with advisor feedback and finalize formatting; submit to committee and
+%    prepare defense; defend in late September 2025; submit final ETD by early October.
+%\end{itemize}
+
+
+%Studying cellular membranes is a complex task, as they have many components and are exposed to very complex and inhomogeneous solutions. If we aim to understand
+%these structures, we must understand all of the component parts individually so that we can eventually study how they interact. One major component of these
+%membranes are the phospholipids themselves -- these are not a passive member of the structure, but are responsible for structure and two-dimensional
+%organisation (such as lipid-rafts which can sequester specific proteins for functional purposes). Phase behavior and raft forming has been studied extensively in pure solvent,
+%and effects from different lipids have been studied as well. However, the effect of ions on the formation of these rafts has not been studied substantially. Simulation studies of this
+%kind have been limited by our models of ion-lipid interactions. To this end, we have developed a method to produce lennard-jones interaction cross-terms to produce parameters that
+%improve the local-interactions in clusters of ions and small molecule lipid mimetics, which can have significant effects on the larger condensed phase simulations. In simulations with \na and POPC
+%we not improved reproduction of experimental SAXS and SANS results. However, when we turn to a divalent ion \mg, we find that experimental results at the concentrations of ions that are required
+%for sampling in simulations are limited. Thus, we have tried several methods to develop interaction cross terms -- following our methodology with \na and \li, and also following the method used
+%to develop ion-DNA interaction terms by our group. These result in parameters that give very different behavior in lipids. We note that \na and \li tend to adsorb in a way that
+%dehydrates the ion and replaces those waters with lipid parts, which we call Langmuir-type adsorption. \mg tends to adsorb in a much more steric modality, remaining in the lipid bilayer
+%region but not dehydrating substantially. However, our more recently developed parameters combined with a \mg-water interaction term developed to increase water exchange from the first coordination shell
+%of \mg result in a substantial number of ions losing one/two water molecules within the bilayer surfacial region. We note a trend -- that the number of charges adsorbed in non-steric modes tend to
+%perturb the bilayer structure such that the bilayer is thicker than the equivalent no-salt simulations. 
+%We currently are working on understanding the differences between these parameters, with the hope to improve our understanding of how small-molecule interactions lead to results in the lipid bilayer.
+%Additionally, to further understand these parameters we have started to simulate a different lipid, DMPC, which packs more closely than POPC in pure water. This will inform us on how the pertubation 
+%from these adsorbed charges depends on the type of lipid in the bilayer. This all together is a significant step towards understanding how these simulations behave
+
+\end{document}
