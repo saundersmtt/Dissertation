@@ -1,3 +1,79 @@
+# Chapter 1 Outline: Introduction and Methods
+
+## 1.1 Membranes as Complex Interfaces
+- Lipid bilayers are dynamic, responsive interfaces.
+- System behavior emerges from water–lipid–ion interactions.
+- Even small changes in one component cascade through the system.
+
+## 1.2 Why Mg²⁺?
+- Biologically essential but chemically stubborn.
+- Strong hydration, slow exchange, low ligand substitution.
+- Sparse experimental benchmarks → simulation is necessary.
+- Existing force fields fail to capture its subtle behavior.
+
+## 1.3 Why Li⁺ and Na⁺?
+- Li⁺ is used therapeutically, hypothesized to mimic Mg²⁺.
+- Chemically weaker, more chaotropic, easier to model.
+- Na⁺ is a useful reference ion: abundant and well-studied.
+- Together, they contextualize Mg²⁺ selectivity and complexity.
+
+## 1.4 Broader Context: Energy Storage Applications
+- Li⁺, Na⁺, and Mg²⁺ are all candidates in battery research.
+- Ion solvation and coordination behavior is key to electrolyte design.
+- Improved force fields have relevance beyond biology.
+- Parameterization methods here can inform cross-disciplinary models.
+
+## 1.5 Modeling Strategies and Limitations
+- Classical MD enables large systems, but uses approximate potentials.
+- Standard Lorentz–Berthelot mixing rules fail for divalent ions.
+- DFT provides accurate ion–ligand energetics for small clusters.
+- Parameter optimization can bridge these methods.
+
+## 1.6 Scope of This Dissertation
+- Develop optimized ion–lipid LJ parameters for Mg²⁺, Na⁺, Li⁺.
+- Benchmark against DFT substitution energies and geometries.
+- Validate parameters against simulation observables:
+  SAXS, electrostatics, hydration, and order parameters.
+- Build models that are realistic, validated, and transferable.
+
+---
+
+## 1.7 Comparing Simulations with Experimental Observables
+
+### 1.7.1 Small-Angle X-ray and Neutron Scattering (SAXS/SANS)
+- Compute electron density and form factors from simulations.
+- Compare peak-to-peak distance (D_HH) to experimental data.
+- Validate bilayer structure and thickness.
+
+### 1.7.2 Electrostatics and Gouy–Chapman Theory
+- Compute ψ(z) by integrating 1D charge density.
+- Use hydration boundary to define effective bilayer surface.
+- Fit PB theory parameters (ψ_s, κ, ρ₀) and compare to simulation.
+
+### 1.7.3 Order Parameters
+- Calculate S_CD for lipid tails and headgroups.
+- Use P₂(z) for water O–H bonds to analyze orientation.
+- Define hydration boundary as zero-crossing in P₂(z).
+- Compute quadrupolar splitting Δν for water comparison to NMR.
+
+### 1.7.4 Water Dynamics and Diffusion
+- Compute MSD and lateral diffusion in different spatial regions.
+- Analyze orientational autocorrelation, fit with 3-time constants.
+- Correlate water mobility with local ordering and ion binding.
+- Note: Diffusion only analyzed for water in Chapter 2.
+
+### 1.7.5 Substitution Energy Matching
+- Define ΔE_sub using DFT: ligand substitution in Mg²⁺(H₂O)₆ clusters.
+- Target clusters represent ester and phosphate binding sites.
+- Compare optimized MD parameters to DFT for energies and distances.
+
+### 1.7.6 Parameter Optimization
+- Use ParOpt and Nelder–Mead to fit σ_ij and ε_ij for ion–lipid LJ terms.
+- Optimize using error in substitution energies and ion–ligand distances.
+- Compare performance to default Lorentz–Berthelot rules.
+- Mg²⁺ 2024 vs Mg²⁺ 2025 parameters discussed in detail.
+
+
 ## 1.X Substitution Energy-Based Parameter Optimization of Ion–Lipid Cross Terms
 
 ### A. Motivation for Custom Cross-Term Parameterization
