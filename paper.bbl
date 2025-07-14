@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -475,6 +475,21 @@ S.~Kurakin, E.~Ermakova, A.~Ivankov, S.~Smerdova, N.~Ku{\v{c}}erka, The effect
   dimyristoylphosphatidylcholine vesicles, Journal of Surface Investigation:
   X-ray, Synchrotron and Neutron Techniques 15 (2021) 211--220.
 
+\bibitem{pabst:2007:rigidification}
+G.~Pabst, A.~Hodzic, J.~{\v{S}}trancar, S.~Danner, M.~Rappolt, P.~Laggner,
+  Rigidification of neutral lipid bilayers in the presence of salts,
+  Biophysical journal 93~(8) (2007) 2688--2696.
+
+\bibitem{inoko:1975}
+Y.~Inoko, T.~Yamaguchi, K.~Furuya, T.~Mitsui, Effects of cations on dipalmitoyl
+  phosphatidylcholine/cholesterol/water systems, Biochimica et Biophysica Acta
+  (BBA)-Biomembranes 413~(1) (1975) 24--32.
+
+\bibitem{yamada:2005}
+N.~L. Yamada, H.~Seto, T.~Takeda, M.~Nagao, Y.~Kawabata, K.~Inoue, Saxs, sans
+  and nse studies on “unbound state” in dppc/water/cacl2 system, Journal of
+  the Physical Society of Japan 74~(10) (2005) 2853--2859.
+
 \bibitem{kucerka:2020}
 N.~Kucerka, E.~Ermakova, E.~Dushanov, K.~T. Kholmurodov, S.~Kurakin,
   K.~Zelinská, D.~Uhr{\'\i}kov{\'a}, Cation--zwitterionic lipid interactions
@@ -513,5 +528,9 @@ M.~J. Abraham, T.~Murtola, R.~Schulz, S.~P{\'a}ll, J.~C. Smith, B.~Hess,
 H.~I. Petrache, S.~W. Dodd, M.~F. Brown, Area per lipid and acyl length
   distributions in fluid phosphatidylcholines determined by 2h nmr
   spectroscopy, Biophysical journal 79~(6) (2000) 3172--3192.
+
+\bibitem{nagle:1993:nmrarea}
+J.~Nagle, Area/lipid of bilayers from nmr, Biophysical journal 64~(5) (1993)
+  1476--1481.
 
 \end{thebibliography}

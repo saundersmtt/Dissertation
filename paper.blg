@@ -2,60 +2,57 @@ This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: paper.aux
 The style file: elsarticle-num.bst
+A level-1 auxiliary file: ch1.aux
+A level-1 auxiliary file: ch2.aux
+A level-1 auxiliary file: ch3.aux
+A level-1 auxiliary file: ch4.aux
 Case mismatch error between cite keys Cordomi:2008 and cordomi:2008
----line 256 of file paper.aux
+---line 8 of file ch4.aux
  : \citation{Cordomi:2008
  :                       ,Cordomi:2009,venable:2013,yoo:2012:improved}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 420 of file paper.aux
- : \bibdata
- :         {refs}
-I'm skipping whatever remains of this command
+A level-1 auxiliary file: ch5.aux
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "pabst:2007:rigidification"
-Warning--I didn't find a database entry for "inoko:1975"
-Warning--I didn't find a database entry for "yamada:2005"
 Warning--I didn't find a database entry for "JACS2025"
-Warning--I didn't find a database entry for "nagle:1993:nmrarea"
-You've used 98 entries,
+You've used 102 entries,
             2952 wiz_defined-function locations,
-            1235 strings with 24954 characters,
-and the built_in function-call counts, 31402 in all, are:
-= -- 2981
-> -- 1205
+            1255 strings with 25487 characters,
+and the built_in function-call counts, 32729 in all, are:
+= -- 3107
+> -- 1260
 < -- 4
-+ -- 467
-- -- 369
-* -- 2572
-:= -- 4390
-add.period$ -- 98
-call.type$ -- 98
-change.case$ -- 96
++ -- 488
+- -- 386
+* -- 2685
+:= -- 4579
+add.period$ -- 102
+call.type$ -- 102
+change.case$ -- 100
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 801
-empty$ -- 3334
-format.name$ -- 460
-if$ -- 7806
+cite$ -- 102
+duplicate$ -- 832
+empty$ -- 3470
+format.name$ -- 480
+if$ -- 8130
 int.to.chr$ -- 0
-int.to.str$ -- 98
-missing$ -- 100
-newline$ -- 305
-num.names$ -- 98
-pop$ -- 517
+int.to.str$ -- 102
+missing$ -- 104
+newline$ -- 317
+num.names$ -- 102
+pop$ -- 536
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1779
+skip$ -- 1850
 stack$ -- 0
-substring$ -- 2448
-swap$ -- 108
+substring$ -- 2560
+swap$ -- 112
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 269
-width$ -- 100
-write$ -- 796
-(There were 2 error messages)
+while$ -- 281
+width$ -- 105
+write$ -- 828
+(There was 1 error message)

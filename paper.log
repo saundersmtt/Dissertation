@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=latex 2025.3.8)  14 JUL 2025 11:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=latex 2025.3.8)  14 JUL 2025 12:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**paper
+**paper.tex -interaction=batchmode
 (./paper.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1017,20 +1017,21 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 )
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 156.
- (./paper.aux
+ (./paper.aux (./ch1.aux) (./ch2.aux) (./ch3.aux
 
 LaTeX Warning: Label `eq:volumeobj' multiply defined.
 
 
 LaTeX Warning: Label `eq:gcpot' multiply defined.
 
+) (./ch4.aux
 
 LaTeX Warning: Label `tab:struc' multiply defined.
 
 
 LaTeX Warning: Label `fig:acylorder' multiply defined.
 
-)
+) (./ch5.aux))
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
@@ -1102,13 +1103,13 @@ Package hyperref Info: Link coloring ON on input line 156.
 \@outlinefile=\write4
 \openout4 = `paper.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 188
+LaTeX Font Info:    Trying to load font information for U+msa on input line 189
 .
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 188
+LaTeX Font Info:    Trying to load font information for U+msb on input line 189
 .
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1119,6 +1120,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ] (./paper.toc
+Underfull \vbox (badness 2753) has occurred while \output is active []
+
+
 
 [2
 
@@ -1128,20 +1132,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-[1] (./paper.lot)
+[3] (./paper.lot)
 \tf@lot=\write6
 \openout6 = `paper.lot'.
 
 
 
-[2
+[4
 
 ] (./paper.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[3
+[5
 
 ])
 \tf@lof=\write7
@@ -1149,57 +1153,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[4]
-
-[5
-
-]
-Chapter 1.
-
+[6]
 
 [1
 
-]
-Chapter 2.
 
+]
+Chapter 1.
+(./ch1.tex)
 
 [2
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Chapter 2.
+(./ch2.tex
 
+[3
 
-
-[3]
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig:energies' on page 5 undefined on input line 361.
+
+
+[5]
+
+LaTeX Warning: Reference `fig:energies' on page 6 undefined on input line 151.
 
 
 Underfull \vbox (badness 4752) has occurred while \output is active []
 
 
 
-[5]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
 [6]
-Overfull \hbox (4.99265pt too wide) in paragraph at lines 482--482
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[7]
+Overfull \hbox (4.99265pt too wide) in paragraph at lines 272--272
 []|$\OML/cmm/m/it/6 ^^[[] \OMS/cmsy/m/n/6 ^^T
  []
 
 
-Overfull \hbox (3.78845pt too wide) in paragraph at lines 482--482
+Overfull \hbox (3.78845pt too wide) in paragraph at lines 272--272
 []|$\OML/cmm/m/it/6 ^^O[]$\T1/cmr/m/n/6 (kJ/mol)| 
  []
 
@@ -1208,19 +1213,14 @@ Underfull \vbox (badness 1874) has occurred while \output is active []
 
 
 
-[7]
+[8]
 File: figures/figure_2_ch1.eps Graphic file (type eps)
  <figures/figure_2_ch1.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5091) has occurred while \output is active []
 
 
 
@@ -1230,6 +1230,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[11]
 File: figures/figure_1_ch1.eps Graphic file (type eps)
  <figures/figure_1_ch1.eps>
 File: figures/figure_s1_ch1.eps Graphic file (type eps)
@@ -1238,28 +1243,28 @@ Underfull \vbox (badness 1701) has occurred while \output is active []
 
 
 
-[11]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 6428) has occurred while \output is active []
 
 
 
 [13]
 
 [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [15]
+
+[16]
 File: figures/figure_4_ch1.eps Graphic file (type eps)
  <figures/figure_4_ch1.eps>
 
@@ -1270,40 +1275,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[16]
-Underfull \vbox (badness 6876) has occurred while \output is active []
-
-
-
 [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [18]
-File: figures/figure_s2_ch1.eps Graphic file (type eps)
- <figures/figure_s2_ch1.eps>
-
-LaTeX Warning: Reference `fig:energies' on page 19 undefined on input line 874.
-
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [19]
+File: figures/figure_s2_ch1.eps Graphic file (type eps)
+ <figures/figure_s2_ch1.eps>
+
+LaTeX Warning: Reference `fig:energies' on page 20 undefined on input line 662.
+
+
+
+
+[20]
 File: figures/figure_3_ch1.eps Graphic file (type eps)
  <figures/figure_3_ch1.eps>
 
-[20]
+[21]
 File: figures/figure_5_ch1.eps Graphic file (type eps)
  <figures/figure_5_ch1.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[21]
+[22]
 File: figures/figure_6_ch1.eps Graphic file (type eps)
  <figures/figure_6_ch1.eps>
 
@@ -1311,7 +1313,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[22]
+[23]
 File: figures/figure_7_ch1.eps Graphic file (type eps)
  <figures/figure_7_ch1.eps>
 
@@ -1322,131 +1324,127 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[23]
-
 [24]
+
+[25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[25]
+[26]
 
-LaTeX Warning: Reference `fig:ch1' on page 26 undefined on input line 1117.
+LaTeX Warning: Reference `fig:ch1' on page 27 undefined on input line 905.
 
 File: figures/figure_s3_ch1.eps Graphic file (type eps)
 <figures/figure_s3_ch1.eps>
 
-[26]
-
 [27]
+
+[28]
 File: figures/figure_s4_ch1.eps Graphic file (type eps)
  <figures/figure_s4_ch1.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[28]
-
 [29]
+
+[30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[30]
+[31])
 
-[31]
+[32]
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1278.
+(hyperref)                removing `\mathsurround' on input line 216.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1278.
+(hyperref)                removing `\z@' on input line 216.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1278.
+(hyperref)                removing `superscript' on input line 216.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1278.
+(hyperref)                removing `\mathsurround' on input line 216.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1278.
+(hyperref)                removing `\z@' on input line 216.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1278.
+(hyperref)                removing `superscript' on input line 216.
 
+(./ch3.tex
 
-
-[32
-
-
-
-
+[33
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[33]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 [34]
-
-LaTeX Warning: Reference `tab:ions' on page 35 undefined on input line 1438.
-
-
-LaTeX Warning: Reference `tab:ions' on page 35 undefined on input line 1446.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [35]
 
+LaTeX Warning: Reference `tab:ions' on page 36 undefined on input line 160.
+
+
+LaTeX Warning: Reference `tab:ions' on page 36 undefined on input line 168.
+
+
+
 [36]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1491.
-
+[37]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1491.
+(hyperref)                removing `\mathsurround' on input line 213.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1491.
+(hyperref)                removing `\z@' on input line 213.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 213.
 
 File: figures/Figure_1_ch2.eps Graphic file (type eps)
 <figures/Figure_1_ch2.eps>
 
-[37]
+[38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[38]
+[39]
 File: figures/Figure_2_ch2.eps Graphic file (type eps)
  <figures/Figure_2_ch2.eps>
 Underfull \vbox (badness 1270) has occurred while \output is active []
 
 
 
-[39]
+[40]
 File: figures/Figure_3_ch2.eps Graphic file (type eps)
  <figures/Figure_3_ch2.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[40]
-
 [41]
+
+[42]
 
 Package siunitx Warning: Unit macro \elementarycharge has been deprecated in
 (siunitx)                this release.
@@ -1463,16 +1461,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[42]
+[43]
 File: figures/Figure_4_ch2.eps Graphic file (type eps)
  <figures/Figure_4_ch2.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[43]
-
 [44]
+
+[45]
 File: figures/Figure_5_ch2.eps Graphic file (type eps)
  <figures/Figure_5_ch2.eps>
 File: figures/Figure_6_ch2.eps Graphic file (type eps)
@@ -1481,25 +1479,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[45]
-
 [46]
 
 [47]
+
+[48]
 File: figures/Figure_7_ch2.eps Graphic file (type eps)
  <figures/Figure_7_ch2.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[48]
-
 [49]
 
 [50]
 
-LaTeX Warning: Reference `fig:cationfrac' on page 51 undefined on input line 19
-13.
+[51]
+
+LaTeX Warning: Reference `fig:cationfrac' on page 52 undefined on input line 63
+5.
 
 File: figures/Figure_8_ch2.eps Graphic file (type eps)
 <figures/Figure_8_ch2.eps>
@@ -1507,10 +1505,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[51]
-
 [52]
-Overfull \hbox (5.41632pt too wide) in paragraph at lines 1934--1947
+
+[53]
+Overfull \hbox (5.41632pt too wide) in paragraph at lines 656--669
 []\T1/cmr/m/n/12 Ion ad-sorp-tion to porous in-ter-faces is a com-plex in-ter-p
 lay be-tween solvent--surface, solvent--
  []
@@ -1520,58 +1518,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[53]
+[54])
 
-[54]
+[55]
 Chapter 4.
-
+(./ch4.tex
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
 
 
-[55
+[56
 
 ]
 
-LaTeX Warning: Citation `pabst:2007:rigidification' on page 56 undefined on inp
-ut line 2019.
-
-
-LaTeX Warning: Citation `inoko:1975' on page 56 undefined on input line 2019.
-
-
-LaTeX Warning: Citation `yamada:2005' on page 56 undefined on input line 2019.
-
-
-LaTeX Warning: Citation `inoko:1975' on page 56 undefined on input line 2021.
-
-
-LaTeX Warning: Citation `yamada:2005' on page 56 undefined on input line 2021.
-
-
-LaTeX Warning: Citation `Cordomi:2008' on page 56 undefined on input line 2025.
-
+LaTeX Warning: Citation `Cordomi:2008' on page 57 undefined on input line 47.
 
 
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
 
 
-[56]
+[57]
 
-LaTeX Warning: Citation `JACS2025' on page 57 undefined on input line 2047.
+LaTeX Warning: Citation `julian:2025:atpcomp' on page 58 undefined on input lin
+e 69.
 
 
 Underfull \vbox (badness 4752) has occurred while \output is active []
 
 
 
-[57]
-
 [58]
 
+[59]
+
 LaTeX Warning: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energ
-ies_nowater.eps' not found on input line 2114.
+ies_nowater.eps' not found on input line 134.
 
 
 ! LaTeX Error: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energ
@@ -1581,9 +1563,9 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2114 ...pointMG6Fadded0_31_energies_nowater.eps}
+l.134 ...dpointMG6Fadded0_31_energies_nowater.eps}
                                                   
-? R
+? r
 OK, entering \nonstopmode...
 
 ! LaTeX Error: Cannot determine size of graphic in figures/alloxygenconstrained
@@ -1593,7 +1575,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2114 ...pointMG6Fadded0_31_energies_nowater.eps}
+l.134 ...dpointMG6Fadded0_31_energies_nowater.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1603,7 +1585,7 @@ File: figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energies_nowater.eps
 <figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energies_nowater.eps>
 
 LaTeX Warning: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energ
-ies_CH3.eps' not found on input line 2117.
+ies_CH3.eps' not found on input line 137.
 
 
 ! LaTeX Error: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energ
@@ -1613,7 +1595,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2117 ...oundpointMG6Fadded0_31_energies_CH3.eps}
+l.137 ...roundpointMG6Fadded0_31_energies_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1626,7 +1608,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2117 ...oundpointMG6Fadded0_31_energies_CH3.eps}
+l.137 ...roundpointMG6Fadded0_31_energies_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1636,7 +1618,7 @@ phic file (type eps)
 <figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energies_CH3.eps>
 
 LaTeX Warning: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_dista
-nces_CH3.eps' not found on input line 2120.
+nces_CH3.eps' not found on input line 140.
 
 
 ! LaTeX Error: File `figures/alloxygenconstrainedaroundpointMG6Fadded0_31_dista
@@ -1646,7 +1628,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2120 ...undpointMG6Fadded0_31_distances_CH3.eps}
+l.140 ...oundpointMG6Fadded0_31_distances_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1659,7 +1641,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2120 ...undpointMG6Fadded0_31_distances_CH3.eps}
+l.140 ...oundpointMG6Fadded0_31_distances_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1675,17 +1657,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[59]
-
 [60]
+
+[61]
 Underfull \vbox (badness 8056) has occurred while \output is active []
 
 
 
-[61]
+[62]
 
 LaTeX Warning: File `../figures/h2order_v2_POPC_compare_CH3.eps' not found on i
-nput line 2190.
+nput line 210.
 
 
 ! LaTeX Error: File `../figures/h2order_v2_POPC_compare_CH3.eps' not found.
@@ -1694,7 +1676,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2190 ...figures/h2order_v2_POPC_compare_CH3.eps}
+l.210 .../figures/h2order_v2_POPC_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1707,7 +1689,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2190 ...figures/h2order_v2_POPC_compare_CH3.eps}
+l.210 .../figures/h2order_v2_POPC_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1718,8 +1700,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[62]
-Overfull \hbox (4.92581pt too wide) in paragraph at lines 2222--2222
+[63]
+Overfull \hbox (4.92581pt too wide) in paragraph at lines 242--242
 []|$\OML/cmm/m/it/6 V[]$ \T1/cmr/m/n/6 (Å$[]$)| 
  []
 
@@ -1728,10 +1710,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[63]
+[64]
 
 LaTeX Warning: File `../figures/cood_v2_POPC_COMPARE_CH3.eps' not found on inpu
-t line 2237.
+t line 257.
 
 
 ! LaTeX Error: File `../figures/cood_v2_POPC_COMPARE_CH3.eps' not found.
@@ -1740,7 +1722,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2237 ...../figures/cood_v2_POPC_COMPARE_CH3.eps}
+l.257 ...{../figures/cood_v2_POPC_COMPARE_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1753,7 +1735,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2237 ...../figures/cood_v2_POPC_COMPARE_CH3.eps}
+l.257 ...{../figures/cood_v2_POPC_COMPARE_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1761,10 +1743,10 @@ If that doesn't work, type  X <return>  to quit.
 File: ../figures/cood_v2_POPC_COMPARE_CH3.eps Graphic file (type eps)
 <../figures/cood_v2_POPC_COMPARE_CH3.eps>
 
-[64]
+[65]
 
 LaTeX Warning: File `../figures/binding_per_system_popc_compare_CH3.eps' not fo
-und on input line 2253.
+und on input line 273.
 
 
 ! LaTeX Error: File `../figures/binding_per_system_popc_compare_CH3.eps' not fo
@@ -1774,7 +1756,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2253 ...binding_per_system_popc_compare_CH3.eps}
+l.273 .../binding_per_system_popc_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1787,7 +1769,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2253 ...binding_per_system_popc_compare_CH3.eps}
+l.273 .../binding_per_system_popc_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1796,20 +1778,20 @@ File: ../figures/binding_per_system_popc_compare_CH3.eps Graphic file (type eps
 )
 <../figures/binding_per_system_popc_compare_CH3.eps>
 
-[65]
+[66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[66]
+[67]
 Underfull \vbox (badness 4084) has occurred while \output is active []
 
 
 
-[67]
+[68]
 
 LaTeX Warning: File `../figures/formfactor_compare_v2_POPC_CH3.eps' not found o
-n input line 2287.
+n input line 307.
 
 
 ! LaTeX Error: File `../figures/formfactor_compare_v2_POPC_CH3.eps' not found.
@@ -1818,7 +1800,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2287 ...ures/formfactor_compare_v2_POPC_CH3.eps}
+l.307 ...gures/formfactor_compare_v2_POPC_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1831,7 +1813,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2287 ...ures/formfactor_compare_v2_POPC_CH3.eps}
+l.307 ...gures/formfactor_compare_v2_POPC_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1842,12 +1824,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[68]
-
 [69]
 
+[70]
+
 LaTeX Warning: File `../figures/density_POPC_compare_CH3.eps' not found on inpu
-t line 2297.
+t line 317.
 
 
 ! LaTeX Error: File `../figures/density_POPC_compare_CH3.eps' not found.
@@ -1856,7 +1838,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2297 ...../figures/density_POPC_compare_CH3.eps}
+l.317 ...{../figures/density_POPC_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1869,7 +1851,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2297 ...../figures/density_POPC_compare_CH3.eps}
+l.317 ...{../figures/density_POPC_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1879,7 +1861,7 @@ File: ../figures/density_POPC_compare_CH3.eps Graphic file (type eps)
 ! Undefined control sequence.
 <inserted text> \Vh 
                     and
-l.2315 ...a lipid are used to compute \st{\Vh and}
+l.335 ... a lipid are used to compute \st{\Vh and}
                                                    \Vc.\st{, and then the su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1890,7 +1872,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2315 ...a lipid are used to compute \st{\Vh and}
+l.335 ... a lipid are used to compute \st{\Vh and}
                                                    \Vc.\st{, and then the su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1901,7 +1883,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2315 ...a lipid are used to compute \st{\Vh and}
+l.335 ... a lipid are used to compute \st{\Vh and}
                                                    \Vc.\st{, and then the su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1912,7 +1894,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2315 ...a lipid are used to compute \st{\Vh and}
+l.335 ... a lipid are used to compute \st{\Vh and}
                                                    \Vc.\st{, and then the su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1923,7 +1905,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     and
-l.2315 ...a lipid are used to compute \st{\Vh and}
+l.335 ... a lipid are used to compute \st{\Vh and}
                                                    \Vc.\st{, and then the su...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1932,7 +1914,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2315 ...pid are used to compute \st{\Vh and} \Vc
+l.335 ...ipid are used to compute \st{\Vh and} \Vc
                                                   .\st{, and then the sum of...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1943,8 +1925,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     .
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1954,8 +1936,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1965,8 +1947,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1976,8 +1958,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1987,8 +1969,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     .
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1998,8 +1980,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     in
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2009,8 +1991,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2020,8 +2002,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2031,8 +2013,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2042,8 +2024,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vl 
                     in
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2053,8 +2035,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     ,
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2064,8 +2046,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2075,8 +2057,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2086,8 +2068,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2097,8 +2079,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <inserted text> \Vh 
                     ,
-l.2320 in these regions.}
-                         
+l.340 in these regions.}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2107,10 +2089,10 @@ and I'll forget about whatever was undefined.
 
 
 
-[70]
+[71]
 
 LaTeX Warning: File `figures/chainorder_popc_compare_CH3.eps' not found on inpu
-t line 2334.
+t line 354.
 
 
 ! LaTeX Error: File `figures/chainorder_popc_compare_CH3.eps' not found.
@@ -2119,7 +2101,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2334 ...figures/chainorder_popc_compare_CH3.eps}
+l.354 ...{figures/chainorder_popc_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2132,7 +2114,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2334 ...figures/chainorder_popc_compare_CH3.eps}
+l.354 ...{figures/chainorder_popc_compare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2140,20 +2122,15 @@ If that doesn't work, type  X <return>  to quit.
 File: figures/chainorder_popc_compare_CH3.eps Graphic file (type eps)
 <figures/chainorder_popc_compare_CH3.eps>
 
-LaTeX Warning: Citation `nagle:1993:nmrarea' on page 71 undefined on input line
- 2339.
-
-
-
-[71]
+[72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[72]
+[73]
 
 LaTeX Warning: File `../figures/perlipid_thickcompare_CH3.eps' not found on inp
-ut line 2397.
+ut line 417.
 
 
 ! LaTeX Error: File `../figures/perlipid_thickcompare_CH3.eps' not found.
@@ -2162,7 +2139,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2397 ..../figures/perlipid_thickcompare_CH3.eps}
+l.417 ...../figures/perlipid_thickcompare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2175,7 +2152,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2397 ..../figures/perlipid_thickcompare_CH3.eps}
+l.417 ...../figures/perlipid_thickcompare_CH3.eps}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2187,60 +2164,68 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[73]
+[74]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-
-[74]
+)
 
 [75]
-Chapter 5.
-(./paper.bbl
 
-[76
+[76]
+Chapter 5.
+(./ch5.tex
+
+[77
 
 ]
-Overfull \hbox (32.4664pt too wide) in paragraph at lines 18--23
+Chapter 6.
+(./paper.bbl
+
+[78
+
+]
+Overfull \hbox (38.33997pt too wide) in paragraph at lines 18--23
 [][][][][][]\T1/cmr/m/n/12 ,
  []
 
 
 
-[77
+[79
 
 ]
-
-[78]
-
-[79]
 
 [80]
 
 [81]
 
 [82]
-Overfull \hbox (41.097pt too wide) in paragraph at lines 284--289
+
+[83]
+
+[84]
+Overfull \hbox (46.97057pt too wide) in paragraph at lines 284--289
 \T1/cmr/m/n/12 URL [][][][][][] 
  []
 
 
-Overfull \hbox (122.86383pt too wide) in paragraph at lines 296--301
+Overfull \hbox (128.7374pt too wide) in paragraph at lines 296--301
 []\T1/cmr/m/n/12 H. I. Pe-tra-che, S. E. Feller, J. F. Na-gle, [][][][][][],
  []
 
 
 
-[83]
-
-[84]
-
 [85]
 
 [86]
 
-[87])
+[87]
+
+[88]
+
+[89]
+
+[90])
 \Changes@OutFile=\write8
 \openout8 = `paper.soc'.
 
@@ -2249,7 +2234,7 @@ Overfull \hbox (122.86383pt too wide) in paragraph at lines 296--301
 
 
 
-[88] (./paper.aux)
+[91] (./paper.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2262,15 +2247,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 10FF678A6AFF72758D3803BAE3527A02;7176.
- ) 
+(rerunfilecheck)             Checksum: 20CBBBB83F0AD573315BFC96DE50EB91;7416.
+ ) ) 
 Here is how much of TeX's memory you used:
- 30918 strings out of 473191
- 624362 string characters out of 5715827
- 1100192 words of memory out of 5000000
- 53624 multiletter control sequences out of 15000+600000
+ 30979 strings out of 473191
+ 625056 string characters out of 5715827
+ 1103749 words of memory out of 5000000
+ 53660 multiletter control sequences out of 15000+600000
  579359 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 132i,22n,135p,822b,1193s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 132i,22n,135p,865b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.dvi (95 pages, 450620 bytes).
+Output written on paper.dvi (97 pages, 456208 bytes).
