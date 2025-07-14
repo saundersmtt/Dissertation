@@ -35,5 +35,16 @@
 \contentsline {subsubsection}{Adsorption modalities}{49}{subsubsection*.36}%
 \contentsline {section}{\numberline {3.5}Conclusions}{53}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Alteration of bilayer structure by adsorbed ions}{55}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusions}{56}{chapter.5}%
-\contentsline {chapter}{References}{57}{chapter*.39}%
+\contentsline {section}{\numberline {4.1}abstract}{55}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Introduction}{56}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Methods}{58}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Mg\textsuperscript {2+}{} Model Parameters}{58}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Molecular Dynamics}{61}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Results and Discussion}{62}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Water structure, and hydration boundaries}{62}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Mg\textsuperscript {2+}Adsorption Behavior}{64}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Bilayer Structure}{68}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Acyl-Chain order parameters}{71}{subsection.4.6.1}%
+\contentsline {section}{\numberline {4.7}Conclusions}{73}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusions}{76}{chapter.5}%
+\contentsline {chapter}{References}{77}{chapter*.51}%

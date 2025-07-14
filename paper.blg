@@ -1,46 +1,61 @@
-This is BibTeX, Version 0.99d (TeX Live 2023/Homebrew)
+This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: paper.aux
 The style file: elsarticle-num.bst
+Case mismatch error between cite keys Cordomi:2008 and cordomi:2008
+---line 256 of file paper.aux
+ : \citation{Cordomi:2008
+ :                       ,Cordomi:2009,venable:2013,yoo:2012:improved}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 420 of file paper.aux
+ : \bibdata
+ :         {refs}
+I'm skipping whatever remains of this command
 Database file #1: refs.bib
-You've used 90 entries,
+Warning--I didn't find a database entry for "pabst:2007:rigidification"
+Warning--I didn't find a database entry for "inoko:1975"
+Warning--I didn't find a database entry for "yamada:2005"
+Warning--I didn't find a database entry for "JACS2025"
+Warning--I didn't find a database entry for "nagle:1993:nmrarea"
+You've used 98 entries,
             2952 wiz_defined-function locations,
-            1199 strings with 23606 characters,
-and the built_in function-call counts, 28739 in all, are:
-= -- 2732
-> -- 1083
+            1235 strings with 24954 characters,
+and the built_in function-call counts, 31402 in all, are:
+= -- 2981
+> -- 1205
 < -- 4
-+ -- 421
-- -- 331
-* -- 2349
-:= -- 4008
-add.period$ -- 90
-call.type$ -- 90
-change.case$ -- 88
++ -- 467
+- -- 369
+* -- 2572
+:= -- 4390
+add.period$ -- 98
+call.type$ -- 98
+change.case$ -- 96
 chr.to.int$ -- 0
-cite$ -- 90
-duplicate$ -- 737
-empty$ -- 3068
-format.name$ -- 414
-if$ -- 7157
+cite$ -- 98
+duplicate$ -- 801
+empty$ -- 3334
+format.name$ -- 460
+if$ -- 7806
 int.to.chr$ -- 0
-int.to.str$ -- 90
-missing$ -- 92
-newline$ -- 281
-num.names$ -- 90
-pop$ -- 477
+int.to.str$ -- 98
+missing$ -- 100
+newline$ -- 305
+num.names$ -- 98
+pop$ -- 517
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1635
+skip$ -- 1779
 stack$ -- 0
-substring$ -- 2237
-swap$ -- 100
+substring$ -- 2448
+swap$ -- 108
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 246
-width$ -- 92
-write$ -- 732
+while$ -- 269
+width$ -- 100
+write$ -- 796
+(There were 2 error messages)

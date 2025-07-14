@@ -1970,6 +1970,596 @@ These experiments are needed to verify
 these conclusions. 
 
 \chapter[Alteration of bilayer structure by adsorbed ions]{Alteration of lipid bilayer structure by adsorbed ions}
+\section{abstract}
+
+%TODO Make this less abrupt of a start...TODO%
+Development of molecular mechanics force fields to model interactions of biological membranes with \mg~cations poses a challenge.
+Structural experimental data on lipid bilayers in presence of Mg salts are sparse, and limited to salt concentrations below 50 mM.
+Under these low concentrations, experiments report no significant effects of \mg~ions  on bilayer macroscopic properties.
+%TODO Was there more to fix here?TODO
+Furthermore, determination of the exact interaction modes of \mg with lipid headgroups is not known directly.
+Previously, we addressed this problem by developing ion-lipid interaction
+Lennard-Jones terms that were optimized against a set of target data on local ion-lipid interactions.
+While our previous model for \mg--lipid interaction appears to be consistent with the sparse experimental data,
+it was developed with target quantum data that did not include fully coordinated (6-fold) \mg~ions that our newer studies find to be important for selection of models that work in the condensed phase.
+%solvated ions.
+%ATP--\mg~studies by our group have suggested
+%that the accurate description of Phosphate--\mg~interactions require
+%the target quantum data generated fully-solvated ions.
+Here we propose a new lipid--\mg~model that
+is developed using this methodology that has been shown to reproduce both local and condensed phase interactions of \mg~with phosphate groups in nucleotides.
+We accomplish this by limiting the target data to only those cases that best represent ion-lipid structures in the condensed phase,
+that is, instead of calibrating on clusters with varying \mg~coordination numbers, we maintain full 6-fold oxygen coordination in our
+\mg~target clusters. With this new model, we find that at high concentrations of about 100 mM, there is a
+systematic thickening of lipid bilayer, which was not observed with our older \mg{} parameters. Nevertheless,
+this result is consistent with our earlier observed trend that irrespective of the force field and the ions used in simulations,
+the structural changes in bilayer are correlated with the amount of charge adsorbed on the surface in non-steric modes.
+
+
+
+\section{Introduction}
+
+Accurate modeling of the specific interaction of salts with lipid bilayers remains a challenge in molecular simulations.
+In general, ions in solution at interfaces have well characterized behavior -- they produce the classic ion double layer, where
+one charge accumulates near the surface, and the second charge then accumulates to compensate for
+that charge~\cite{israelachvili:2011:intermol}.
+This can be explained using a simple mean-field approximation;
+however, this fails to capture detailed interactions between ionic species and
+the interface moieties. Specific adsorption effects are determined by a critical
+balance between the interactions of ions-solvent, ions-substrate,
+and solvent-substrate. These details are especially important in the case of
+such as phospholipid membranes, where the substrate is liquid.
+
+Development of computational models that describe specific ionic interactions
+require multiple studies of varying salt concentrations at the lipid interface.
+Typically, simulations of lipid-electrolyte interface involve concentrations on the order of 100 mM of salt.
+Simulations at lower concetrations, i.e. on the order of 10 mM or smaller, are intractable to simulate due to the requirement
+of a large amount of water in such systems.
+On the other hand, experiments at the concentrations typically used in simulations result in deformation of
+multi-lamellar vesicles~\cite{kurakin:2021:effect,pabst:2007:rigidification,inoko:1975,yamada:2005}.
+Thus, experimental data are obtained
+at much lower concentrations~\cite{kurakin:2021:effect,kucerka:2020,kurakin:2022:cations,inoko:1975,yamada:2005}, making
+it difficult to validate simulation models.
+
+Simulations, irrespective of the force-field used, often report thickening of the lipid
+bilayer when compared to the structure of a bilayer simulated without salt~\cite{Cordomi:2008,Cordomi:2009,venable:2013,yoo:2012:improved}.
+%TODO More references here?
+However, experiments report insignificant changes in POPC lipid
+bilayer structure due to specific binding of ions at the experimental concentrations
+~\cite{kurakin:2021:effect,kucerka:2020,kurakin:2022:cations}.
+In our previous works, we were able to produce a computational model that was consistent with these experimental findings
+in the case of monovalent salts, specifically \nacl{} with a POPC bilayer.
+This was achieved by parameterizing ion-lipid Lennard-Jones (LJ) interaction cross-terms~\cite{saunders:2022}.
+We have also applied this method to \li{} and divalent cation \mg{}~\cite{saunders:2024}. However, to our knowledge there
+are no relevant experimental data to validate the methodology and the model for \li{} and \mg{} salts.
+
+Of these two ions, \mg{} presents a particularly difficult modeling challenge due to its slow dehydration kinetics and
+strong preference for maintaining a full hydration shell~\cite{grotz:2021:optimized}. As a result,
+simulation outcomes are highly sensitive to the
+choice of force field parameters. %TODO References for this?
+In our previous work, \mg{} using two different solvent-ion interaction models
+showed virtually no loss of hydration shell waters and exhibited only weak, steric
+adsorption to the bilayer, which we defined as non-Langmuir type binding.
+
+{\color{red} Our recent work on the development of force fields for \mg{} interactions with proteins
+have implied that, within the classical framework, a single set of force-field parameters for \mg{} do not perform well at simultaneously reproducing
+energies of both fully coordinated
+and partially coordinated \mg~structures~\cite{julian:2023:mg}. Furthermore, force-field parameters developed using fully coordinated structures performed excellently at reproducing not only local interactions of \mg~ions in clusters containing nucleotide phosphate groups but also condensed phase binding free energies of \mg~ions with nucleotides\cite{julian:2023:mg}. We have shown that this strategy also works for other cations \cite{JACS2025}
+%With this limitation in mind, Melendez-Delgado \etal{}
+%suggested that while developing parameters for \mg{} full hydration should be maintained in the reference data.
+This was not considered in the development of our previous \mg{} model~\cite{saunders:2024}, in which target data consisted of only partially coordinated structures of \mg.
+
+Here we apply this new protocol to develop a new set of \mg{}-lipid
+interaction parameters. Our target data consists exclusively of full 6-fold coordinated \mg clusters with
+different combinations of waters and ligands representative of the common binding sites on POPC.}
+This allows us to focus our model parametrization on clusters that are more representative of the dense, bulk phase systems
+that we are interested in studying. As before, target data is obtained from benchmarked quantum mechanical (QM) vdW-inclusive density functional theory (DFT).
+
+Using these new parameters, we perform MD simulations of POPC in \mgcl{} solution with the aim of comparing these results
+with those of our previous interaction model parameters. We also characterize their behavior using two different
+ion-water interaction parameter sets, parameters from Grotz \etal~\cite{grotz:2021:optimized,micro} that are developed to
+improve the first shell water residence times in comparison to experiments, and parameters from Li
+\etal{}\cite{merzhfe} which target experimental hydration free energies.
+
+In this way, we aim to test how changes to the \mg–water and \mg–lipid interaction models affect adsorption behavior and
+the resulting perturbations to bilayer structure. Our goal is not to validate a specific force-field or parameterization scheme,
+but to identify which structural metrics are most sensitive to these parameter choices and to provide a framework for future
+comparisons with experimental results. Essentially, in absence of appropriate experimental data, we have two competing models for \mg-lipid interactions
+that points to different adsorption behavior.
+
+\section{Methods}
+\subsection{\mg{} Model Parameters}
+
+%Lennard-Jones (LJ) interaction cross-terms were chosen following
+%the method outlined in our previous work, where we developed Lennard-Jones interaction cross-terms
+%for \na with lipid components~\cite{saunders:2022}, and where we developed
+%parameters for \li and \mg~\cite{saunders:2024}.
+We performed a parameter search for the 7 pairs of Lennard-Jones (LJ) \sigmaij{} and \epsilonij{} interaction
+cross-terms for the lipid headgroup oxygens, carbon, and phosphorus with \mg{}.
+We perform this search using target
+clusters of ligands that represent the major cation binding sites in phospholipid headgroups with \mg{},
+maintaining full first-shell coordination with oxygens by replacing removed ligand oxygens with water molecules.
+We used clusters of up to four methyl-acetate molecules representing the ester-fragment
+connecting the lipid acyl chains to the glycerol backbone, and up to two diethyl-phosphate molecules representing the
+phosphate fragment in the lipid headgroups.
+
+These target clusters are geometry optimizatized at the DFT level using PBE0~\cite{adamo:1999:toward},
+with the Tkatchenko–Scheffler
+dispersion corrections~\cite{tkatchenko:2009} as implemented in FHI-aims~\cite{fhiaims}.
+Geometry optimization are first performed with the ``light'' basis set as provided in the
+FHI-aims software package, and then with the ``really-tight'' basis. Both
+geometry optimizations are performed with a force
+convergence threshold of 0.005 eV/\AA. Energies of these optimized clusters are used to compute substitution energies, and
+geometries are computed as an array of distances between all particles in the cluster and the cation.
+Substitution energy is defined for the following reaction:
+\begin{equation}
+(\mathrm{Mg} \mathrm{W}_{6})^{2+} + n\mathrm{X} \longleftrightarrow (\mathrm{Mg} \mathrm{W}_{6-n} \mathrm{X}_n)^{2+} + n\mathrm{W}
+\end{equation}
+as
+\begin{equation}
+\Delta E_{sub} = E_{MgWX} + nE_{W} - E_{MgW} - nE_{X}
+\end{equation}
+where $E_{MgW}$ is the energy of the optimized geometry of \mg~cluster with 6 waters and $E_{MgWX}$ is the energy of optimized geometry the mixed cluster of \mg~consisting of $n$ X ligands and $6-n$ waters. $E_{W}$ and $E_X$ are, respectively, the energies of the optimized geometries of the isolated water and isolated ligand.
+Substitution energies and geometries compared with clusters using the optimized parameters can be seen in figure~\ref{fig:optres}.
+
+
+\begin{figure}
+    \caption[Substitution energies, and optimized geometries]{Substitution energies and geometries for optimization target data. (A,B) We compare the
+        energies obtained from from DFT optimization (black) to the energies optimized in MM under LB-rules (red), and the
+    final optimized parameters (blue). (C) compares the optimized geometries of the target data under these same three models,
+by computing the distance between all system components and the ion, and plotting them per atom. (A) Shows the energies of the
+non-full coordination number target clusters, and (B) shows the energies of the target clusters with 6-fold coordination.}
+    \label{fig:optres}
+    \raisebox{1.2ex}{\textbf{(A)}}
+    \includegraphics[height=0.25\textheight]{figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energies_nowater.eps}
+    \hspace{1em}
+    \raisebox{1.2ex}{\textbf{(B)}}
+    \includegraphics[height=0.25\textheight]{figures/alloxygenconstrainedaroundpointMG6Fadded0_31_energies_CH3.eps}
+    \hspace{1em}
+    \raisebox{1.2ex}{\textbf{(C)}}
+    \includegraphics[height=0.25\textheight]{figures/alloxygenconstrainedaroundpointMG6Fadded0_31_distances_CH3.eps}
+    \hspace{1em}
+\end{figure}
+Parameter optimizations were performed using the ParOpt software package developed by our group~\cite{fogarty:2014:paropt}. We used the Nelder-Mead optimizer to simultaneously optimize
+the 14 LJ cross terms for each atom type in our target clusters. Constraints are detailed in table~\ref{tab:constrain}.
+
+We first performed parameter searches using a full-random simplex initialization,
+to obtain 400 converged simplexes, regarding a simplex as converged if the RMSD collapses to $10\times{}10^{-3}$. The best parameters from this search were then used
+to perform another search using around-point initialized simplex, with an RMSD cutoff of $10\times{}10^{-5}$, again for 400 converged simplexes. From this search, we selected the parameters that balanced
+the error in substitution energies and geometries simultaneously.
+These parameters are detailed in table~\ref{tab:params}. We denote these parameters the \mg{-2025} parameters, and compare these with our parameters from
+Saunders \etal{} 2024~\cite{saunders:2024}, which we will refer to as \mg{-2024}.
+There are substantial differences between the \mg{-2024} and \mg{-2025} parameters, with the greatest changes in the size of the well depth \epsilonij{} for MG-OA, MG-P, and MG-OM\textsuperscript{*} -- based on the
+result in the work by Grotz \etal{}\cite{grotz:2021:optimized}, we chose to not limit these values as strictly as was done for the \mg{-2024} parameters.
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
+\hline
+                         & \multicolumn{2}{c|}{\textbf{2025}} & \multicolumn{2}{c|}{\textbf{2024}} & \multicolumn{2}{c|}{\textbf{LB-rules}} \\\hline
+Parameter                & \boldmath$\varepsilon$             & \boldmath$\sigma$                  & \boldmath$\varepsilon$                          & \boldmath$\sigma$ & \boldmath$\varepsilon$ & \boldmath$\sigma$ \\\hline
+MG-CH3                   & 0.60498                            & 0.22161                            & 0.68709                                         & 0.14257           & 0.19239                & 0.30856 \\\hline
+MG-CH2                   & 1.36553                            & 0.41404                            & 0.63126                                         & 0.20617           & 0.13238                & 0.32468 \\\hline
+MG-OA                    & 25.25725                           & 0.30372                            & 5.05190                                         & 0.26223           & 0.19044                & 0.26890 \\\hline
+MG-P                     & 29.74732                           & 0.23348                            & 3.89200                                         & 0.27811           & 0.32318                & 0.29044 \\\hline
+MG-OM\textsuperscript{*} & 22.04699                           & 0.20018                            & 3.22262                                         & 0.17691           & 0.20771                & 0.26469 \\\hline
+MG-CO\textsuperscript{*} & 0.57040                            & 0.42212                            & 0.56152                                         & 0.37127           & 0.06152                & 0.34796 \\\hline
+MG-O\textsuperscript{*}  & 2.06827                            & 0.24468                            & 2.43058                                         & 0.13069           & 0.20771                & 0.26469 \\\hline
+\end{tabularx}
+\caption[Lennard-Jones parameters for magnesium interactions]{Lennard-Jones parameters for magnesium interactions: well depth $\epsilon_{ij}$ (kJ/mol) and distance parameter $\sigma_{ij}$ (nm), comparing the 2025 optimized model, the 2024 model, and the original LB-rules.}
+\label{tab:params}
+\end{table}
+
+\subsection{Molecular Dynamics}
+%Whoops, we used verlet lists -- we will show the fit with nosalt POPC with the verlet list, its not bad! I mean the lobes at higher q values are not great but still.
+%And here we describe simulations with Li-Merz HFE and Grotz and Shiweirz micro models applied as interaction terms with water. This gives us quite different adsorption behavior in the
+%simulations!
+The \mg-2025 parameters were used in
+two 1 $\mu$s long simulations of POPC with \mgcl{}, one using the water--\mg~interaction term computed using \mg~HFE model of Li \etal~\cite{merzhfe}, and
+one using the \mg~micro from Grotz \etal~\cite{grotz:2021:optimized,micro}.
+Lipid bonded and non-bonded interactions were described using the gromos 43-a1s3 force-field~\cite{chiu:2009}.
+Simulations were performed using Gromacs version
+2024.0~\cite{gromacs}
+with an integration time step of 4 fs.
+Neighbor searching was performed every 2 steps using Verlet neighbor-lists.
+The PME algorithm was used for electrostatic interactions.
+with a cut-off of 1.6 nm.
+A reciprocal grid of 52 x 52 x 240 cells was used with 4th order B-spline interpolation.
+A single cut-off of 1.6 nm was used for Van der Waals interactions.
+Temperature coupling was done with the Nose-Hoover algorithm holding the system temperature at 300 K~\cite{nose:1983}.
+Pressure coupling was done with the Parrinello-Rahman algorithm holding the system pressure at 1 atm~\cite{parrinello:1981}.
+
+Trajectories are analyzed using tools provided in the Gromacs software package~\cite{gromacs}, in-house code developed using the Gromacs API, and using the MDanalysis python package~\cite{mdanalysis1,mdanalysis2}.
+
+\section{Results and Discussion}
+
+\subsection{Water structure, and hydration boundaries}
+To differentiate interfacial ions from those in the bulk solvent, we first need to define at interfacial boundary. As before\cite{saunders:2024}, we do this using the orientational ordering of water molecules. Waters near the lipid bilayer interface are ordered due to the electrostatic and steric interactions with the lipid bilayer, as well as interactions with dissolved salts. The
+orientation of these waters can be probed by computing the orientational order parameters $P_1=\langle\cos{\beta}\rangle$ and $P_2=\langle{\frac{1}{2}(3\cos^{2}{\beta}-1}\rangle$, where $\beta$ is the angle made between the water OW-HW1 vector. The hydration boundary marks the location where water molecules become orientationally isotropic, beyond which they no longer contribute to quadrupolar NMR splitting. We use this position to define ion adsorption: if an ion resides within the hydration boundary, we consider it adsorbed. In our previous work~\cite{saunders:2024}, we demonstrated that ion densities outside this boundary follow Poisson–Boltzmann theory, while those inside deviate from it. This breakdown in mean-field behavior indicates a specific interaction with the membrane.
+
+To compute $P_1$ and $P_2$, we divide the simulation unit cell into 2000 slices along the membrane transverse (z-) axis.
+The average values over the last 150 ns of the simulation are shown in figure~\ref{fig:h2order}.
+
+\begin{figure}[H]
+    \caption[Water orientational ordering]{Water orientational order parameters. These are defined as the first and second Legendre polynomials of the cosine of the angle between the first water oxygen-hydrogen bond, and the box z-axis. The first
+    order parameter represents an in-out ordering with respect to the bilayer center, and the second is related to the orientation of the quadrupole moment of the box. A value of zero is completely
+    parallel with the box axis. These values are computed over the 1 ns chunks of simulation time, for every water in every histogram slice. These are then averaged per histogram slice, and then over the last 150 ns of simulation time. {\color{blue} The first order parameter indicates a significant increase in the positive ordering induced by the \mg{-2025} parameters compared to the no-salt and the
+        \mg{-2024} simulations.  The second order parameter indicates increased ordering as on approaches the bilayer \dhh{}. There is also a steeper decline as one follows the plot into to the acyl chain region denoted by the bilayer \dc{} in the
+\mg{-2025} Micro system.}}
+    \label{fig:h2order}
+    \includegraphics{../figures/h2order_v2_POPC_compare_CH3.eps}
+\end{figure}
+The histogram of $P_2$ is used to calculate the \emph{hydration boundary} of the lipid bilayer system. The outermost
+region of negative ordering is fitted to an exponential function, and the lengthscale of the exponential is used to find the location where $P_2$ is considered to be effectively zero.
+Lines to delimit these values are drawn on the plot in figure~\ref{fig:h2order}, and these positions are noted for each bilayer
+in table~\ref{tab:struc}.
+\begin{table}[H]
+{\tiny
+    \caption[Bilayer structual parameters]{Bilayer structural parameters. The bilayer hydration boundary is defined as the position away from the bilayer center beyond which solvent is isotropic, and denotes
+        bulk solvent from bound solvent. The number of adsorbed charges in each adsorption mode are within the hydration boundary of the system, and are further classified by the degree
+    of loss of hydration water -- steric adsorbed have lost no water, imperfect have lost at least one, and perfect have replaced all water oxygens for lipid oxygens. The bilayer thickness
+\dhh{} is defined as the distance between the peaks in the electron density of the system, roughly localizing the phosphate groups. \dc{} is the thickness of the acyl-chain region of the bilayer,
+and is measured as the distance between the Gibb's surfaces of the acyl-chain probablility density. Lipid component volumes $V_{CH3}$ and $V_{\text{CH1/CH2}}$ are computed using the method
+of Petrache \etal{}. $V_C$ is computed from the component volumes by multiplying by the number of these components in each acyl chain.
+$A_L=\frac{V_C}{D_C}$ is the two-dimensional area occupied per lipid on the bilayer surface.}
+    \label{tab:struc}
+    \begin{tabularx}{\textwidth}{X|X|X|X|X|X|X|X|}
+
+        \hline                     & Without salt             & \na                              & \li                & \mg{-2024} HFE     & \mg{-2024} Micro    & \mg{-2025} HFE    & \mg{-2025} Micro \\\hline
+    Hydration Boundary~(\AA)       & N/A                      & 37.1                             & 36.7               & 34.5               & 33.3               & 34.8               & 35.9      \\\hline
+    Perfectly Adsorbed Charges     & 0                        & 44.63                            & 42.36              & 1.52               & 0.00               & 0.00               & 0.00      \\\hline
+    Imperfectly Adsorbed Charges   & 0                        & 7.42                             & 17.97              & 3.03               & 7.85               & 31.92              & 76.15     \\\hline
+    Sterically Adsorbed Charges    & 0                        & 1.09                             & 0.23               & 42.05              & 28.27              & 99.89              & 15.59     \\\hline
+    $D_{HH}$~(\AA)                 & 37.57 $\pm$ 1.27         & 37.73 $\pm$ 0.97                 & 38.58 $\pm$ 0.75   & 38.15 $\pm$ 1.20   & 37.75 $\pm$ 1.19   & 40.75 $\pm$ 0.92   & 40.26 $\pm$ 0.96\\\hline
+%    $D_b$~(\AA)                    & 36.25 $\pm$ 0.47         & 43.85 $\pm$ 0.46                 & 44.93 $\pm$ 0.48   & 43.01 $\pm$ 0.49   & 41.81 $\pm$ 0.52   & 46.24 $\pm$ 0.39   & 45.75 $\pm$ 0.42\\\hline
+    $2D_C$~(\AA)                   & 26.98 $\pm$ 0.35         & 30.95 $\pm$ 0.34                 & 30.34 $\pm$ 0.36   & 28.99 $\pm$ 0.31   & 28.08 $\pm$ 0.40   & 31.45 $\pm$ 0.29   & 30.84 $\pm$ 0.29\\\hline
+    $V_{\text{CH1/CH2}}$~(\AA$^3$) & 26.33 $\pm$ 0.05         & 26.06 $\pm$ 0.05                 & 26.16 $\pm$ 0.04   & 26.21 $\pm$ 0.05   & 26.33 $\pm$ 0.05   & 26.22 $\pm$ 0.04   & 26.12 $\pm$ 0.04\\\hline
+    $V_{CH3}$~(\AA$^3$)            & 54.97 $\pm$ 0.39         & 55.26 $\pm$ 0.39                 & 55.17 $\pm$ 0.37   & 54.77 $\pm$ 0.39   & 54.98 $\pm$ 0.40   & 54.74 $\pm$ 0.24   & 55.19 $\pm$ 0.26\\\hline
+%    $V_H$~(\AA$^3$)                & 323.30 $\pm$ 0.82        & 314.81  $\pm$ 0.75               & 305.98 $\pm$ 1.03  & 323.95 $\pm$ 1.26  & 327.85 $\pm$ 1.10  & 283.55 $\pm$ 0.77  & 296.16 $\pm$ 0.67\\\hline
+    $V_C$~(\AA$^3$)                & 899.72 $\pm$ 1.01        & 896.50  $\pm$ 1.19               & 895.27 $\pm$ 0.91  & 895.85 $\pm$ 1.05  & 899.83 $\pm$ 1.06  & 895.94 $\pm$ 0.95  & 894.00 $\pm$ 1.11\\\hline
+%    $V_L$~(\AA$^3$)                & 1223.01 $\pm$ 0.82       & 1211.32 $\pm$ 1.21               & 1201.25 $\pm$ 1.05 & 1219.80 $\pm$ 1.24 & 1227.68 $\pm$ 1.24 & 1179.49 $\pm$ 1.02 & 1190.16 $\pm$ 1.07\\\hline
+    $A_L=\frac{V_C}{D_C}$          & 66.71 $\pm$ 0.89         & 61.89 $\pm$ 0.73                 & 59.03 $\pm$ 0.71   & 61.80 $\pm$ 0.66   & 64.10 $\pm$ 0.92   & 56.97 $\pm$ 0.54   & 57.98 $\pm$ 0.57\\\hline
+    \end{tabularx}
+}
+\end{table}
+\section{\mg Adsorption Behavior}
+We classify any ion within the hydration boundary as at least sterically adsorbed, with further distinction -- steric, imperfect, or perfect -- based on how much dehydration the ion undergoes when approaching the bilayer center. A \emph{perfectly} adsorbed ion has lost all waters in its first hydration shell, \emph{imperfectly} adsorbed ions
+have lost at least one water. {\emph{Sterically} adsorbed} waters have not dehydrated; however, they are spatially located within the \emph{hydration boundary} of the lipid bilayer. To evaluate this, we define a cutoff to the first hydration shell,
+computed from radial distribution functions. The cutoff used for \mg{} in all systems is 3.3~\aa. We compute the nearest oxygens (lipid phosphate, glycerol, ester fragment, or water) within these
+cutoffs of cations across the simulation system, and generate a histogram averaged over slices and then over the last 150 ns of simulation time. This histogram is shown in
+figure~\ref{fig:ioncoordination}.
+\begin{figure}[H]
+    \caption[Ion coordination summary]{Coordination partners of \mg{} across the simulation systems. We note that while the Micro water with the 2024 parameters do result in some dehydration
+        of the \mg{} in the headgroup region of the bilayer, both 2024 systems show nearly no dehydration of \mg{} at any location in the simulation box. The 2025 HFE parameters
+        still largely do not dehydrate, but the 2025+Micro simulation does start to see loss of 1-2 waters from the \mg{} coordination shell within the headgroup region.
+    We see substantial interaction with the headgroup phosphate oxygens, and no significant interaction with the glycerol or ester linkage oxygens.}
+\label{fig:ioncoordination}
+\includegraphics[height=0.5\textheight]{../figures/cood_v2_POPC_COMPARE_CH3.eps}
+\end{figure}
+We note that the \mg{-2024} parameters result in very little dehydration of ions, throughout the simulation box. The 2025 parameters result in loss of 1-2 waters as the ion approaches the bilayer center, with the \mg{-2025} Micro parameters resulting in the greatest degree of dehydration among the \mg{} simulations.
+The \mg{-2025} HFE parameters result in some loss of first shell water, but no replacement in the first shell with lipid oxygens.
+The \mg{-2025} Micro appears to have a preference for direct interaction with the phosphate group oxygens when dehydrated, and none of the \mg{} parameters studied result in significant direct interaction with the ester fragment and glycerol oxygens.
+Fractions of ions in each adsorption mode have been computed by counting the number of ions in each frame within the hydration boundary, and the number of those that have lost one water, or all of their waters. We compute averages over the last 150ns, and then
+fractions of the total adsorbed ions present in each mode. These values are shown in figure~\ref{fig:adfrac}, alongside the fraction of ions adsorbed vs the fraction remaining in bulk solvent. We note the
+number of adsorbed charges, or the number of ions times the charge on the ion, in table~\ref{tab:struc} rows 2-4.
+\begin{figure}[H]
+    \caption[Adsorption mode fractions]{Fraction of total ions adsorbed in each adsorption mode, and the fraction of total ions adsorbed. We note
+        that in both 2024 and 2025 simulations the HFE model results in more adsorbed ions over the \mg{} Micro parameters.
+    The \mg{-2025} HFE does lead to a larger number of adsorbed ions over 2024, and a significantly larger number in the imperfect
+    adsorption mode, now nearly matching the \mg{-2024} Micro. On the other hand, the \mg{-2025} Micro parameters lead to a nearly three times
+    larger fraction of the ions in the imperfect mode, possibly due to the increased exchange rate of first-shell waters in this
+    model.}
+    \label{fig:adfrac}
+    \includegraphics[height=0.5\textheight]{../figures/binding_per_system_popc_compare_CH3.eps}
+\end{figure}
+The 2025 parameters result in significantly more adsorbed ions and as a result more adsorbed charges in both cases, with the most increased in the \mg{-2025} HFE simulation.
+Additionally,  in conjunction
+with the +2 charge on the \mg{} ion results in a larger number of adsorbed charges in these systems when compared to \na{} and \li{}.
+We also note an increase in imperfectly adsorbed ions in the \mg{-2025} HFE simulation. However, the \mg{-2025} Micro parameters result in ions shifting to the majority in the imperfect
+adsorption mode from the steric mode seen in both 2024 simulations.
+The \mg{-2025} HFE parameters still remain with the largest fraction of ions in the steric adsorption mode.
+These differences in the distribution of adsorbed \mg{} ions -- particularly the rise in imperfect adsorption for \mg{-2025} Micro --
+raises the question of how such interactions reshape the membrane itself. We therefore turn to a structural analysis of the lipid bilayer
+to evaluate the consequences of these adsorption patterns.
+
+
+\section{Bilayer Structure}
+The effect of changes in ion adsorption on bilayer structure was assessed through several structural parameters. Electron densities were
+computed using the \texttt{gmx density} tool included in the GROMACS software suite. Histograms were calculated in 1 ns chunks along the
+bilayer normal (z-axis) and centered at zero using the position of minimum density, corresponding approximately to the bilayer midplane.
+These histograms were then symmetrized about the center and averaged over the final 150 ns of each trajectory.
+
+From the resulting profiles, we calculated the small-angle X-ray scattering (SAXS) form factor by subtracting the average water electron
+density and applying a cosine transform. Electron density profiles and corresponding simulated SAXS form factors are shown in
+Figure~\ref{fig:formfactors}.
+
+%The effect of these changes in ion adsorption on the bilayer structure can be investigated through several different parameters.
+%To begin,
+%electron densities are obtained using the GMX density tool included with the gromacs software package. We compute the electron density histogram in 1ns chunks with respect to the z-axis of the bilayer, and center it at zero using the minimum value -- this location is often used as the center of the acyl-chain region of the bilayer.
+%We then symmetrize the histogram around this point, and average these histograms over the last 150ns of the simulation. From this we compute the x-ray scattering form-factor by subtracting the average value of the water electron density from the entire histogram, and performing a cosine transform on the histogram. Electron
+%densities and the associated simulated SAXS form-factors can be seen in figure~\ref{fig:formfactors}.
+\begin{figure}[H]
+    \caption[Bilayer SAXS Form-factors and electron densities]{SAXS form-factors and associated electron densities for \mg{} simulations. (a) \mg{-2024} under both Micro
+and HFE has little effect in changing the bilayer form-factor compared to that of the no-salt simulation. Both of the simulations with 2025 parameters result in significant thickening of the bilayer.
+This is also seen in the associated electron densities (b), where we see much taller peaks that are further apart in the \mg{-2025} simulations
+than that obtained from the 2024 simulations.}
+    \label{fig:formfactors}
+    \includegraphics[height=0.5\textheight]{../figures/formfactor_compare_v2_POPC_CH3.eps}
+\end{figure}
+We note significant broadening of the bilayer peak-to-peak distance in the electron densities of the 2025 systems, with the greatest change from the 2024 and no-salt simulations resulting from the 2025-HFE parameters. \st{We note greater broadening in both 2025 \mg{} simulations compared to the results from the \na{} and \li{} simulations.}
+Additional structural parameters are computed from the various number density histograms of our simulations. Similarly to the electron densities, we use the gromacs GMX density tool to compute the number density histogram over 1ns chunks of our simulation. We then center these histograms using the centerpoint found from the electron
+density at each 1ns chunk.
+These histograms are then symmetrized, and averaged over the last 150ns of simulation time.
+These can be seen for solvent and lipid headgroup components of in figure~\ref{fig:soldens}.
+We note greater accumulation of \mg{} in the \mg{-2025} simulations, with greater peak densities of cations in the headgroup regions, with the largest peak in the \mg{-2025} HFE system.
+
+\begin{figure}[H]
+    \includegraphics{../figures/density_POPC_compare_CH3.eps}
+    \caption[Number densities of lipid headgroup moieties]{Number density histograms of lipid headgroup components. Vertical lines denote the bilayer structural features such as the hydration boundary in purple, the \dhh{} in orange and the \dc{} in red. We note
+    that within the hydration boundary of each system there is accumulation of ions -- anions accumulate near the trimethlammonium nitrogen and cations accumulate near the phosphate group. The \mg{-2025} parameters
+have a much larger accumulation of both ions in the headgroup region of the bilayer compared to the \mg{-2024} systems.}
+    \label{fig:soldens}
+\end{figure}
+
+The bilayer thickness \db{} and the acyl-chain region thickness \dc{} are computed as the distance between the Gibb's surfaces of the probability densities of solvent and the lipid acyl-chain carbons, respectively~\cite{fogarty:2015}.
+These are computed from the number densities of these species for each 1ns chunk of the simulation, and then averaged over the last 150ns of the simulation time.
+The values for these are listed in table~\ref{tab:struc}.
+We also compute the lipid component volumes using the method of Petrache \etal{}~\cite{petrache:1997}. To do this, we partition the lipid number densities into
+headgroup and chains, with the headgroup consisting of any particles above the acyl chain ester fragment and the chains as just the acyl chain carbons. We partition the
+chains into groups of CH2+CH1, and the terminal CH3 atoms. We optimize the following objective function to partition the volume in each histogram slice $z_j$ from the number densities to these groups:
+\begin{equation}
+    \Omega{(v_i)}=\sum^{\rho_s}_{z_j}\bigg(1-\sum^{N_{\text{groups}}}_{i=1}\big(\rho_i(z_j)(v_i)^2\bigg)\text{.}
+\end{equation}
+From this we obtain partial volumes for the groups $v_{\text{CH1\&CH2}}$, $v_{\text{CH3}}$, $v_{\text{Headgroup}}$. We equate the $V_{CH2}=v_{CH1\&CH2}$ as these densities have significant overlap,
+and thus the volumes cannot be separated. This, along with the $V_{\text{CH3}}=v_{\text{CH3}}$ can be seen in table~\ref{tab:struc} rows ???. These volumes multiplied by the number of each
+moiety in a lipid are used to compute \st{\Vh and} \Vc.\st{, and then the sum of these is used to compute \Vl. These values should not change significantly from the simulation without salt -- however, we note decreasing
+\Vl in the the systems with ions
+in non-steric modes.
+We believe that this is due to overlapping number densities in this
+region causing underestimation of the headgroup volume \Vh, as more of the volume is assigned to the solvent and ions
+in these regions.}
+Finally, we compute the \al as the ratio $2\times{}V_c/2D_C$.
+
+We note that in the systems with the smallest number of adsorbed charges in non-steric modes (perfect and imperfect) -- in this case the 2024-\mg parameters, show
+the smallest increase in \dc{}. The \na and \li systems have more adsorbed charges in the non-steric modes with most of their ions adsorbed perfectly,
+and have larger increases in \dc{}. The 2025-\mg systems have the greatest number of adsorbed charges in non-steric modes, and have the largest increase in \dc{} over the system simulated without salt. We note that
+this trend is not followed necessarily in the \dhh{} \st{or \db{}}, which is not as reliable as measures of bilayer thickness due to the effect of headgroup tilt angle, and overlapping number densities of water
+and salt in the headgroup region.
+\subsection{Acyl-Chain order parameters}
+Acyl-chain order parameters are computed using the method outlined by Douliez \etal~\cite{Douliez:1995} (seesee  figure~\label{fig:acylorder}). We note that
+the 2024 \mg{} parameters do not significantly increase the acyl-chain ordering from that of the system simulated without salt.The 2025 \mg{} parameters have a much greater effect on the ordering.
+\begin{figure}[H]
+    \caption[Acyl-Chain order parameters]{ }
+    \label{fig:acylorder}
+    \includegraphics{figures/chainorder_popc_compare_CH3.eps}
+\end{figure}
+We can compute the lipid bilayer thickness using the acyl-chain order parameter by using the
+"first-order mean-torque model" of Petrache \etal~\cite{petrache:2000:nmrarea,nagle:2000}.
+This is done by taking the average S\textsubscript{CD} from the experimental plateau region -- the set of carbons where the experimental S\textsubscript{CD} does not change
+detectably~\cite{nagle:2000,nagle:1993:nmrarea}. This can be used to compute the average segmental projection onto the bilayer normal $\langle x \rangle$:
+\begin{equation}
+    \langle x \rangle = 1 - \frac{1}{\varepsilon_1}, \varepsilon_1 = \frac{2}{1 - \sqrt{\frac{-8\big<S_{CD}\big> - 1}{3}}}\text{,}
+\end{equation}
+where $\varepsilon_1$ is the mean-torque parameter. We compute the corresponding squared projection $\langle x^2 \rangle$ from the $S_{CD}$
+using the following equation:
+\begin{equation}
+    \langle x^2 \rangle = \frac{1 - 4\big<S_{CD}\big>}{3}\text{,}
+\end{equation}
+which can be used together to compute the area factor:
+\begin{equation}
+q = 3 - 3 \langle x \rangle + \langle x^2 \rangle\text{.}
+\end{equation}
+This is then used to compute both the area per lipid and the thickness of the acyl-chain region of the lipid bilayer:
+\begin{equation}
+    \langle A \rangle = q\frac{4V_{\text{CH}_2}}{D_M}\text{,}
+\end{equation}
+Using $V_{CH_2}$ computed from the number densities, and the bond length $D_M=2.54$.
+We approximate the $V_{CH2}$ in two ways from the $v_{CH2\&CH1}$ -- first by directly using $V_{CH2}=v_{CH2\&CH1}$, and
+second by using the common approximation of $\frac{V_{CH2}=v_{CH3}}{2}$~\cite{nagle:2000}.
+These values are listed in table \ref{tab:opstruc}. We can also compute the acyl chain thickness:
+\begin{equation}
+    D_C = \frac{n_cD_M}{2q}\text{,}
+\end{equation}
+with $n_c=16$ as the number of carbons in the Sn-1 chain.
+These values can be seen in table~\ref{tab:opstruc}.
+%This is considered to be a more reliable measure of the lipid bilayer thickness than the other measures such as the peak-to-peak
+%distance from the electron densities \dhh{} or
+%the Gibbs-Luzzati thickness \db{},
+%where both the water structure and the headgroup tilt have significant influence over the result~\cite{nagle:2000}. Also, computing the \dc{} in this way
+%is independent of the number densities as the $V_{CH2}$ is computed using densities, as well as the acyl-chain probability density used for
+%the gap--integral. \TODO I DONT CARE FOR THIS PART!!! WHY LEAVE TODOS????
+\begin{table}[H]
+{\tiny
+    \caption[Structural Parameters from Acyl-Chain Ordering]{Area factor, acyl chain region thickness and area per lipid. These values are computed via the method described in Petrache \etal~\cite{petrache:2000:nmrarea}. This provides us with another
+    measure of the acyl chain thickness. We note that the thickening of the lipid bilayer remains consistent with the acyl chain thickness \dc{} computed from the number densities.}
+    \label{tab:opstruc}
+    \begin{tabularx}{\textwidth}{X|X|X|X|X|X|X|X}
+    \multicolumn{4}{l}{ }                       & \multicolumn{2}{l}{2024} & \multicolumn{2}{l}{2025}\\\hline
+                                                & Without salt             & \na                              & \li                & \mg-HFE            & \mg-Micro          & \mg-HFE            & \mg-Micro \\\hline
+    $q$                                         & 1.39 $\pm$ 0.14          & 1.30 $\pm$ 0.11                  & 1.29 $\pm$ 0.02    & 1.36 $\pm$ 0.02    & 1.41 $\pm$ 0.03    & 1.24 $\pm$ 0.01    & 1.26 $\pm$ 0.01 \\\hline
+    $2D_C$ NMR~(\AA)                            & 28.67 $\pm$ 2.97         & 30.85 $\pm$ 2.57                 & 31.53 $\pm$ 0.53   & 29.98 $\pm$ 0.47   & 28.84 $\pm$ 0.57   & 32.66 $\pm$ 0.33   & 32.17 $\pm$ 0.30\\\hline
+    $A_L$ from $v_{CH2\&CH1}$                   & 55.14 $\pm$ 1.21         & 51.98 $\pm$ 0.69                 & 53.13 $\pm$ 0.91   & 55.98 $\pm$ 0.92   & 58.45 $\pm$ 1.16   & 51.37 $\pm$ 0.52   & 51.97 $\pm$ 0.49 \\\hline
+    $((V_{CH3}/2)$                              & 30.87 $\pm$ 0.30         & 29.65 $\pm$ 0.24                 & 27.58 $\pm$ 0.19   & 27.40 $\pm$ 0.19   & 27.49 $\pm$ 0.20   & 27.38 $\pm$ 0.13   & 27.59 $\pm$ 0.13 \\\hline
+    $A_L$ from  $(V_{CH3}/2)$                   & 68.26 $\pm$ 1.95         & 61.10 $\pm$ 0.99                 & 56.02 $\pm$ 1.04   & 58.51 $\pm$ 1.03   & 61.03 $\pm$ 1.35   & 53.67 $\pm$ 0.58   & 54.90 $\pm$ 0.60 \\\hline
+    \end{tabularx}
+}
+\end{table}
+Notably, the \dc{} for all systems studied is slightly smaller than what we compute from the number densities, but follows similar trends.
+The \al{} computed here only relies on the volume of the CH2 moiety, and ends up with again
+quite different results than what we computed from $2V_C/2D_C$.
+Together, we note that the systems with the greatest number of charges in the Langmuir-type (non-steric) modes correlate with an increase the
+bilayer thickness (figure~\ref{fig:chargeperlipid})
+\begin{figure}[h!]
+    \caption[Adsorbed charge per mode per lipid]{Adsorbed charge per adsorption modality per lipid as a function of the lipid bilayer hydrocarbon thickness \dc{}. There is a clear trend in the number of adsorbed
+        charges, where more charges results in a greater \dc{}. There is no clear trend in the sterically-adsorbed ions, suggesting that the primary contributor to this trend are
+the non-steric modes of adsorption.}
+    \label{fig:chargeperlipid}
+    \includegraphics[height=0.5\textheight]{../figures/perlipid_thickcompare_CH3.eps}
+\end{figure}
+\section{Conclusions}
+We have presented a comparison between two \mg{} parameter sets developed by our group, under two different water-ion interaction models. The \mg{-2024} parameters
+optimized using clusters of ions and lipid-component ligands at sub-full oxygen coordination of the ion~\cite{saunders:2024}. The \mg{-2025} parameters are
+optimized using clusters at full oxygen coordination, by replacing the missing ligand oxygens with waters, based on expectations from ion-nucleic acid parameterization
+by our group~\cite{julian:2023:mg}. These parameters are used to simulate POPC bilayers in \mgcl{} solution, and lead to quite different results.
+
+We note significantly greater numbers of ions adsorbed in both \mg{-2025} HFE and Micro, and a greater number of ions in the non-steric adsorption modes. This correlates
+with the increase in bilayer thickness, measured both from the number densities and the acyl-chain ordering.
+However, with the sparse amount of experimental data at relevant concentrations of salt, it is not possible at this time to validate these results. Thus, we present
+these two parameter sets and the results as targets for future experiments, where validation of one or the other of these results can help guide future force-field
+development.
+
+
+%\TODO \TODO
+%Okay, so... in the \na{} and \li{} simulations, we see significant overlap between regions with phosphate oxygen and acyl-chain carbonyl oxygen interaction with ions...
+%this leads to some ripple effect, where lipids have to be slightly sunken in to be bridged... This would limit the amount of thickening that is possible when measured
+%via a Gibb's surface! This would bring the half-probability point to be slightly further inside!
+%In the \mg{} simulations from 2024, we saw no real interaction with the bilayer, only steric adsorption. But, the 2025 model causes some loss of water and interaction with
+%the phosphate groups, but no significant interactions with the acyl-chain carbonyl! This eliminates that drive to cause a ripple effect, and allows us to see
+%even more thickening of the \dc{}! Furthermore, it frees up the acyl-chain carbonyl to be bridged by water, which could bring things even closer than was allowed with the
+%ripple... how do I show this? \TODO
+%\begin{figure}[h!]
+%    \caption{Adsorbed charge per adsorption modality per lipid as a function of the lipid bilayer hydrocarbon thickness \dc{}. There is a clear trend in the number of adsorbed
+%        charges, where more charges results in a greater \dc{}. There is no clear trend in the sterically-adsorbed ions, suggesting that the primary contributor to this trend are
+%the non-steric modes of adsorption.}
+%    \label{fig:chargeperlipid}
+%    \includegraphics[height=0.5\textheight]{../figures/perlipid_thickcompare_2dcmethods.eps}
+%\end{figure}
+%\FloatBarrier
+%\section{Supporting Information}
+%\section{Acknowledgements}
+%\bibliography{refs}
+%\newpage
+
+%\section{Table and Figures}
+%    YEAH WE DONt know how to make a force-field like this...
+%\TODO Throw away the concentration effect! Concentration is hard to describe here...
+%\TODO There is a significant gap between experiments and simulations... we tune force-fields with two ways... but the concentrations are
+%always too high!!! And it is expensive to try to do significant amounts of ions and still have smaller concentrations of ions!
+%
+%Here we develop a new model that improves local interactions... new strategy that improves this... as a result
+%we get condensed phase properties that show a significant change in bilayer structure -- but this is at a large concentration...
+%to reduce this we need way more water and that can get intractable! Systems need to be very very big...
+%And experiments can't be done at high concentration! Because that screws up the data in various ways...
+%So how do we rectify this? Maybe there's nothing left to be done... no more lipid force-fields to be made
+%and the ions never worked!!! \TODO
+
+
+%Force-field validation for ion–membrane interactions is hindered by the mismatch between experimental and simulated ion concentrations.
+%Experimental structures of lipid bilayers in salt solution are often limited to concentrations that result in relatively few ions adsorbed per lipid,
+%as higher salt concentrations can complicate structural measurements~\cite{kurakin:2021:effect,kucerka:2020,kurakin:2022:cations,kurakin:2021:effect,petrache:2006:swelling}.
+%As a result, the effects of ions--especially divalent cations--on bilayer structure remain inconclusive from experiments alone.
+%Additionally, simulations are limited practically to the higher ion--concentration regime to allow for statistical sampling of
+%ion behavior.
+%We resolve this gap by have developing lipid--ion interaction cross-terms using
+%varied target data from \emph{ab initio} calculations. We have optimized \mg--lipid interaction parameters derived from ion clusters with ligands representative of common POPC binding sites.
+%Full sixfold oxygen coordination was strictly maintained by adding water molecules to replace missing ligands in smaller clusters.
+%
+%This approach follows strategies previously used to develop force-field parameters for ion--protein complexes and nucleic acid phosphate groups~\cite{julian:2023:mg}.
+%The parameters developed using these targets are compared with the results from our simulations parameterized with simpler clusters without additional water molecules~\cite{saunders:2022,saunders:2024}.
+%Our previously developed parameters, while they did improve substitution energies, we expected to introduce error in the geometeries as a tradeoff -- especially the ion--oxygen distances were reduced significantly.
+%The new parameterization reproduces gas-phase substitution energies and cluster geometries with much
+%better reproduction of the ion--oxygen distances compared to QM,
+%and leads to substantially increased \mg{} adsorption on the bilayer relative to our earlier force field.
+%When combined with the ion--water interaction parameters of Grotz~\etal~\cite{grotz:2021:optimized,micro}, the new model also yields a higher population of non-steric adsorption modes.
+%This enhanced binding correlates with a measurable thickening of the bilayer's hydrocarbon region—an effect not observed with the previously used \mg{} parameters.
+%Comparing these results to previous simulations of \mgcl{}, \nacl{}, and \licl{}, we find a consistent trend:
+%greater non-steric adsorbed charge corresponds to increased bilayer thickness, regardless of force field or parameterization approach.
+%However, experimental data at high salt concentrations remain sparse, underscoring the need for further measurements to validate parameterization approaches.
+%Ions in solution at interfaces have well characterized behavior -- they produce the classic ion double layer, where
+%one charge accumulates near the surface, and the second charge then accumulates to match that charge~\cite{israelachvilli}.
+%This is a mean-field effect, and neglects the specific adsorption behavior of the ion at and within the surface material.
+%These specific adsorption effects are determined by a critical balance between the interactions of ions-solvent, ions-surface,
+%and solvent-surface species.
+%This balance is even more critical when the interface is with another liquid species, or liquid-crystalline like a lipid bilayer,
+%where the structure of the interface itself is dependent on the interplay between these species.
+%This situation can prove complicated to study
+%theoretically and computationally,
+%as limited experimental data on structures of lipid membranes in presence of salt solutions are available.
+%As reported by Petrache \etal{} and Kurakin \etal{}, experiments at high concentrations of salts result in deformation
+%of lipid vesicles, which can complicate data analysis and interpretation~\cite{kurakin:2021:effect,petrache:2006:swelling}.
+%Thus data that are available are obtained at lower concentrations~\cite{kurakin:2021:effect,kucerka:2020,kurakin:2022:cations}.
+%\TODO ADD MORE REFERENCES AND DO A WHOLE REVIEW HERE!!! \TODO COMPUTATIONAL AND EXPERIMENTAL \TODO
+%These data report that salts have insignificant effects on POPC bilayers.
+%
+%Studies of lipid bilayers under elevated concentrations of salt
+%can enable more conclusive examination of ion--adsorption mechanisms and structural
+%perturbation that remain difficult to resolve at experimentally accessible ion concentrations.
+%
+%Simulations of lipid bilayers in the presence of various salts and parameter sets often report thickening of the lipid
+%bilayer when compared to the structure of a bilayer simulated in pure solvent~\cite{...}.
+%In our previous works, we were able to eliminate
+%the effect of this thickening of the bilayer by \nacl{} on the
+%lipid bilayer form-factor by parameterizing ion-lipid
+%Lennard-Jones interaction cross-terms~\cite{saunders:2022:higher}.
+%However, \li{} and \mg{} had different effects, which we
+%attributed to the level of dehydration of the ions adsorbed to the bilayer~\cite{saunders:2024}.
+%
+%Recent work developing model parameters for the interactions of
+%\mg{} with phosphate groups in DNA and RNA have noted that there is
+%significant difficulty in choosing parameters that both
+%get the fully hydrated \mg{} structure and energy compared to CCSDT results
+%at the same time as those at smaller coordination
+%numbers~\cite{julian:2023:mg}. To improve the reproduction of
+%these target data in their clusters of small molecules, Melendez-Delgado \etal{} enforced
+%strict sixfold coordination by replacing missing ligand oxygens with water molecules.
+%
+%In this work, we have applied this same idea to our target data -- we have developed newly optimized \mg{}-lipid
+%interaction parameters derived from ion
+%clusters with ligands representative
+%of the common binding sites on POPC, and maintain full sixfold oxygen
+%coordination by adding waters to replace missing ligands in the smaller clusters.
+%This allows us to focus our model parametrization
+%on clusters that are more representative of the crowded, bulk phase systems that we are
+%interested in studying. These optimized parameters are selected to reproduce gas-phase energies and geometries
+%compared to results from density functional theory~\cite{pbe0}.
+%We have performed simulations of POPC in \mgcl{} solution using
+%these parameters with the aim of comparing these results with those of our
+%previous interaction model parameters. We also characterize their behavior using
+%two different ion-water interaction parameter sets, parameters from Grotz \etal~\cite{grotz:2021:optimized,micro}
+%that are developed to improve the first shell water residence times in comparison to experiments,
+%and parameters from Li \etal{}\cite{hfe} which target experimental hydration free energies.
+%In this way, we hope to elucidate the result of these pertubations to the balance of interactions at a model interface and
+%deduce an empirical model for how these adsorbed charges effect the lipid bilayer structure.
+
+
+
+%These new parameters result in significantly more ion adsorption
+%on the lipid bilayer, compared to the parameters developed for \mg--lipid interactions in our previous work.
+%Additionally, these new parameters in combination with
+%the ion--water interaction parameters from Grotz \etal~\cite{grotz:2021:optimized,micro} result in significantly more ions adsorbing
+%in non-steric modes. These new parameters result in a thickening of the
+%lipid chain region of the bilayer that was not observed with the prevously used \mg parameters.
+%Comparing these new simulations with our previously simulated \mgcl, \nacl, and \licl, we find that irrespective of the force-field used or parameterization approach
+%there is a correlation between the hydrocarbon thickness of the bilayer and the amount of charge in a non-steric adsorption mode.
+%However, experimental data on these systems are sparse, and more data at higher concentrations of salt are needed to validate these
+%results.
+
+\beginsupplemental
+\begin{table}[h!]
+    \tiny
+\begin{tabularx}{\textwidth}{X|X|X|X}
+\hline
+\textbf{Parameter} & \textbf{Min} & \textbf{Max} & \textbf{Additional Constraint} \\
+\hline
+MGCH3-$\varepsilon$                   & 0.0 & 2.19239 & \\\hline
+MGCH3-$\sigma$                        & 0.2 & 0.5     & \\\hline
+MGCH2-$\varepsilon$                   & 0.0 & 2.13238 & \\\hline
+MGCH2-$\sigma$                        & 0.2 & 0.5     & \\\hline
+MGOA-$\varepsilon$                    & 0.0 & 30.0    & \\\hline
+MGOA-$\sigma$                         & 0.2 & 0.5     & \\\hline
+MGP-$\varepsilon$                     & 0.0 & 30.0    & \\\hline
+MGP-$\sigma$                          & 0.2 & 0.5     & \\\hline
+MGOM\textsuperscript{*}-$\varepsilon$ & 0.0 & 30.0    & \\\hline
+MGOM\textsuperscript{*}-$\sigma$      & 0.2 & 0.5     & $\sigma_{\text{MG-OM}^*} = \min\big\{\sigma_{\text{MG-P}},\ \sigma_{\text{MG-OM}^*}\big\} $\\\hline
+MGCO\textsuperscript{*}-$\varepsilon$ & 0.0 & 2.06152 & \\\hline
+MGCO\textsuperscript{*}-$\sigma$      & 0.2 & 0.5     & \\\hline
+MGO\textsuperscript{*}-$\varepsilon$  & 0.0 & 30.0    & \\\hline
+MGO\textsuperscript{*}-$\sigma$       & 0.2 & 0.5     & \\\hline
+\hline
+\end{tabularx}
+\caption[Parameter bounds and active constraints]{Parameter bounds and active constraints. $\varepsilon$ and $\sigma$ correspond to Lennard-Jones well depth and size.}
+\label{tab:constrain}
+\end{table}
 \chapter{Conclusions}
 \TODO{
 We have introduced a framework for classifying ion adsorption at lipid bilayers based on the degree of dehydration observed in molecular dynamics simulations. This classification distinguishes between steric, imperfect, and perfect adsorption modes, corresponding to fully hydrated, partially dehydrated, and completely dehydrated ions within the hydration boundary of the bilayer.

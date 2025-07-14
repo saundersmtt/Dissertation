@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Representative Nelder--Meade (NM) optimization run}}{9}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Substitution energies for Na\textsuperscript {+}\nobreakspace {}clusters computed as described in equation\nobreakspace {}\ref {eq:substitution}}}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Substitution energies for Na\textsuperscript {+}~clusters computed as described in equation~\ref {eq:substitution}}}{13}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Distances from Na\textsuperscript {+}to each component atom in sample clusters.}}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Electron densities}}{17}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Acyl-chain order parameters}}{19}{figure.caption.15}%
@@ -21,4 +21,12 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Coordination partners for Li\textsuperscript {+}and Mg\textsuperscript {2+}}}{50}{figure.caption.37}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Ion adsorption modalities}}{52}{figure.caption.38}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Substitution energies, and optimized geometries}}{60}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Water orientational ordering}}{63}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ion coordination summary}}{65}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Adsorption mode fractions}}{67}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Bilayer SAXS Form-factors and electron densities}}{69}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Number densities of lipid headgroup moieties}}{70}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Acyl-Chain order parameters}}{71}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Adsorbed charge per mode per lipid}}{74}{figure.caption.49}%
 \addvspace {10\p@ }

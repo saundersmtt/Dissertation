@@ -469,4 +469,49 @@ J.~Kruczek, M.~Saunders, M.~Khosla, Y.~Tu, S.~A. Pandit, Molecular dynamics
 M.~R. Reddy, M.~Berkowitz, The dielectric constant of spc/e water, Chemical
   physics letters 155~(2) (1989) 173--176.
 
+\bibitem{kurakin:2021:effect}
+S.~Kurakin, E.~Ermakova, A.~Ivankov, S.~Smerdova, N.~Ku{\v{c}}erka, The effect
+  of divalent ions on the structure of bilayers in the
+  dimyristoylphosphatidylcholine vesicles, Journal of Surface Investigation:
+  X-ray, Synchrotron and Neutron Techniques 15 (2021) 211--220.
+
+\bibitem{kucerka:2020}
+N.~Kucerka, E.~Ermakova, E.~Dushanov, K.~T. Kholmurodov, S.~Kurakin,
+  K.~Zelinská, D.~Uhr{\'\i}kov{\'a}, Cation--zwitterionic lipid interactions
+  are affected by the lateral area per lipid, Langmuir 37~(1) (2020) 278--288.
+
+\bibitem{kurakin:2022:cations}
+S.~Kurakin, O.~Ivankov, V.~Skoi, A.~Kuklin, D.~Uhr{\'\i}kov{\'a},
+  N.~Ku{\v{c}}erka, Cations do not alter the membrane structure of popc—a
+  lipid with an intermediate area, Frontiers in Molecular Biosciences 9 (2022)
+  926591.
+
+\bibitem{saunders:2024}
+M.~Saunders, A.~Adekoya-Olowofela, S.~Downing, S.~A. Pandit, Adsorption modes
+  of na+, li+, and mg2+ to a model zwitterionic lipid bilayer, Langmuir 40~(49)
+  (2024) 25892--25901.
+
+\bibitem{micro}
+K.~K. Grotz, N.~Schwierz, Optimized magnesium force field parameters for
+  biomolecular simulations with accurate solvation, ion-binding, and
+  water-exchange properties in spc/e, tip3p-fb, tip4p/2005, tip4p-ew, and
+  tip4p-d, Journal of Chemical Theory and Computation 18~(1) (2021) 526--537.
+
+\bibitem{merzhfe}
+P.~Li, B.~P. Roberts, D.~K. Chakravorty, K.~M. Merz~Jr, Rational design of
+  particle mesh ewald compatible lennard-jones parameters for+ 2 metal cations
+  in explicit solvent, Journal of chemical theory and computation 9~(6) (2013)
+  2733--2748.
+
+\bibitem{gromacs}
+M.~J. Abraham, T.~Murtola, R.~Schulz, S.~P{\'a}ll, J.~C. Smith, B.~Hess,
+  E.~Lindahl, Gromacs: High performance molecular simulations through
+  multi-level parallelism from laptops to supercomputers, SoftwareX 1 (2015)
+  19--25.
+
+\bibitem{petrache:2000:nmrarea}
+H.~I. Petrache, S.~W. Dodd, M.~F. Brown, Area per lipid and acyl length
+  distributions in fluid phosphatidylcholines determined by 2h nmr
+  spectroscopy, Biophysical journal 79~(6) (2000) 3172--3192.
+
 \end{thebibliography}
